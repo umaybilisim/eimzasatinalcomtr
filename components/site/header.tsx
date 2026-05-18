@@ -77,6 +77,9 @@ export function Header() {
             <Button asChild>
               <Link href="/iletisim">Sipariş Ver</Link>
             </Button>
+            <Button asChild>
+              <a href="https://odeme.umaybilisim.com.tr/" target="_blank" rel="noopener noreferrer">Online Ödeme</a>
+            </Button>
           </div>
 
           {/* Mobile toggle */}
@@ -134,6 +137,11 @@ export function Header() {
               <Link href="/iletisim" onClick={() => setMobileOpen(false)}>
                 Sipariş Ver
               </Link>
+            </Button>
+            <Button className="w-full" asChild>
+              <a href="https://odeme.umaybilisim.com.tr/" target="_blank" rel="noopener noreferrer">
+                Online Ödeme
+              </a>
             </Button>
           </div>
         </div>
