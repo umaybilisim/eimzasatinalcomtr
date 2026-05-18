@@ -85,10 +85,22 @@ export default function HakkimizdaPage() {
                     { label: "Vergi Numarası", value: "892 062 5443" },
                     { label: "Vergi Dairesi", value: "Ali Fuat Cebesoy VD" },
                     { label: "Adres", value: "Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84, Erenler 54200 Sakarya / TÜRKİYE" },
+                    { label: "Web Adresi", value: "__link__" },
                   ].map((row, i) => (
                     <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-muted/30"}>
                       <td className="px-5 py-3 font-semibold text-foreground w-40 shrink-0">{row.label}</td>
-                      <td className="px-5 py-3 text-muted-foreground">{row.value}</td>
+                      <td className="px-5 py-3 text-muted-foreground">
+                        {row.value === "__link__" ? (
+                          <a
+                            href="https://www.umaybilisim.com.tr"
+                            target="_blank"
+                            rel="noopener"
+                            className="text-primary hover:underline font-medium"
+                          >
+                            www.umaybilisim.com.tr
+                          </a>
+                        ) : row.value}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
