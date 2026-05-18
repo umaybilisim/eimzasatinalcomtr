@@ -31,7 +31,7 @@ export default function HakkimizdaPage() {
             Hakkımızda
           </h1>
           <p className="mt-4 text-slate-300 max-w-2xl text-lg">
-            e-imzasatinal.com olarak, bireylere ve kurumlara TÜBİTAK onaylı nitelikli elektronik imza, KEP ve zaman damgası hizmetleri sunuyoruz.
+            Umay Tüm Bilişim e-imzasatinal.com olarak, 15 Yıldır DİA ERP Yazılımı, E-Dönüşüm Portalı satışı, eğitimi ve desteği tecrübesi ile birlikte bireylere ve kurumlara TÜBİTAK onaylı nitelikli elektronik imza, KEP ve zaman damgası hizmetlerini 5 yıldır sunuyoruz.
           </p>
         </div>
       </section>
