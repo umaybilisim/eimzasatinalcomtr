@@ -15,7 +15,7 @@ export default function KvkkPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "KVKK" }]} />
           <h1 className="mt-6 text-3xl font-extrabold">KVKK Aydınlatma Metni</h1>
-          <p className="mt-2 text-slate-400">Son güncelleme: Ocak 2024</p>
+          <p className="mt-2 text-slate-400">Son güncelleme: Ocak 2026</p>
         </div>
       </section>
 
@@ -24,7 +24,17 @@ export default function KvkkPage() {
           <p className="text-muted-foreground"><em>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında hazırlanmış örnek bir aydınlatma metnidir. Lütfen hukuk danışmanınızla güncelleyiniz.</em></p>
 
           <h2>1. Veri Sorumlusu</h2>
-          <p>e-imzasatinal.com olarak, kişisel verilerinizi 6698 sayılı KVKK kapsamında işlemekteyiz.</p>
+          <p>
+            <strong>UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</strong> (e-imzasatinal.com)
+            olarak, kişisel verilerinizi 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında işlemekteyiz.
+          </p>
+          <ul>
+            <li><strong>Vergi Dairesi:</strong> Ali Fuat Cebesoy VD</li>
+            <li><strong>Vergi Numarası:</strong> 892 062 5443</li>
+            <li><strong>Adres:</strong> Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84, Erenler 54200 Sakarya / TÜRKİYE</li>
+            <li><strong>E-posta:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+            <li><strong>Telefon:</strong> {siteConfig.phone}</li>
+          </ul>
 
           <h2>2. İşlenen Kişisel Veriler</h2>
           <p>Ad, soyad, e-posta adresi, telefon numarası, TC kimlik numarası (e-imza başvurusu için zorunlu), adres bilgileri.</p>
