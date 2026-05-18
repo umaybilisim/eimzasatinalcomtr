@@ -33,7 +33,10 @@ export function Header() {
                     <ChevronDown className={cn("h-4 w-4 transition-transform", dropdownOpen && "rotate-180")} />
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-52 rounded-xl border bg-white shadow-lg p-1 z-50">
+                    <div
+                      className="absolute top-full left-0 mt-1 w-52 rounded-xl border bg-white shadow-lg p-1 z-50"
+                      onMouseDown={(e) => e.preventDefault()}
+                    >
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
