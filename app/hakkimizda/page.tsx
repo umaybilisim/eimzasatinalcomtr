@@ -51,7 +51,10 @@ export default function HakkimizdaPage() {
           <div className="prose prose-slate max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground">Misyonumuz</h2>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              Dijital dönüşüm sürecinde bireylerin ve şirketlerin ihtiyaç duyduğu elektronik kimlik hizmetlerini hızlı, güvenilir ve uygun maliyetle sunmak temel misyonumuzdur. Kâğıt tabanlı süreçlerin yerini alan dijital imzayla hem zaman hem maliyet tasarrufu sağlıyoruz.
+              Umay Tüm Bilişim olarak 16 yıldır DİA ERP yazılımı ve E-Dönüşüm çözümleri alanında binlerce işletmeye kesintisiz hizmet verdik. Bu köklü deneyimimizi 5 yıl önce e-imza, KEP ve zaman damgası hizmetlerine taşıdık; bugün hem bireysel hem kurumsal müşterilerimize aynı güvenilirlik anlayışıyla TÜBİTAK onaylı dijital kimlik çözümleri sunuyoruz.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              16 yıllık sektör birikimimiz sayesinde müşterilerimizin ihtiyaçlarını önceden anlıyor, doğru ürünü doğru süreçle ulaştırıyoruz. Satış öncesinde danışmanlık, satış sonrasında kurulum ve teknik destek — tüm süreç boyunca yanınızdayız.
             </p>
             <h2 className="text-2xl font-bold text-foreground mt-8">Sunduğumuz Hizmetler</h2>
             <ul className="text-muted-foreground mt-4 space-y-2">
