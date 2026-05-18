@@ -62,7 +62,17 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} e-imzasatinal.com — Tüm hakları saklıdır.</p>
-          <p>TÜBİTAK BİLGEM onaylı nitelikli elektronik sertifika hizmetleri</p>
+          <p>
+            TÜBİTAK BİLGEM onaylı nitelikli elektronik sertifika hizmetleri |{" "}
+            <a
+              href="https://www.umaybilisim.com.tr"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-slate-300 transition-colors"
+            >
+              Umay Bilişim
+            </a>
+          </p>
         </div>
       </div>
     </footer>
