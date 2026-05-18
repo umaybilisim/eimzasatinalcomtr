@@ -15,7 +15,7 @@ export default function MesafeliSatisPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Mesafeli Satış Sözleşmesi" }]} />
           <h1 className="mt-6 text-3xl font-extrabold">Mesafeli Satış Sözleşmesi</h1>
-          <p className="mt-2 text-slate-400">Son güncelleme: Ocak 2024</p>
+          <p className="mt-2 text-slate-400">Son güncelleme: Ocak 2026</p>
         </div>
       </section>
 
@@ -25,10 +25,14 @@ export default function MesafeliSatisPage() {
 
           <h2>Satıcı Bilgileri</h2>
           <ul>
-            <li><strong>Ünvan:</strong> e-imzasatinal.com</li>
-            <li><strong>Adres:</strong> {siteConfig.address}</li>
+            <li><strong>Ünvan:</strong> UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</li>
+            <li><strong>Vergi Dairesi:</strong> Ali Fuat Cebesoy VD</li>
+            <li><strong>Vergi Numarası:</strong> 892 062 5443</li>
+            <li><strong>Adres:</strong> Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84, Erenler 54200 Sakarya / TÜRKİYE</li>
+            <li><strong>Web:</strong> <a href="https://www.umaybilisim.com.tr" target="_blank" rel="noopener">www.umaybilisim.com.tr</a> / <a href="https://www.e-imzasatinal.com">www.e-imzasatinal.com</a></li>
             <li><strong>E-posta:</strong> {siteConfig.email}</li>
             <li><strong>Telefon:</strong> {siteConfig.phone}</li>
+            <li><strong>Telefon 2:</strong> {siteConfig.phone2}</li>
           </ul>
 
           <h2>Sözleşme Konusu</h2>
