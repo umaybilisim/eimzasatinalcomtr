@@ -67,6 +67,53 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
+      {/* Ünvan ve Banka Bilgileri */}
+      <section className="py-16 bg-muted/40">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-12">
+
+          {/* Ünvan Bilgileri */}
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Fatura / Ünvan Bilgileri</h2>
+            <div className="rounded-xl border bg-white overflow-hidden">
+              <table className="w-full text-sm">
+                <tbody>
+                  {[
+                    { label: "Firma Ünvanı", value: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ." },
+                    { label: "Vergi Numarası", value: "892 062 5443" },
+                    { label: "Vergi Dairesi", value: "Ali Fuat Cebesoy VD" },
+                    { label: "Adres", value: "Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84, Erenler 54200 Sakarya / TÜRKİYE" },
+                  ].map((row, i) => (
+                    <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-muted/30"}>
+                      <td className="px-5 py-3 font-semibold text-foreground w-40 shrink-0">{row.label}</td>
+                      <td className="px-5 py-3 text-muted-foreground">{row.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Banka Bilgileri */}
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Banka Hesap Bilgileri</h2>
+            <div className="space-y-4">
+              {[
+                { banka: "Akbank", sube: "Sakarya / Adapazarı", iban: "TR20 0004 6000 2788 8000 2875 87" },
+                { banka: "Ziraat Bankası", sube: "Sakarya / Adapazarı", iban: "TR87 0001 0019 1396 0934 9250 02" },
+                { banka: "TEB Bankası", sube: "Sakarya / Adapazarı", iban: "TR05 0003 2000 0000 0086 0180 73" },
+              ].map((h) => (
+                <div key={h.banka} className="rounded-xl border bg-white p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8">
+                  <div className="font-bold text-foreground w-36 shrink-0">{h.banka}</div>
+                  <div className="text-sm text-muted-foreground w-44 shrink-0">{h.sube}</div>
+                  <div className="font-mono text-sm font-semibold text-primary tracking-wide">{h.iban}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <CtaSection />
     </>
   )
