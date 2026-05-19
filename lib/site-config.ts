@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "e-imzasatinal",
-  title: "E-İmza, KEP ve Zaman Damgası Satın Al | e-imzasatinal.com",
+  title: "E-İmza, KEP ve Zaman Damgası Satın Al | eimzasatinal.com.tr",
   description:
     "TÜBİTAK onaylı e-imza, KEP ve zaman damgası satın alın. Bireysel ve kurumsal e-imza paketleri, hızlı aktivasyon, uygun fiyat. Hemen sipariş verin.",
-  url: "https://e-imzasatinal.com",
+  url: "https://www.eimzasatinal.com.tr",
   phone: "0 850 777 11 45",
   phoneTel: "+908507771145",
   phone2: "0 264 777 11 45",
