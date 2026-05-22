@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { Logo } from "./logo"
 import { siteConfig, footerLinks } from "@/lib/site-config"
+import { cities } from "@/lib/city-seo-data"
 
 export function Footer() {
   return (
@@ -60,7 +61,25 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        {/* City SEO links */}
+        <div className="mt-10 pt-8 border-t border-slate-800">
+          <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            Hizmet Bölgelerimiz — E-İmza
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {cities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/e-imza/${city.slug}`}
+                className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+              >
+                {city.name} E-İmza
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} e-imzasatinal.com — Tüm hakları saklıdır.</p>
           <p>
             TÜBİTAK BİLGEM onaylı nitelikli elektronik sertifika hizmetleri |{" "}

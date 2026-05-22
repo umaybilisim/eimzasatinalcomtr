@@ -9,6 +9,7 @@ import { JsonLd, productSchema, faqSchema, breadcrumbSchema } from "@/components
 import { getProduct } from "@/lib/products"
 import { getFaqByCategory } from "@/lib/faq-data"
 import { siteConfig } from "@/lib/site-config"
+import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
   title: "E-İmza Satın Al — Bireysel ve Kurumsal E-İmza",
@@ -158,6 +159,30 @@ export default function EImzaPage() {
               >
                 {l.label}
                 <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* City landing pages */}
+      <section className="py-14 bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-foreground mb-3">Şehrinize Özel E-İmza Hizmeti</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Türkiye&apos;nin büyük şehirlerine hızlı kargo ve aynı gün aktivasyon desteği sunuyoruz.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {cities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/e-imza/${city.slug}`}
+                className="group rounded-xl border bg-white p-4 text-center hover:border-primary/40 hover:shadow-md transition-all"
+              >
+                <span className="block font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                  {city.name}
+                </span>
+                <span className="block text-xs text-muted-foreground mt-0.5">E-İmza</span>
               </Link>
             ))}
           </div>

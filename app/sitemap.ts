@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/site-config"
+import { cities } from "@/lib/city-seo-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url
@@ -26,10 +27,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mesafeli-satis",
   ]
 
-  return routes.map((route) => ({
-    url: `${base}${route}/`,
+  const cityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${base}/e-imza/${city.slug}/`,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.startsWith("/blog") ? 0.7 : 0.8,
+    changeFrequency: "monthly",
+    priority: 0.75,
   }))
+
+  return [
+    ...routes.map((route) => ({
+      url: `${base}${route}/`,
+      lastModified: new Date(),
+      changeFrequency: (route === "" ? "weekly" : "monthly") as "weekly" | "monthly",
+      priority: route === "" ? 1 : route.startsWith("/blog") ? 0.7 : 0.8,
+    })),
+    ...cityRoutes,
+  ]
 }
