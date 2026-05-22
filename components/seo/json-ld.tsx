@@ -15,11 +15,12 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "e-imzasatinal.com",
-    url: "https://e-imzasatinal.com",
+    name: "UMAY TÜM BİLİŞİM — e-imzasatinal.com",
+    url: "https://www.eimzasatinal.com.tr",
+    logo: "https://www.eimzasatinal.com.tr/og-image.png",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+902120000000",
+      telephone: "+908507771145",
       contactType: "customer service",
       availableLanguage: "Turkish",
     },
@@ -31,11 +32,13 @@ export function productSchema({
   description,
   url,
   price,
+  image,
 }: {
   name: string
   description: string
   url: string
   price?: string
+  image?: string
 }) {
   return {
     "@context": "https://schema.org",
@@ -43,6 +46,7 @@ export function productSchema({
     name,
     description,
     url,
+    image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
     brand: {
       "@type": "Brand",
       name: "e-imzasatinal.com",
@@ -53,6 +57,44 @@ export function productSchema({
         priceCurrency: "TRY",
         price,
         availability: "https://schema.org/InStock",
+        url,
+        seller: {
+          "@type": "Organization",
+          name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: "0",
+            currency: "TRY",
+          },
+          shippingDestination: {
+            "@type": "DefinedRegion",
+            addressCountry: "TR",
+          },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: {
+              "@type": "QuantitativeValue",
+              minValue: 0,
+              maxValue: 1,
+              unitCode: "DAY",
+            },
+            transitTime: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              maxValue: 3,
+              unitCode: "DAY",
+            },
+          },
+        },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "TR",
+          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+          merchantReturnDays: 0,
+        },
       },
     }),
   }
