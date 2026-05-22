@@ -124,7 +124,7 @@ export const cities: CityData[] = [
     metaDescription: "Sakarya'da e-imza satın alın. Merkezimiz Sakarya'da! Adapazarı ve tüm ilçelere aynı gün teslimat seçeneği. TÜBİTAK onaylı e-imza, uygun fiyat.",
     heroDesc: "Merkezimiz Sakarya'da! Adapazarı ve tüm ilçelere en hızlı e-imza teslimatı, yerinde kurulum desteği.",
     cityContext: "Sakarya, Umay Tüm Bilişim'in merkez şehridir. Bu nedenle Sakarya'daki müşterilerimize en hızlı teslimat ve yerinde teknik destek imkânı sunmaktayız. Adapazarı, Serdivan, Hendek, Arifiye ve Geyve başta olmak üzere tüm Sakarya ilçelerine aynı gün veya ertesi gün e-imza teslim edebiliyoruz. Sakarya Organize Sanayi Bölgesi'ndeki firmalar toplu e-imza müşterilerimiz arasındadır.",
-    sectorNote: "Sakarya'da otomotiv yan sanayi (Honda'ya tedarikçiler), inşaat, tarım ve hizmet sektörlerindeki şirketler ile muhasebe ve hukuk büroları e-imzanın yoğun kullanıcısıdır.",
+    sectorNote: "Sakarya'da otomotiv yan sanayi (Toyota'ya tedarikçiler), inşaat, tarım ve hizmet sektörlerindeki şirketler ile muhasebe ve hukuk büroları e-imzanın yoğun kullanıcısıdır.",
     deliveryNote: "Sakarya merkezimiz sayesinde tüm ilçelere aynı gün veya en geç ertesi gün teslimat garanti edilmektedir. Elden teslim seçeneği için bizi arayın.",
     faqs: [
       { question: "Sakarya'da e-imzayı elden teslim alabilir miyim?", answer: "Evet! Sakarya merkezimizden randevu ile elden teslim ve yerinde kurulum desteği alabilirsiniz. 0850 777 11 45 veya 0264 777 11 45 numaralarından bizi arayın." },

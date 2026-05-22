@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim 2026",
   description:
-    "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum. Honda tedarikçileri, OSB firmaları ve muhasebecilere özel TÜBİTAK onaylı e-imza çözümleri.",
+    "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum. Toyota tedarikçileri, OSB firmaları ve muhasebecilere özel TÜBİTAK onaylı e-imza çözümleri.",
   alternates: { canonical: `${siteConfig.url}/blog/sakarya-e-imza/` },
   openGraph: {
     title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim",
@@ -33,8 +33,8 @@ const faqs = [
     answer: "Evet. Sakarya Organize Sanayi Bölgesi'ndeki firmalar için 3 ve üzeri e-imza başvurularında toplu fiyatlandırma uygulanmaktadır. Şirketinizdeki tüm yetkili imzacılar için tek seferde başvuru yapabilirsiniz.",
   },
   {
-    question: "Honda tedarikçisi olarak e-imzaya ihtiyacım var mı?",
-    answer: "Honda Türkiye ve diğer otomotiv ana sanayii firmalarına tedarik yapan şirketler, EDI sistemleri, kalite belgeleri, sevkiyat onayları ve tedarikçi sözleşmeleri için e-imzaya ihtiyaç duymaktadır. Sakarya'daki Honda tedarikçilerine özel destek sunuyoruz.",
+    question: "Toyota tedarikçisi olarak e-imzaya ihtiyacım var mı?",
+    answer: "Toyota Türkiye ve diğer otomotiv ana sanayii firmalarına tedarik yapan şirketler, EDI sistemleri, kalite belgeleri, sevkiyat onayları ve tedarikçi sözleşmeleri için e-imzaya ihtiyaç duymaktadır. Sakarya'daki Toyota tedarikçilerine özel destek sunuyoruz.",
   },
   {
     question: "Sakarya'da muhasebeci olarak e-imzayı nasıl kullanırım?",
@@ -51,7 +51,7 @@ const kullanimAlanlari = [
   "e-Devlet işlemleri",
   "TÜRMOB ve SMMM portal işlemleri",
   "Banka ve finans başvuruları",
-  "Honda & otomotiv EDI sistemleri",
+  "Toyota & otomotiv EDI sistemleri",
   "Sakarya Büyükşehir Belediyesi ihaleleri",
   "UYAP (avukatlar için)",
   "TÜBİTAK TEYDEB proje başvuruları",
@@ -106,7 +106,7 @@ export default function SakaryaEImzaPage() {
             <span className="text-blue-400">Adapazarı&apos;nda Aynı Gün Elden Teslim</span>
           </h1>
           <p className="mt-5 text-lg text-slate-300 max-w-2xl">
-            TÜBİTAK onaylı nitelikli elektronik imzanızı Sakarya merkezimizden elden teslim alın, aynı gün aktive edin. Honda tedarikçileri, OSB firmaları, mali müşavirler ve tüm Sakarya işletmelerine özel hizmet.
+            TÜBİTAK onaylı nitelikli elektronik imzanızı Sakarya merkezimizden elden teslim alın, aynı gün aktive edin. Toyota tedarikçileri, OSB firmaları, mali müşavirler ve tüm Sakarya işletmelerine özel hizmet.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -158,12 +158,12 @@ export default function SakaryaEImzaPage() {
           {/* Kimler kullanıyor */}
           <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Sakarya&apos;da E-İmzayı Kimler Kullanıyor?</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Sakarya, Honda Türkiye&apos;nin üretim üssü ve Türkiye&apos;nin önemli otomotiv yan sanayi merkezlerinden biridir. Organize Sanayi Bölgesi&apos;ndeki yüzlerce firma, Sakarya Büyükşehir Belediyesi ihalelerine giren KOBİ&apos;ler ve şehrin dinamik ticaret hayatı e-imzayı yoğun biçimde kullanmaktadır.
+            Sakarya, Toyota Türkiye&apos;nin üretim üssü ve Türkiye&apos;nin önemli otomotiv yan sanayi merkezlerinden biridir. Organize Sanayi Bölgesi&apos;ndeki yüzlerce firma, Sakarya Büyükşehir Belediyesi ihalelerine giren KOBİ&apos;ler ve şehrin dinamik ticaret hayatı e-imzayı yoğun biçimde kullanmaktadır.
           </p>
 
           <div className="not-prose mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { baslik: "Honda Tedarikçileri", aciklama: "EDI sistemleri, kalite belgeleri, sevkiyat onayları ve tedarikçi sözleşmeleri için e-imza zorunlu hale gelmektedir." },
+              { baslik: "Toyota Tedarikçileri", aciklama: "EDI sistemleri, kalite belgeleri, sevkiyat onayları ve tedarikçi sözleşmeleri için e-imza zorunlu hale gelmektedir." },
               { baslik: "OSB Firmaları", aciklama: "Sakarya Organize Sanayi Bölgesi'ndeki imalat firmaları kamu ihaleleri ve ihracat belgelerinde e-imzayı aktif kullanmaktadır." },
               { baslik: "Mali Müşavir & SMMM", aciklama: "e-Beyanname, SGK bildirimleri ve TÜRMOB işlemleri için Sakarya'daki muhasebecilerin büyük çoğunluğu e-imza kullanmaktadır." },
               { baslik: "Hukuk Büroları", aciklama: "UYAP üzerinden e-imzalı belge gönderimi Sakarya'daki avukatlar için zorunluluk haline gelmiştir." },
@@ -256,10 +256,10 @@ export default function SakaryaEImzaPage() {
             </Link>
           </div>
 
-          {/* Honda / Otomotiv bölümü */}
-          <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Honda Tedarikçileri ve Otomotiv Sektörü için E-İmza</h2>
+          {/* Toyota / Otomotiv bölümü */}
+          <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Toyota Tedarikçileri ve Otomotiv Sektörü için E-İmza</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Sakarya, Honda Türkiye&apos;nin 1997&apos;den bu yana üretim yaptığı şehirdir. Honda&apos;ya ve diğer otomotiv ana sanayii firmalarına tedarik yapan yüzlerce Sakarya firması, tedarik zinciri yönetiminde e-imzayı zorunlu olarak kullanmaktadır.
+            Sakarya, Toyota Türkiye&apos;nin 1997&apos;den bu yana üretim yaptığı şehirdir. Toyota&apos;ya ve diğer otomotiv ana sanayii firmalarına tedarik yapan yüzlerce Sakarya firması, tedarik zinciri yönetiminde e-imzayı zorunlu olarak kullanmaktadır.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
             Tedarikçi kalifikasyon sözleşmeleri, kalite kontrol belgeleri, sevkiyat onayları ve EDI sistemi entegrasyonlarında bireysel ya da kurumsal e-mühür tercih edilmektedir. Sakarya OSB&apos;deki firmalara toplu e-imza başvurularında özel fiyatlandırma sunmaktayız — detaylar için iletişime geçin.
