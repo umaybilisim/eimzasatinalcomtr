@@ -1,14 +1,16 @@
+import dynamic from "next/dynamic"
 import { Hero } from "@/components/site/hero"
-import { FeatureGrid } from "@/components/site/feature-grid"
-import { TestimonialGrid } from "@/components/site/testimonial-grid"
-import { CtaSection } from "@/components/site/cta-section"
-import { PricingTable } from "@/components/site/pricing-table"
-import { Accordion } from "@/components/ui/accordion"
 import { JsonLd, organizationSchema, faqSchema } from "@/components/seo/json-ld"
 import { products } from "@/lib/products"
 import { faqData } from "@/lib/faq-data"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+
+const FeatureGrid = dynamic(() => import("@/components/site/feature-grid").then(m => ({ default: m.FeatureGrid })))
+const TestimonialGrid = dynamic(() => import("@/components/site/testimonial-grid").then(m => ({ default: m.TestimonialGrid })))
+const PricingTable = dynamic(() => import("@/components/site/pricing-table").then(m => ({ default: m.PricingTable })))
+const CtaSection = dynamic(() => import("@/components/site/cta-section").then(m => ({ default: m.CtaSection })))
+const Accordion = dynamic(() => import("@/components/ui/accordion").then(m => ({ default: m.Accordion })))
 
 const homeFaqs = faqData.filter((f) =>
   ["genel-1", "genel-2", "eimza-1", "eimza-2", "kep-1"].includes(f.id)

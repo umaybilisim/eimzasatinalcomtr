@@ -6,10 +6,10 @@ import { siteConfig } from "@/lib/site-config"
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10" aria-hidden="true">
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-blue-400 blur-2xl" />
-        <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-blue-600 blur-2xl" />
+      {/* Background decoration — blur kaldırıldı (mobile LCP için) */}
+      <div className="absolute inset-0 opacity-5 hidden sm:block" aria-hidden="true">
+        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-blue-400" />
+        <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-blue-600" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">

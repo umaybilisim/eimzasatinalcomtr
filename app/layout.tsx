@@ -65,8 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3LVKN5BK34" strategy="afterInteractive" />
-        <Script id="ga4" strategy="afterInteractive">{`
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3LVKN5BK34" strategy="lazyOnload" />
+        <Script id="ga4" strategy="lazyOnload">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
