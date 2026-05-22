@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OG Image Export</title>
+<style>
+  body { margin: 0; background: #000; display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 20px; font-family: sans-serif; color: white; }
+  canvas { border: 1px solid #333; }
+  button { padding: 12px 24px; background: #1a56db; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+  button:hover { background: #1e40af; }
+</style>
+</head>
+<body>
+<h2>og-image.png Oluşturucu</h2>
+<canvas id="c" width="1200" height="630"></canvas>
+<button onclick="download()">PNG İndir (og-image.png)</button>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+const img = new Image();
+img.onload = () => ctx.drawImage(img, 0, 0);
+img.src = 'og-image.svg';
+
+function download() {
+  const a = document.createElement('a');
+  a.download = 'og-image.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>

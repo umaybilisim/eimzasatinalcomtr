@@ -1,0 +1,58 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="100" r="250" fill="#1a56db" fill-opacity="0.12"/>
+  <circle cx="150" cy="530" r="180" fill="#1a56db" fill-opacity="0.08"/>
+
+  <!-- Card -->
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="url(#card)" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- Logo icon -->
+  <rect x="140" y="160" width="80" height="80" rx="16" fill="#1a56db"/>
+  <path d="M180 174L196 183V203C196 211 188 218 180 222C172 218 164 211 164 203V183L180 174Z"
+    fill="white" fill-opacity="0.15" stroke="white" stroke-width="2.5"/>
+  <path d="M172 200L178 207L190 193"
+    stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Logo text -->
+  <text x="240" y="208" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="white">e-imza</text>
+  <text x="390" y="208" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#60a5fa">satinal</text>
+  <text x="240" y="235" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="400" fill="#94a3b8">.com.tr</text>
+
+  <!-- Divider -->
+  <rect x="140" y="270" width="920" height="1.5" fill="white" fill-opacity="0.1"/>
+
+  <!-- Main headline -->
+  <text x="140" y="340" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="white">E-İmza, KEP ve Zaman Damgası</text>
+  <text x="140" y="400" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#60a5fa">Satın Al</text>
+
+  <!-- Subtitle -->
+  <text x="140" y="450" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400" fill="#94a3b8">TÜBİTAK onaylı · Hızlı aktivasyon · Uygun fiyat</text>
+
+  <!-- Bottom badges -->
+  <rect x="140" y="490" width="180" height="40" rx="20" fill="#1a56db" fill-opacity="0.3"/>
+  <text x="230" y="516" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Bireysel E-İmza</text>
+
+  <rect x="336" y="490" width="190" height="40" rx="20" fill="#1a56db" fill-opacity="0.3"/>
+  <text x="431" y="516" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Kurumsal E-İmza</text>
+
+  <rect x="542" y="490" width="120" height="40" rx="20" fill="#1a56db" fill-opacity="0.3"/>
+  <text x="602" y="516" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">KEP</text>
+
+  <rect x="678" y="490" width="200" height="40" rx="20" fill="#1a56db" fill-opacity="0.3"/>
+  <text x="778" y="516" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Zaman Damgası</text>
+</svg>
