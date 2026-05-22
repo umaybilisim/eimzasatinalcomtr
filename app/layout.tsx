@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/footer"
 import { WhatsappFloat } from "@/components/site/whatsapp-float"
 import { siteConfig } from "@/lib/site-config"
 
-const inter = Inter({ subsets: ["latin", "latin-ext"] })
+const inter = Inter({ subsets: ["latin", "latin-ext"], display: "swap", preload: true })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -63,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-3LVKN5BK34" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
