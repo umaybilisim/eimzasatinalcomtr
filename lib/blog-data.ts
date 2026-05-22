@@ -64,4 +64,12 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 dk",
     category: "E-İmza",
   },
+  {
+    slug: "sakarya-e-imza",
+    title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim 2026",
+    excerpt: "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum desteği, TÜBİTAK onaylı e-imza. Honda tedarikçileri, OSB firmaları ve muhasebecilere özel çözümler.",
+    date: "2026-05-22",
+    readTime: "8 dk",
+    category: "E-İmza",
+  },
 ]

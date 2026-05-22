@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/mali-musavir-e-imza-rehberi",
     "/blog/e-imza-yenileme",
     "/blog/yapi-denetimcisi-e-imza-rehberi",
+    "/blog/sakarya-e-imza",
     "/kvkk",
     "/gizlilik",
     "/mesafeli-satis",
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/e-imza/${city.slug}/`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.75,
+    priority: city.slug === "sakarya" ? 0.9 : 0.75,
   }))
 
   return [
