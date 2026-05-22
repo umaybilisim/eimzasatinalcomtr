@@ -56,4 +56,12 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 dk",
     category: "E-İmza",
   },
+  {
+    slug: "yapi-denetimcisi-e-imza-rehberi",
+    title: "Yapı Denetimcileri İçin E-İmza Rehberi 2026 | YDS ve Proje Onayları",
+    excerpt: "Yapı denetim şirketleri ve denetimciler için e-imza rehberi. YDS sistemi, proje onayları, hakediş belgeleri ve bireysel/kurumsal e-imza seçimi hakkında kapsamlı bilgi.",
+    date: "2026-05-22",
+    readTime: "10 dk",
+    category: "E-İmza",
+  },
 ]

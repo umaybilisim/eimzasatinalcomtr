@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/zaman-damgasi-nedir",
     "/blog/mali-musavir-e-imza-rehberi",
     "/blog/e-imza-yenileme",
+    "/blog/yapi-denetimcisi-e-imza-rehberi",
     "/kvkk",
     "/gizlilik",
     "/mesafeli-satis",
