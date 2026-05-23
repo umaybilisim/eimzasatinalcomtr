@@ -4,7 +4,7 @@ import { PricingTable } from "@/components/site/pricing-table"
 import { CtaSection } from "@/components/site/cta-section"
 import { Accordion } from "@/components/ui/accordion"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
-import { JsonLd, productSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
+import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
 import { getProduct } from "@/lib/products"
 import { getFaqByCategory } from "@/lib/faq-data"
 import { siteConfig } from "@/lib/site-config"
@@ -31,7 +31,7 @@ export default function ZamanDamgasiPage() {
 
   return (
     <>
-      <JsonLd data={productSchema({ name: product.name, description: product.description, url: `${siteConfig.url}/zaman-damgasi/` })} />
+      <JsonLd data={serviceSchema({ name: product.name, description: product.description, url: `${siteConfig.url}/zaman-damgasi/` })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Zaman Damgası", url: `${siteConfig.url}/zaman-damgasi/` }])} />
 

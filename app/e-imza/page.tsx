@@ -49,6 +49,8 @@ export default function EImzaPage() {
           name: product.name,
           description: product.description,
           url: `${siteConfig.url}/e-imza/`,
+          lowPrice: "2750",
+          highPrice: "3750",
         })}
       />
       <JsonLd data={faqSchema(faqs)} />

@@ -32,14 +32,75 @@ export function productSchema({
   description,
   url,
   price,
+  lowPrice,
+  highPrice,
   image,
 }: {
   name: string
   description: string
   url: string
   price?: string
+  lowPrice?: string
+  highPrice?: string
   image?: string
 }) {
+  const seller = {
+    "@type": "Organization",
+    name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
+  }
+
+  const shippingDetails = {
+    "@type": "OfferShippingDetails",
+    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "TRY" },
+    shippingDestination: { "@type": "DefinedRegion", addressCountry: "TR" },
+    deliveryTime: {
+      "@type": "ShippingDeliveryTime",
+      handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+      transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 3, unitCode: "DAY" },
+    },
+  }
+
+  const returnPolicy = {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "TR",
+    returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+    merchantReturnDays: 0,
+  }
+
+  let offers: Record<string, unknown>
+  if (lowPrice && highPrice) {
+    offers = {
+      "@type": "AggregateOffer",
+      priceCurrency: "TRY",
+      lowPrice,
+      highPrice,
+      offerCount: "3",
+      availability: "https://schema.org/InStock",
+      url,
+      seller,
+      shippingDetails,
+      hasMerchantReturnPolicy: returnPolicy,
+    }
+  } else if (price) {
+    offers = {
+      "@type": "Offer",
+      priceCurrency: "TRY",
+      price,
+      availability: "https://schema.org/InStock",
+      url,
+      seller,
+      shippingDetails,
+      hasMerchantReturnPolicy: returnPolicy,
+    }
+  } else {
+    offers = {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url,
+      seller,
+    }
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -47,56 +108,39 @@ export function productSchema({
     description,
     url,
     image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
-    brand: {
-      "@type": "Brand",
-      name: "e-imzasatinal.com",
+    brand: { "@type": "Brand", name: "e-imzasatinal.com" },
+    offers,
+  }
+}
+
+export function serviceSchema({
+  name,
+  description,
+  url,
+  image,
+}: {
+  name: string
+  description: string
+  url: string
+  image?: string
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url,
+    image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
+    provider: {
+      "@type": "Organization",
+      name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
+      url: "https://www.eimzasatinal.com.tr",
     },
-    ...(price && {
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "TRY",
-        price,
-        availability: "https://schema.org/InStock",
-        url,
-        seller: {
-          "@type": "Organization",
-          name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: {
-            "@type": "MonetaryAmount",
-            value: "0",
-            currency: "TRY",
-          },
-          shippingDestination: {
-            "@type": "DefinedRegion",
-            addressCountry: "TR",
-          },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: {
-              "@type": "QuantitativeValue",
-              minValue: 0,
-              maxValue: 1,
-              unitCode: "DAY",
-            },
-            transitTime: {
-              "@type": "QuantitativeValue",
-              minValue: 1,
-              maxValue: 3,
-              unitCode: "DAY",
-            },
-          },
-        },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "TR",
-          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-          merchantReturnDays: 0,
-        },
-      },
-    }),
+    areaServed: { "@type": "Country", name: "Türkiye" },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: url,
+    },
   }
 }
 

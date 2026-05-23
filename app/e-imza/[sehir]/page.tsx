@@ -77,6 +77,8 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
           name: `${city.name} E-İmza — TÜBİTAK Onaylı Nitelikli Elektronik İmza`,
           description: city.metaDescription,
           url: pageUrl,
+          lowPrice: "2750",
+          highPrice: "3750",
         })}
       />
       <JsonLd data={faqSchema(city.faqs)} />
