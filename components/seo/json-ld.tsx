@@ -15,7 +15,7 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "UMAY TÜM BİLİŞİM — e-imzasatinal.com",
+    name: "UMAY TÜM BİLİŞİM — eimzasatinal.com.tr",
     url: "https://www.eimzasatinal.com.tr",
     logo: "https://www.eimzasatinal.com.tr/og-image.png",
     contactPoint: {
@@ -108,7 +108,7 @@ export function productSchema({
     description,
     url,
     image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
-    brand: { "@type": "Brand", name: "e-imzasatinal.com" },
+    brand: { "@type": "Brand", name: "eimzasatinal.com.tr" },
     offers,
   }
 }
@@ -179,11 +179,11 @@ export function articleSchema({
     datePublished,
     author: {
       "@type": "Organization",
-      name: "e-imzasatinal.com",
+      name: "eimzasatinal.com.tr",
     },
     publisher: {
       "@type": "Organization",
-      name: "e-imzasatinal.com",
+      name: "eimzasatinal.com.tr",
     },
   }
 }

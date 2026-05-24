@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Gizlilik Politikası",
-  description: "e-imzasatinal.com gizlilik politikası ve çerez kullanımı.",
+  description: "eimzasatinal.com.tr gizlilik politikası ve çerez kullanımı.",
   alternates: { canonical: `${siteConfig.url}/gizlilik/` },
 }
 
@@ -25,7 +25,7 @@ export default function GizlilikPage() {
 
           <h2>1. Veri Sorumlusu</h2>
           <p>
-            <strong>UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</strong> (e-imzasatinal.com)
+            <strong>UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</strong> (eimzasatinal.com.tr)
             olarak kişisel verilerinizin güvenliğine önem veriyoruz.
           </p>
           <ul>

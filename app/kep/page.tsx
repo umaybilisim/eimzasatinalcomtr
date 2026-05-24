@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "BTK yetkili KEP adresi satın alın. Yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.",
   alternates: { canonical: `${siteConfig.url}/kep/` },
   openGraph: {
-    title: "KEP Adresi Al | e-imzasatinal.com",
+    title: "KEP Adresi Al | eimzasatinal.com.tr",
     description: "BTK yetkili KEP hizmeti. Yasal tebligat ve resmi yazışmalar için.",
     url: `${siteConfig.url}/kep/`,
   },

@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Mesafeli Satış Sözleşmesi",
-  description: "e-imzasatinal.com mesafeli satış sözleşmesi.",
+  description: "eimzasatinal.com.tr mesafeli satış sözleşmesi.",
   alternates: { canonical: `${siteConfig.url}/mesafeli-satis/` },
 }
 
@@ -29,7 +29,7 @@ export default function MesafeliSatisPage() {
             <li><strong>Vergi Dairesi:</strong> Ali Fuat Cebesoy VD</li>
             <li><strong>Vergi Numarası:</strong> 892 062 5443</li>
             <li><strong>Adres:</strong> Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84, Erenler 54200 Sakarya / TÜRKİYE</li>
-            <li><strong>Web:</strong> <a href="https://www.umaybilisim.com.tr" target="_blank" rel="noopener">www.umaybilisim.com.tr</a> / <a href="https://www.e-imzasatinal.com">www.e-imzasatinal.com</a></li>
+            <li><strong>Web:</strong> <a href="https://www.umaybilisim.com.tr" target="_blank" rel="noopener">www.umaybilisim.com.tr</a> / <a href="https://www.eimzasatinal.com.tr">www.eimzasatinal.com.tr</a></li>
             <li><strong>E-posta:</strong> {siteConfig.email}</li>
             <li><strong>Telefon:</strong> {siteConfig.phone}</li>
             <li><strong>Telefon 2:</strong> {siteConfig.phone2}</li>

@@ -16,7 +16,7 @@ const packages = [
 ]
 
 export function ContactForm() {
-  const subject = "e-imzasatinal.com - Sipariş / Bilgi Talebi"
+  const subject = "eimzasatinal.com.tr - Sipariş / Bilgi Talebi"
 
   return (
     <div className="grid lg:grid-cols-2 gap-12">

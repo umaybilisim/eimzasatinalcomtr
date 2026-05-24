@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "TÜBİTAK onaylı nitelikli elektronik imza satın alın. 1, 2 ve 3 yıllık paketler. Mali müşavir, avukat ve KOBİ'lere özel çözümler. Hemen sipariş verin.",
   alternates: { canonical: `${siteConfig.url}/e-imza/` },
   openGraph: {
-    title: "E-İmza Satın Al | e-imzasatinal.com",
+    title: "E-İmza Satın Al | eimzasatinal.com.tr",
     description: "TÜBİTAK onaylı e-imza. Hızlı aktivasyon, uygun fiyat.",
     url: `${siteConfig.url}/e-imza/`,
   },

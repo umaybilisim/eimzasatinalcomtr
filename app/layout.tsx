@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: "%s | e-imzasatinal.com",
+    template: "%s | eimzasatinal.com.tr",
   },
   description: siteConfig.description,
   keywords: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     "kurumsal e-imza",
     "ucuz e-imza",
   ],
-  authors: [{ name: "e-imzasatinal.com" }],
-  creator: "e-imzasatinal.com",
+  authors: [{ name: "eimzasatinal.com.tr" }],
+  creator: "eimzasatinal.com.tr",
   openGraph: {
     type: "website",
     locale: "tr_TR",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "e-imzasatinal.com.tr — E-İmza, KEP ve Zaman Damgası",
+        alt: "eimzasatinal.com.tr.tr — E-İmza, KEP ve Zaman Damgası",
       },
     ],
   },

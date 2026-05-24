@@ -80,7 +80,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} e-imzasatinal.com — Tüm hakları saklıdır.</p>
+          <p>© {new Date().getFullYear()} eimzasatinal.com.tr — Tüm hakları saklıdır.</p>
           <p>
             TÜBİTAK BİLGEM onaylı nitelikli elektronik sertifika hizmetleri |{" "}
             <a

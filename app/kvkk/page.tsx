@@ -25,7 +25,7 @@ export default function KvkkPage() {
 
           <h2>1. Veri Sorumlusu</h2>
           <p>
-            <strong>UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</strong> (e-imzasatinal.com)
+            <strong>UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.</strong> (eimzasatinal.com.tr)
             olarak, kişisel verilerinizi 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında işlemekteyiz.
           </p>
           <ul>
