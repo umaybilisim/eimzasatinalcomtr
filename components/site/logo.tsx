@@ -34,8 +34,8 @@ export function Logo({ className, inverted }: LogoProps) {
         />
       </svg>
       <span className={cn("text-lg leading-none", inverted ? "text-white" : "text-foreground")}>
-        e-imza<span className={inverted ? "text-blue-200" : "text-primary"}>satinal</span>
-        <span className="text-xs font-normal opacity-70">.com</span>
+        eimza<span className={inverted ? "text-blue-200" : "text-primary"}>satinal</span>
+        <span className="text-xs font-normal opacity-70">.com.tr</span>
       </span>
     </Link>
   )
