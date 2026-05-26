@@ -118,7 +118,7 @@ export function Hero() {
           </div>
 
           {/* Right: Cards or Steps */}
-          <div key={`right-${active}`} className="grid grid-cols-1 gap-3 animate-fade-in lg:pl-10 lg:pr-[76px]">
+          <div key={`right-${active}`} className="grid grid-cols-1 gap-3 animate-fade-in lg:pl-[154px]">
             {slide.right === "cards" ? (
               cards.map((p) => (
                 <Link
