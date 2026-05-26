@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "eimzasatinal.com.tr" }],
   creator: "eimzasatinal.com.tr",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     type: "website",
     locale: "tr_TR",
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "eimzasatinal.com.tr.tr — E-İmza, KEP ve Zaman Damgası",
+        alt: "eimzasatinal.com.tr — E-İmza, KEP ve Zaman Damgası",
       },
     ],
   },
