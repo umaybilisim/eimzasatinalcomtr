@@ -75,11 +75,11 @@ export function Hero() {
         <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-blue-600" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[320px]">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-start min-h-[320px]">
 
           {/* Left: Text */}
-          <div key={active} className="animate-fade-in">
+          <div key={active} className="animate-fade-in flex flex-col">
             <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-500/30 px-4 py-1.5 text-sm text-blue-200 mb-6">
               <slide.badge.icon className="h-4 w-4" />
               {slide.badge.text}
@@ -102,7 +102,7 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-auto pt-8 flex flex-wrap gap-4">
               <Button size="lg" asChild className="bg-blue-500 hover:bg-blue-400 text-white shadow-lg shadow-blue-900/40">
                 <Link href="/iletisim">
                   Hemen Sipariş Ver
@@ -118,18 +118,18 @@ export function Hero() {
           </div>
 
           {/* Right: Cards or Steps */}
-          <div key={`right-${active}`} className="grid grid-cols-1 gap-4 animate-fade-in">
+          <div key={`right-${active}`} className="grid grid-cols-1 gap-3 animate-fade-in lg:pl-10">
             {slide.right === "cards" ? (
               cards.map((p) => (
                 <Link
                   key={p.name}
                   href={p.href}
-                  className="group flex items-center gap-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-white/40 p-4 transition-all"
+                  className="group flex items-center gap-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-white/40 p-3 transition-all"
                 >
-                  <div className="h-10 w-10 rounded-lg bg-blue-500/30 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="h-5 w-5 text-blue-300" />
+                  <div className="h-8 w-8 rounded-lg bg-blue-500/30 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="h-4 w-4 text-blue-300" />
                   </div>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-white">{p.name}</span>
                       <span className="text-xs rounded-full bg-blue-500/30 text-blue-200 px-2 py-0.5">{p.badge}</span>
@@ -141,11 +141,11 @@ export function Hero() {
               ))
             ) : (
               steps.map((s) => (
-                <div key={s.num} className="flex items-center gap-4 rounded-xl bg-white/10 border border-white/20 p-4">
-                  <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center shrink-0 font-bold text-white text-lg">
+                <div key={s.num} className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/20 p-3">
+                  <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center shrink-0 font-bold text-white text-base">
                     {s.num}
                   </div>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-white">{s.title}</span>
                       <span className="text-xs rounded-full bg-green-500/30 text-green-300 px-2 py-0.5">{s.time}</span>
