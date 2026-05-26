@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ArrowRight, ShieldCheck, Zap, Clock, Monitor, CheckCircle } from "lucide-react"
+import { ArrowRight, ShieldCheck, Zap, Clock, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site-config"
 
@@ -34,10 +34,8 @@ const slides = [
         Alın — Ofise Gelmenize Gerek Yok
       </>
     ),
-    subtitle: "Online kimlik doğrulama ile başvurunuzu tamamlayın, e-imzanız anında aktive edilsin. Masaüstü veya laptop'unuzdan kolayca kullanın.",
+    subtitle: "Online kimlik doğrulama ile başvurunuzu tamamlayın, e-imzanız anında aktive edilsin.",
     features: [
-      { icon: Monitor, color: "text-blue-400", text: "Windows 10 / 11" },
-      { icon: Monitor, color: "text-slate-300", text: "macOS" },
       { icon: ShieldCheck, color: "text-green-400", text: "Hukuki geçerlilik" },
     ],
     right: "steps",
