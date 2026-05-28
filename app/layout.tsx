@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [`${siteConfig.url}/og-image.png`],
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
   robots: {
     index: true,
     follow: true,

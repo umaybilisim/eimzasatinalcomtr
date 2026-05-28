@@ -1,0 +1,35 @@
+# eimzasatinal.com.tr — E-İmza, KEP ve Zaman Damgası
+
+## Şirket Hakkında
+
+UMAY TÜM BİLİŞİM, Sakarya merkezli bir e-imza satış ve aktivasyon firmasıdır. TÜBİTAK ve BTK onaylı e-imza, KEP (Kayıtlı Elektronik Posta) ve zaman damgası hizmetleri sunmaktadır.
+
+## Hizmetler
+
+- **E-İmza (Nitelikli Elektronik İmza):** 5070 sayılı Elektronik İmza Kanunu kapsamında ıslak imzayla eşdeğer hukuki geçerliliğe sahip dijital imza. 1, 2 ve 3 yıllık paketler mevcuttur.
+- **KEP (Kayıtlı Elektronik Posta):** Yasal delil niteliğinde e-posta sistemi. Sermaye şirketleri, avukatlar ve kamu kurumları için zorunludur.
+- **Zaman Damgası:** Belgelerin belirli bir zamanda var olduğunu kanıtlayan TÜBİTAK onaylı RFC 3161 uyumlu hizmet.
+
+## Özellikler
+
+- Uzaktan (online) aktivasyon — ofise gelmeye gerek yok
+- Aynı gün aktivasyon imkânı
+- 7/24 teknik destek
+- Bireysel ve kurumsal paketler
+- TÜBİTAK & BTK onaylı sağlayıcılar
+
+## İletişim
+
+- Telefon: 0 850 777 11 45
+- E-posta: bilgi@umaybilisim.com.tr
+- Adres: Meydan54 AVM, Erenler, Sakarya
+
+## Önemli Sayfalar
+
+- Anasayfa: https://eimzasatinal.com.tr/
+- E-İmza: https://eimzasatinal.com.tr/e-imza/
+- KEP: https://eimzasatinal.com.tr/kep/
+- Zaman Damgası: https://eimzasatinal.com.tr/zaman-damgasi/
+- SSS: https://eimzasatinal.com.tr/sss/
+- Blog: https://eimzasatinal.com.tr/blog/
+- İletişim: https://eimzasatinal.com.tr/iletisim/
