@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     images: [`${siteConfig.url}/og-image.png`],
   },
   alternates: {
-    canonical: "https://www.eimzasatinal.com.tr",
+    canonical: siteConfig.url,
   },
   robots: {
     index: true,
