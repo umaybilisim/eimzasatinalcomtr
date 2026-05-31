@@ -6,7 +6,7 @@ import { JsonLd, organizationSchema, breadcrumbSchema } from "@/components/seo/j
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Hakkımızda — eimzasatinal.com.tr",
+  title: "Hakkımızda — E-İmza, KEP ve Zaman Damgası",
   description: "TÜBİTAK onaylı e-imza, KEP ve zaman damgası hizmetleri sunuyoruz. Güvenilir, hızlı ve uygun fiyatlı dijital imza çözümleri.",
   alternates: { canonical: `${siteConfig.url}/hakkimizda/` },
 }
