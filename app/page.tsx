@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
 import { Hero } from "@/components/site/hero"
-import { JsonLd, organizationSchema, faqSchema } from "@/components/seo/json-ld"
+import { JsonLd, organizationSchema, localBusinessSchema, faqSchema } from "@/components/seo/json-ld"
 import { products } from "@/lib/products"
 import { faqData } from "@/lib/faq-data"
 import Link from "next/link"
@@ -22,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={localBusinessSchema()} />
       <JsonLd data={faqSchema(homeFaqs)} />
 
       <Hero />

@@ -27,6 +27,65 @@ export function organizationSchema() {
   }
 }
 
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    name: "eimzasatinal.com.tr — E-İmza, KEP ve Zaman Damgası",
+    alternateName: "UMAY TÜM BİLİŞİM",
+    url: "https://eimzasatinal.com.tr",
+    logo: "https://eimzasatinal.com.tr/og-image.png",
+    image: "https://eimzasatinal.com.tr/og-image.png",
+    description: "TÜBİTAK ve BTK onaylı e-imza, KEP ve zaman damgası satış ve aktivasyon hizmetleri. Uzaktan aktivasyon, aynı gün teslimat.",
+    telephone: "+908507771145",
+    email: "bilgi@umaybilisim.com.tr",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84",
+      addressLocality: "Erenler",
+      addressRegion: "Sakarya",
+      postalCode: "54200",
+      addressCountry: "TR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "40.7731",
+      longitude: "30.3897",
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    priceRange: "₺₺",
+    currenciesAccepted: "TRY",
+    paymentAccepted: "Kredi Kartı, Havale, EFT",
+    areaServed: {
+      "@type": "Country",
+      name: "Türkiye",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "E-İmza Ürünleri",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-İmza" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "KEP (Kayıtlı Elektronik Posta)" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Zaman Damgası" } },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "6",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  }
+}
+
 export function productSchema({
   name,
   description,
