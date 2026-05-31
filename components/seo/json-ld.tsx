@@ -27,6 +27,31 @@ export function organizationSchema() {
   }
 }
 
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "eimzasatinal.com.tr",
+    alternateName: "E-İmza Satın Al — eimzasatinal.com.tr",
+    url: "https://eimzasatinal.com.tr",
+    description: "TÜBİTAK onaylı e-imza, KEP ve zaman damgası satın al. Hızlı aktivasyon, uygun fiyat.",
+    inLanguage: "tr-TR",
+    publisher: {
+      "@type": "Organization",
+      name: "UMAY TÜM BİLİŞİM",
+      url: "https://eimzasatinal.com.tr",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://eimzasatinal.com.tr/blog/?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  }
+}
+
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
