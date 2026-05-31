@@ -62,20 +62,54 @@ export function Footer() {
         </div>
 
         {/* City SEO links */}
-        <div className="mt-10 pt-8 border-t border-slate-800">
-          <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-            Hizmet Bölgelerimiz — E-İmza
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/e-imza/${city.slug}`}
-                className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
-              >
-                {city.name} E-İmza
-              </Link>
-            ))}
+        <div className="mt-10 pt-8 border-t border-slate-800 space-y-4">
+          <div>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              Hizmet Bölgelerimiz — E-İmza
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/e-imza/${city.slug}`}
+                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                >
+                  {city.name} E-İmza
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              Hizmet Bölgelerimiz — KEP
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/kep/${city.slug}`}
+                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                >
+                  {city.name} KEP
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              Hizmet Bölgelerimiz — Zaman Damgası
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/zaman-damgasi/${city.slug}`}
+                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                >
+                  {city.name} Zaman Damgası
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
