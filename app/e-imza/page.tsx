@@ -42,6 +42,13 @@ export default function EImzaPage() {
   const product = getProduct("e-imza")!
   const faqs = getFaqByCategory("e-imza")
 
+  // Fiyatları products.ts'den dinamik olarak türet (sadece sayısal fiyatlar)
+  const numericPrices = product.packages
+    .map(p => parseInt(p.price.replace(/[^0-9]/g, ""), 10))
+    .filter(p => !isNaN(p) && p > 0)
+  const lowPrice = numericPrices.length > 0 ? Math.min(...numericPrices).toString() : undefined
+  const highPrice = numericPrices.length > 0 ? Math.max(...numericPrices).toString() : undefined
+
   return (
     <>
       <JsonLd
@@ -49,8 +56,8 @@ export default function EImzaPage() {
           name: product.name,
           description: product.description,
           url: `${siteConfig.url}/e-imza/`,
-          lowPrice: "2750",
-          highPrice: "3750",
+          lowPrice,
+          highPrice,
         })}
       />
       <JsonLd data={faqSchema(faqs)} />

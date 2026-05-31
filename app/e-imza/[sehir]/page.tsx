@@ -64,6 +64,13 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
   const product = getProduct("e-imza")!
   const pageUrl = `${siteConfig.url}/e-imza/${city.slug}/`
 
+  // Fiyatları products.ts'den dinamik türet
+  const numericPrices = product.packages
+    .map(p => parseInt(p.price.replace(/[^0-9]/g, ""), 10))
+    .filter(p => !isNaN(p) && p > 0)
+  const lowPrice = numericPrices.length > 0 ? Math.min(...numericPrices).toString() : undefined
+  const highPrice = numericPrices.length > 0 ? Math.max(...numericPrices).toString() : undefined
+
   const cityFaqItems = city.faqs.map((f) => ({
     id: `city-faq-${city.slug}-${f.question.slice(0, 20)}`,
     question: f.question,
@@ -77,8 +84,8 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
           name: `${city.name} E-İmza — TÜBİTAK Onaylı Nitelikli Elektronik İmza`,
           description: city.metaDescription,
           url: pageUrl,
-          lowPrice: "2750",
-          highPrice: "3750",
+          lowPrice,
+          highPrice,
         })}
       />
       <JsonLd data={faqSchema(city.faqs)} />
