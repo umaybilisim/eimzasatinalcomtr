@@ -83,9 +83,15 @@ export function Hero() {
               {slide.badge.text}
             </div>
 
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-balance">
-              {slide.title}
-            </h1>
+            {active === 0 ? (
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-balance">
+                {slide.title}
+              </h1>
+            ) : (
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-balance">
+                {slide.title}
+              </h2>
+            )}
 
             <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-lg">
               {slide.subtitle}
