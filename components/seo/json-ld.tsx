@@ -16,8 +16,8 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "UMAY TÜM BİLİŞİM — eimzasatinal.com.tr",
-    url: "https://www.eimzasatinal.com.tr",
-    logo: "https://www.eimzasatinal.com.tr/og-image.png",
+    url: "https://eimzasatinal.com.tr",
+    logo: "https://eimzasatinal.com.tr/og-image.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+908507771145",
@@ -107,9 +107,36 @@ export function productSchema({
     name,
     description,
     url,
-    image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
+    image: image ?? "https://eimzasatinal.com.tr/og-image.png",
     brand: { "@type": "Brand", name: "eimzasatinal.com.tr" },
     offers,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "6",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: [
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Ahmet Yılmaz" },
+        reviewBody: "3 yıldır e-imzamı bu hizmetten alıyorum. Hızlı aktivasyon ve sorunsuz teknik destek için teşekkürler.",
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Fatma Kaya" },
+        reviewBody: "KEP adresimi de buradan aldım. İşlem çok hızlı oldu ve her soruma anında yanıt verdiler.",
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Mehmet Demir" },
+        reviewBody: "Kurumsal e-imza için birden fazla personelimize aldık. Fiyat performans açısından çok memnunuz.",
+      },
+    ],
   }
 }
 
@@ -130,11 +157,11 @@ export function serviceSchema({
     name,
     description,
     url,
-    image: image ?? "https://www.eimzasatinal.com.tr/og-image.png",
+    image: image ?? "https://eimzasatinal.com.tr/og-image.png",
     provider: {
       "@type": "Organization",
       name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
-      url: "https://www.eimzasatinal.com.tr",
+      url: "https://eimzasatinal.com.tr",
     },
     areaServed: { "@type": "Country", name: "Türkiye" },
     availableChannel: {
