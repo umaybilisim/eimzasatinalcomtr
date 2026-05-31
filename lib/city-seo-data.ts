@@ -319,7 +319,7 @@ export function getCityBySlug(slug: string): CityData | undefined {
 
 export function getKepCityMeta(city: CityData) {
   return {
-    metaTitle: `${city.name} KEP Adresi Al 2026 | Kayıtlı Elektronik Posta | eimzasatinal.com.tr`,
+    metaTitle: `${city.name} KEP Adresi Al | Kayıtlı Elektronik Posta | eimzasatinal`,
     metaDescription: `${city.name}'da KEP adresi satın alın. BTK yetkili, yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.`,
     heroDesc: `${city.nameGenitive} faaliyet gösteren şirketler için BTK yetkili KEP adresi. Yasal tebligat ve resmi yazışmalarınızı güvence altına alın.`,
     faqs: [
@@ -341,7 +341,7 @@ export function getKepCityMeta(city: CityData) {
 
 export function getZdCityMeta(city: CityData) {
   return {
-    metaTitle: `${city.name} Zaman Damgası Al 2026 | TÜBİTAK Onaylı | eimzasatinal.com.tr`,
+    metaTitle: `${city.name} Zaman Damgası Al | TÜBİTAK Onaylı | eimzasatinal`,
     metaDescription: `${city.name}'da zaman damgası satın alın. TÜBİTAK onaylı, RFC 3161 uyumlu zaman damgası. Belge varlığı kanıtı için güvenilir çözüm. Kontör bazlı paketler.`,
     heroDesc: `${city.nameGenitive} hukuk büroları, teknoloji ve finans firmaları için TÜBİTAK onaylı zaman damgası hizmeti. RFC 3161 uyumlu, hukuki geçerliliği olan belge zaman kanıtı.`,
     faqs: [

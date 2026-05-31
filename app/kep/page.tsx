@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Check, X } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
 import { CtaSection } from "@/components/site/cta-section"
@@ -8,6 +9,7 @@ import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components
 import { getProduct } from "@/lib/products"
 import { getFaqByCategory } from "@/lib/faq-data"
 import { siteConfig } from "@/lib/site-config"
+import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
   title: "KEP Adresi Al — Kayıtlı Elektronik Posta",
@@ -122,6 +124,25 @@ export default function KepPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-foreground mb-10">Sıkça Sorulan Sorular</h2>
           <Accordion items={faqs} />
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-t">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-base font-semibold text-muted-foreground mb-4 uppercase tracking-wide">
+            Şehrinizde KEP Adresi Alın
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {cities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/kep/${city.slug}`}
+                className="px-3 py-1.5 rounded-lg border text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                {city.name} KEP
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

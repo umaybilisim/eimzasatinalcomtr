@@ -28,11 +28,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mesafeli-satis",
   ]
 
-  const cityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
+  const eimzaCityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${base}/e-imza/${city.slug}/`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: city.slug === "sakarya" ? 0.9 : 0.75,
+  }))
+
+  const kepCityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${base}/kep/${city.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: city.slug === "sakarya" ? 0.85 : 0.7,
+  }))
+
+  const zdCityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${base}/zaman-damgasi/${city.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: city.slug === "sakarya" ? 0.85 : 0.7,
   }))
 
   return [
@@ -42,6 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: (route === "" ? "weekly" : "monthly") as "weekly" | "monthly",
       priority: route === "" ? 1 : route.startsWith("/blog") ? 0.7 : 0.8,
     })),
-    ...cityRoutes,
+    ...eimzaCityRoutes,
+    ...kepCityRoutes,
+    ...zdCityRoutes,
   ]
 }
