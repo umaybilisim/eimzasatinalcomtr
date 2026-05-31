@@ -120,15 +120,8 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 {city.nameGenitive} Zaman Damgası Kullanım Alanları
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Zaman damgası, bir belgenin belirli bir tarih ve saatte var olduğunu TÜBİTAK güvencesiyle kanıtlar.
-                RFC 3161 standardına uygun zaman damgamız; mahkemelerde, kamu kurumlarında ve uluslararası tahkimde
-                geçerli hukuki delil niteliği taşır.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                {city.nameGenitive} hukuk büroları, muhasebe firmaları, yazılım şirketleri ve kamu kurumları
-                belgelerinin zaman bütünlüğünü ispat etmek için zaman damgasını tercih etmektedir.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">{city.zdContext}</p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{city.zdSectorNote}</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {zdUseCases.map((u) => (

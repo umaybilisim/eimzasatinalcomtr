@@ -112,13 +112,8 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 {city.nameGenitive} KEP Zorunluluğu ve Avantajları
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Türk Ticaret Kanunu uyarınca tüm sermaye şirketleri KEP (Kayıtlı Elektronik Posta) adresi edinmekle yükümlüdür.{" "}
-                {city.nameGenitive} faaliyet gösteren limited ve anonim şirketler bu zorunluluğa uymak için hemen başvurabilir.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                KEP ile gönderilen her e-posta yasal delil niteliği taşır: gönderim zamanı, alıcı adresi, içerik bütünlüğü ve okundu bilgisi kriptografik olarak kaydedilir. Normal e-postanın sağlayamadığı bu güvenceyi {city.nameGenitive} tüm kurumsal yazışmalarınıza uygulayın.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">{city.kepContext}</p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{city.kepSectorNote}</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {kepFeatures.map((f) => (

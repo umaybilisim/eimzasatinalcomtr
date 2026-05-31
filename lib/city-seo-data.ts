@@ -1,8 +1,8 @@
 export interface CityData {
   slug: string
   name: string
-  nameGenitive: string   // İstanbul'da, Ankara'da vb.
-  nameDative: string     // İstanbul'a, Ankara'ya vb.
+  nameGenitive: string
+  nameDative: string
   metaTitle: string
   metaDescription: string
   heroDesc: string
@@ -10,6 +10,10 @@ export interface CityData {
   sectorNote: string
   deliveryNote: string
   faqs: { question: string; answer: string }[]
+  kepContext: string
+  kepSectorNote: string
+  zdContext: string
+  zdSectorNote: string
 }
 
 export const cities: CityData[] = [
@@ -24,6 +28,10 @@ export const cities: CityData[] = [
     cityContext: "İstanbul, 18 milyonu aşan nüfusu ve 1 milyondan fazla aktif şirketiyle Türkiye'nin e-imza talebinin en yoğun yaşandığı şehridir. Başta Levent, Maslak, Ümraniye ve Bağcılar olmak üzere İstanbul'un her ilçesinde faaliyet gösteren şirketler; e-fatura, e-beyanname, kamu ihaleleri ve dijital sözleşmeler için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "İstanbul'daki finans kurumları, hukuk büroları, muhasebe şirketleri, inşaat ve gayrimenkul şirketleri e-imzayı yoğun biçimde kullanmaktadır. Borsa İstanbul'a kayıtlı şirketlerin ve holding gruplarının büyük çoğunluğunun merkezi İstanbul'dadır.",
     deliveryNote: "İstanbul'a e-imza siparişleriniz aynı gün kargoya verilmekte, Anadolu ve Avrupa yakasında 1 iş günü içinde teslim edilmektedir.",
+    kepContext: "İstanbul, Türkiye'nin ticaret merkezi olarak holding grupları, büyük hukuk büroları ve finans kurumlarının yasal yazışma trafiğinin en yoğun olduğu şehirdir. Sermaye şirketleri için zorunlu olan KEP, İstanbul'daki kurumsal firmalarda çalışan sayısı ve yönetim kademesi arttıkça çoklu KEP hesabı ihtiyacı doğurmaktadır.",
+    kepSectorNote: "İstanbul'daki büyük hukuk büroları ihtarname ve bildirimlerini KEP ile göndermektedir. Finans şirketleri, sigorta aracıları ve muhasebe firmaları resmi tebligatlarını KEP üzerinden iletmekte; bu sayede belgelerinin yasal geçerliliğini kriptografik olarak kanıtlamaktadır.",
+    zdContext: "İstanbul'daki yazılım şirketleri ve teknoloji girişimleri, fikri mülkiyet uyuşmazlıklarında zaman damgasını birincil kanıt olarak kullanmaktadır. Borsa İstanbul'a kayıtlı şirketler ve SPK lisanslı kurumlar; kamuoyu açıklamaları, sözleşmeler ve finansal raporların zaman bütünlüğünü zaman damgasıyla belgelemektedir.",
+    zdSectorNote: "İstanbul'daki hukuk büroları, tahkim merkezleri ve noterler zaman damgasını dava dosyası hazırlamada ve delil sunumunda aktif biçimde kullanmaktadır. Fintech firmaları ve dijital bankalar ise ödeme talimatlarının ve sözleşmelerin zaman kanıtı için zaman damgası API'sine entegre etmektedir.",
     faqs: [
       { question: "İstanbul'da e-imza nasıl satın alınır?", answer: "Sitemizden online sipariş verin, e-Devlet üzerinden kimlik doğrulamanızı tamamlayın. USB token İstanbul adresinize 1 iş günü içinde kargo ile ulaşır. Aktivasyon desteğimiz kurulum süresince yanınızdadır." },
       { question: "İstanbul'da aynı gün e-imza teslimi mümkün mü?", answer: "Standart siparişler İstanbul'a 1 iş günü içinde ulaşmaktadır. Acil kurumsal ihtiyaçlarınız için 0850 777 11 45 numaralı hattımızı arayarak öncelikli kargo seçeneğini öğrenebilirsiniz." },
@@ -41,6 +49,10 @@ export const cities: CityData[] = [
     cityContext: "Türkiye'nin başkenti Ankara, devlet kurumları, bakanlıklar ve kamu ihalelerinin yoğunlaştığı şehirdir. e-Devlet sistemi, Kamu İhale Kurumu (KİK) ekap.gov.tr platformu ve sayısız bakanlık portali e-imza gerektirmektedir. Çankaya, Kızılay, Sıhhiye ve OSB bölgelerindeki şirketler e-imzayı aktif biçimde kullanmaktadır.",
     sectorNote: "Ankara'da savunma sanayii firmaları, mühendislik şirketleri, devlet ihalelerine giren KOBİ'ler ve kamu çalışanları e-imzanın en yoğun kullanıcıları arasındadır. EKAP üzerinden ihale başvurusu yapan binlerce firma Ankara merkezlidir.",
     deliveryNote: "Ankara'ya e-imza siparişleriniz aynı gün kargoya verilmekte, 1 iş günü içinde teslim edilmektedir.",
+    kepContext: "Ankara, Türkiye'nin idari başkenti olarak bakanlıklar, kamu kurumları ve düzenleyici otoritelerin en yoğun bulunduğu şehirdir. Kamu kurumlarına yapılan resmi başvurular ve tebligatlar için KEP giderek zorunlu hale gelmekte; Ankara'daki avukatlık büroları ve kamu hukuku uzmanları yasal yazışmalarını KEP üzerinden yürütmektedir.",
+    kepSectorNote: "Ankara'da savunma sanayii alt yüklenicileri, ihale şirketleri ve kamu danışmanlık firmaları teklif bildirimleri ve ihale yazışmaları için KEP kullanmaktadır. Ankara Barosu üyesi avukatlar dava tebligatları için KEP'i tercih etmektedir.",
+    zdContext: "Ankara'da savunma sanayii firmaları proje belgelerinin ve teknik şartnamelerin zaman bütünlüğünü zaman damgasıyla kanıtlamaktadır. TÜBİTAK TEYDEB hibe başvuruları ve proje raporları da araştırmacılar tarafından zaman damgasıyla tarihlenmektedir.",
+    zdSectorNote: "Ankara merkezli kamu bilgi teknolojileri şirketleri ve sistem entegratörleri, yazılım teslim belgelerini ve kaynak kodlarını zaman damgasıyla imzalamaktadır. Savunma ihalelerine giren firmalar ise gizlilik gerektiren teknik dokümanları için zaman damgasını kriptografik güvence aracı olarak kullanmaktadır.",
     faqs: [
       { question: "Ankara'da kamu ihaleleri için e-imza zorunlu mu?", answer: "Evet. EKAP (Elektronik Kamu Alımları Platformu) üzerinden ihaleye katılmak için nitelikli elektronik imza zorunludur. Teklif dosyalarının e-imza ile imzalanması yasal gerekliliktir." },
       { question: "Ankara'da bakanlık işlemleri için hangi e-imzayı almalıyım?", answer: "Bakanlık portallerine erişim ve resmi belge imzalamak için bireysel nitelikli elektronik imza yeterlidir. TÜBİTAK BİLGEM CA tarafından düzenlenen e-imzamız tüm kamu sistemleriyle uyumludur." },
@@ -58,6 +70,10 @@ export const cities: CityData[] = [
     cityContext: "İzmir, Türkiye'nin üçüncü büyük şehri ve Ege Bölgesi'nin ticaret merkezi olarak ihracat odaklı bir ekonomiye sahiptir. Ege Serbest Bölgesi, ESBAŞ, İzmir Atatürk Organize Sanayi Bölgesi ve Kemalpaşa OSB'de faaliyet gösteren firmalar gümrük işlemleri, ihracat belgeleri ve uluslararası sözleşmeler için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "İzmir'de tekstil, gıda, kimya, makine ve tarım sektörlerinde faaliyet gösteren ihracatçı firmalar ile liman ve lojistik şirketleri e-imzanın en aktif kullanıcılarıdır. Alsancak, Konak ve Bornova'daki hukuk ve muhasebe büroları da yoğun kullanıcı kitlesi arasındadır.",
     deliveryNote: "İzmir'e e-imza siparişleriniz 1 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "İzmir, Ege İhracatçı Birlikleri ve liman lojistiğiyle öne çıkan bir ticaret kenti olarak uluslararası yazışma hacminin yüksek olduğu bir şehirdir. İzmir'deki ihracatçı firmalar yabancı alıcılarla imzalanan sözleşmelerin ve akreditif bildirimlerinin yasal kanıtını KEP üzerinden sağlamaktadır.",
+    kepSectorNote: "İzmir Serbest Bölgesi'ndeki firmalar, liman gümrük müşavirleri ve ihracat yönetim şirketleri resmi yazışmalarını KEP ile ileterek tebligat uyuşmazlıklarını önlemektedir. Ege Üniversitesi Teknokent bünyesindeki girişimler de yatırımcı anlaşmaları için KEP kullanmaktadır.",
+    zdContext: "İzmir'deki yazılım geliştirme şirketleri ve teknoloji girişimleri üretilen kaynak kodun fikri mülkiyet tarihini zaman damgasıyla belgelemektedir. İhracatçı firmalar ise konşimento ve yükleme belgelerinin gerçek zamanlı kaydını zaman damgasıyla oluşturarak gümrük uyuşmazlıklarına karşı koruma sağlamaktadır.",
+    zdSectorNote: "İzmir Barosu üyesi avukatlar ve izmir'deki noterlerin bir kısmı önemli belgeleri zaman damgasıyla tarihlendirmektedir. Ege Bölgesi'nde tarım ürünleri ihraç eden firmalar kalite sertifikalarını ve fitosaniter belgeleri zaman damgasıyla ilişkilendirmektedir.",
     faqs: [
       { question: "İzmir'de ihracat yapan firmalar için e-imza zorunlu mu?", answer: "Gümrük beyannameleri, ihracat izin belgeleri ve uluslararası ticaret formları için e-imza giderek zorunlu hale gelmektedir. Ege İhracatçı Birlikleri'ne yapılacak başvurular ve e-Gümrük işlemleri e-imza gerektirmektedir." },
       { question: "İzmir serbest bölgesindeki firmalar için e-imza alabilir miyim?", answer: "Evet. Ege Serbest Bölgesi ve diğer serbest bölgelerdeki firmalar için hem bireysel hem kurumsal e-mühür hizmetlerimiz mevcuttur. Toplu başvurularda kurumsal indirim uygulanır." },
@@ -75,6 +91,10 @@ export const cities: CityData[] = [
     cityContext: "Bursa, Türkiye'nin dördüncü büyük şehri ve en önemli sanayi merkezlerinden biridir. TOFAŞ, OYAK Renault, Bosch ve onlarca yan sanayi firmasının bulunduğu Bursa'da tedarikçi sözleşmeleri, kalite belgeleri ve ithalat-ihracat evrakları için e-imza kritik bir ihtiyaçtır. Nilüfer ve Osmangazi OSB'lerindeki firmalar e-imzayı yoğun biçimde kullanmaktadır.",
     sectorNote: "Bursa'da otomotiv yan sanayii, tekstil-konfeksiyon, seramik ve gıda sektörlerindeki firmalar başta olmak üzere muhasebeciler, mali müşavirler ve avukatlar e-imzanın en büyük kullanıcı kitlesini oluşturmaktadır.",
     deliveryNote: "Bursa'ya e-imza siparişleriniz aynı gün kargoya verilmekte, ertesi iş günü teslim edilmektedir.",
+    kepContext: "Bursa, TOFAŞ ve OYAK Renault başta olmak üzere büyük otomotiv firmalarının ve yüzlerce tedarikçinin bulunduğu bir sanayi şehridir. Bu firmaların satın alma, kalite ve hukuk departmanları; tedarikçi sözleşmeleri, garanti bildirimleri ve uyuşmazlık tebligatları için KEP kullanmaktadır.",
+    kepSectorNote: "Bursa'daki tekstil-konfeksiyon ihracatçıları marka lisans anlaşmaları ve alıcı tebligatları için KEP'i tercih etmektedir. Nilüfer OSB'deki büyük fabrikalar ise çalışan iş akdi bildirimleri ve toplu iş sözleşmesi tebligatlarını KEP aracılığıyla yasal güvenceye almaktadır.",
+    zdContext: "Bursa'daki otomotiv yan sanayi firmaları kalite belgelerinin ve test raporlarının gerçek zamanlı kaydını zaman damgasıyla kanıtlamaktadır. Ana sanayi firmalarına teslim edilen parça sertifikasyonları ve IATF 16949 kalite belgelerinin tarihlendirilmesinde zaman damgası kritik bir rol oynamaktadır.",
+    zdSectorNote: "Bursa'daki tekstil fabrikaları kumaş tasarımı ve desen tescili için zaman damgasını fikri mülkiyet aracı olarak kullanmaktadır. Seramik ve yapı malzemeleri üreticileri ürün test raporlarını ve CE belge başvurularını zaman damgasıyla tarihlendirmektedir.",
     faqs: [
       { question: "Bursa'daki otomotiv tedarikçileri e-imzayı nasıl kullanıyor?", answer: "Otomotiv ana sanayii firmaları, tedarikçilerin sözleşme ve teklifleri e-imzalı göndermesini zorunlu kılmaktadır. EDI sistemleri, kalite belgeleri ve sevkiyat onayları için bireysel veya kurumsal e-imza gerekmektedir." },
       { question: "Bursa'da tekstil firmaları için kurumsal e-imza alabilir miyim?", answer: "Evet. İhracat belgeleri, konşimento onayları ve müşteri sözleşmeleri için kurumsal e-mühür hizmetimiz mevcuttur. Detaylı bilgi için bizi arayın." },
@@ -92,6 +112,10 @@ export const cities: CityData[] = [
     cityContext: "Antalya, yılda 15 milyonu aşan turist ağırlayan Türkiye'nin turizm merkezi ve en hızlı büyüyen şehirlerinden biridir. Turizm işletmeleri, inşaat ve gayrimenkul şirketleri, tarım ihracatçıları ve Serbest Bölge'deki firmalar e-imzayı aktif biçimde kullanmaktadır. Serik, Alanya, Manavgat ve Kemer'deki işletmeler de kapsama dahildir.",
     sectorNote: "Antalya'da turizm tesisleri (otel, tatil köyü, acente), inşaat şirketleri, gayrimenkul danışmanlık firmaları ve tarım ihracatçıları e-imzanın en yoğun kullandığı sektörler arasındadır.",
     deliveryNote: "Antalya şehir merkezi ve ilçelerine e-imza siparişleriniz 1-2 iş günü içinde teslim edilmektedir.",
+    kepContext: "Antalya'da turizm sektöründeki otel zincirleri, tatil köyleri ve tur operatörleri yüksek hacimli yazışmalarını KEP ile yasal güvenceye almaktadır. Sezonluk işçi sözleşmeleri, tedarikçi anlaşmaları ve sigorta tazminat bildirimleri için KEP tebligatı sektörde yaygınlaşmaktadır.",
+    kepSectorNote: "Antalya'daki gayrimenkul geliştirme ve inşaat şirketleri kat karşılığı sözleşme bildirimleri ve proje teslim tebligatları için KEP'i tercih etmektedir. Tarım ihracatçıları ise Akdeniz İhracatçı Birlikleri ile olan resmi yazışmalarını KEP üzerinden yürütmektedir.",
+    zdContext: "Antalya'daki inşaat ve gayrimenkul geliştirme şirketleri proje onay belgelerinin ve ruhsat başvurularının zaman kanıtını zaman damgasıyla sağlamaktadır. Turizm işletmeleri sözleşme tarihlerinin ve rezervasyon belgelerinin bütünlüğünü belgelemek için zaman damgasını kullanmaktadır.",
+    zdSectorNote: "Antalya Serbest Bölgesi'ndeki ihracatçı firmalar ve lojistik şirketleri gümrük belgelerini zaman damgasıyla tarihlendirmektedir. Narenciye ve yaş meyve ihracatçıları bitki sağlığı sertifikalarının gerçek zaman kaydını zaman damgasıyla kanıtlamaktadır.",
     faqs: [
       { question: "Antalya'daki oteller e-imzayı ne için kullanıyor?", answer: "Otel işletmeleri; tedarikçi sözleşmeleri, turizm bakanlığı belgeleri, çalışan sözleşmeleri ve tour operatörü anlaşmaları için e-imzayı kullanmaktadır. Belgeler e-imzayla saniyeler içinde yasal geçerliliğe kavuşur." },
       { question: "Antalya'da gayrimenkul sektörü için e-imza zorunlu mu?", answer: "Tapu devri işlemleri noter aracılığıyla yapılmakla birlikte, ön sözleşmeler, vekalet belgeleri ve müteahhit anlaşmaları e-imzayla geçerli biçimde imzalanabilmektedir. e-Devlet üzerinden yapılan tapu işlemleri de e-imza gerektirmektedir." },
@@ -109,6 +133,10 @@ export const cities: CityData[] = [
     cityContext: "Kocaeli (İzmit), Türkiye'nin en büyük sanayi şehirlerinden biridir. TüpRaş, Ford Otosan, AKSA, Arçelik ve yüzlerce yan sanayi firmasının bulunduğu Kocaeli'nde endüstriyel sözleşmeler, kamu ihaleleri ve tedarik zinciri belgeleri için e-imza vazgeçilmezdir. Gebze Organize Sanayi Bölgesi Türkiye'nin en büyük OSB'lerinden biridir.",
     sectorNote: "Kocaeli'nde petrokimya, plastik, otomotiv, beyaz eşya ve elektronik sektörlerindeki firmalar ile Gebze Teknopark'taki teknoloji şirketleri e-imzanın yoğun kullanıcılarıdır.",
     deliveryNote: "Kocaeli, Gebze ve İzmit'e e-imza siparişleriniz aynı gün kargoya verilmekte, ertesi iş günü teslim edilmektedir.",
+    kepContext: "Kocaeli'nde TüpRaş, Ford Otosan ve AKSA gibi büyük sanayi kuruluşları ile yüzlerce KOBİ tedarikçi, tedarik zinciri yazışmalarını ve sözleşme bildirimlerini KEP üzerinden yürütmektedir. Gebze Organize Sanayi Bölgesi'nin en büyük firmalarından başlayarak KEP kullanımı küçük tedarikçilere de yaygınlaşmaktadır.",
+    kepSectorNote: "Kocaeli'ndeki petrokimya ve plastik sektörü firmaları tehlikeli madde taşıma bildirimleri ve çevre uyum raporları için KEP'i zorunlu görmektedir. Gebze Teknopark'taki yazılım firmaları ise müşteri sözleşmelerini ve proje kabul bildirimlerini KEP üzerinden yasal güvenceye almaktadır.",
+    zdContext: "Kocaeli'ndeki büyük sanayi kuruluşları üretim kalite raporlarını, ISO denetim belgelerini ve çevre uyum raporlarının zaman bütünlüğünü zaman damgasıyla kanıtlamaktadır. Ford Otosan gibi firmalar için tedarikçi sertifikasyon belgeleri zaman damgasıyla arşivlenmektedir.",
+    zdSectorNote: "Kocaeli'nde petrokimya sektörü tehlikeli madde güvenlik veri formlarını (MSDS) zaman damgasıyla tarihlendirmektedir. Gebze'deki elektronik ve beyaz eşya üreticileri ürün test raporlarının gerçek zamanlı kaydını zaman damgasıyla sağlamaktadır.",
     faqs: [
       { question: "Kocaeli'ndeki büyük sanayi firmaları için kurumsal e-imza alabilir miyim?", answer: "Evet. 10 kişi ve üzeri toplu e-imza başvurularında kurumsal indirim uygulanmaktadır. Şirketinizin tüm yetkili imzacıları için toplu başvuru yapabilirsiniz." },
       { question: "Gebze OSB'deki firmalar için e-imza teslimat süresi nedir?", answer: "Gebze dahil tüm Kocaeli ilçelerine e-imza 1 iş günü içinde teslim edilmektedir." },
@@ -126,6 +154,10 @@ export const cities: CityData[] = [
     cityContext: "Sakarya, Umay Tüm Bilişim'in merkez şehridir. Bu nedenle Sakarya'daki müşterilerimize en hızlı teslimat ve yerinde teknik destek imkânı sunmaktayız. Adapazarı, Serdivan, Hendek, Arifiye ve Geyve başta olmak üzere tüm Sakarya ilçelerine aynı gün veya ertesi gün e-imza teslim edebiliyoruz. Sakarya Organize Sanayi Bölgesi'ndeki firmalar toplu e-imza müşterilerimiz arasındadır.",
     sectorNote: "Sakarya'da otomotiv yan sanayi (Toyota'ya tedarikçiler), inşaat, tarım ve hizmet sektörlerindeki şirketler ile muhasebe ve hukuk büroları e-imzanın yoğun kullanıcısıdır.",
     deliveryNote: "Sakarya merkezimiz sayesinde tüm ilçelere aynı gün veya en geç ertesi gün teslimat garanti edilmektedir. Elden teslim seçeneği için bizi arayın.",
+    kepContext: "Sakarya, Umay Tüm Bilişim'in merkez şehri olması nedeniyle KEP konusunda en hızlı destek ve aktivasyonu sağladığımız şehirdir. Toyota Otomotiv'e tedarikçi olan Sakarya firmaları, tedarik sözleşmesi tebligatları ve fiyat güncelleme bildirimleri için KEP kullanmaktadır.",
+    kepSectorNote: "Sakarya OSB'deki imalat firmaları, inşaat şirketleri ve muhasebe büroları resmi yazışmalarını KEP ile güvence altına almaktadır. Adapazarı ve Serdivan'daki avukat ofisleri ihtarname ve tebligat hizmetleri için KEP'i birincil araç olarak kullanmaktadır.",
+    zdContext: "Sakarya, merkezimizin bulunduğu şehir olarak zaman damgası konusunda en hızlı teknik destek ve API entegrasyon hizmetini sunduğumuz lokasyondur. Sakarya Üniversitesi'ndeki araştırmacılar ve TEKNOPARK firmaları proje belgelerini ve yayın öncesi raporları zaman damgasıyla tarihlendirmektedir.",
+    zdSectorNote: "Toyota'ya tedarikçi olan Sakarya firmaları otomotiv kalite belgelerini ve proje onay formlarını zaman damgasıyla koruma altına almaktadır. Sakarya'daki yazılım ve bilişim firmaları kaynak kodu tescili ve proje teslim belgelerinde zaman damgasını düzenli olarak kullanmaktadır.",
     faqs: [
       { question: "Sakarya'da e-imzayı elden teslim alabilir miyim?", answer: "Evet! Sakarya merkezimizden randevu ile elden teslim ve yerinde kurulum desteği alabilirsiniz. 0850 777 11 45 veya 0264 777 11 45 numaralarından bizi arayın." },
       { question: "Sakarya'da aynı gün e-imza aktivasyonu mümkün mü?", answer: "Sakarya'da elden teslim siparişlerde aynı gün aktivasyon yapılabilmektedir. Kargo siparişlerinde ise 1 iş günü içinde ulaşım sağlanır." },
@@ -143,6 +175,10 @@ export const cities: CityData[] = [
     cityContext: "Konya, Türkiye'nin en büyük yüzölçümlü şehri ve tarım ile imalat sektörlerinin merkezi olarak hızlı bir dijital dönüşüm sürecinden geçmektedir. Konya Organize Sanayi Bölgesi'ndeki makine imalatçıları, gıda işleme firmaları ve tarım sektörü şirketleri kamu ihaleleri ve e-Devlet işlemleri için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "Konya'da tarım makineleri imalatçıları, un fabrikaları, çimento ve yapı malzemeleri şirketleri ile ihracatçı gıda firmaları e-imzanın önde gelen kullanıcılarıdır.",
     deliveryNote: "Konya'ya e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Konya, tarım makineleri imalatı ve gıda işleme sektöründe Türkiye'nin önemli bir ihracat merkezi konumundadır. Konya OSB'deki imalat firmaları ile Konya Ticaret Odası üyesi büyük şirketler, tedarikçi ve müşteri tebligatları için KEP kullanmaktadır.",
+    kepSectorNote: "Konya'daki tarım kooperatifleri ve un fabrikaları ürün alım tebligatları ve fiyat bildirimlerini KEP üzerinden yasal güvenceye almaktadır. Belediye ihalelerine giren inşaat firmaları ise ihale sonuç bildirimleri ve sözleşme tebligatları için KEP'e başvurmaktadır.",
+    zdContext: "Konya'daki makine imalatçıları ürün test sertifikalarını ve CE uygunluk belgelerinin zaman bütünlüğünü zaman damgasıyla kanıtlamaktadır. Tarım sektöründe toprak analiz raporları ve hasat sertifikalarının gerçek zamanlı kaydı için zaman damgası kullanımı artmaktadır.",
+    zdSectorNote: "Konya'daki gıda işleme firmaları üretim tarihini ve kalite denetim raporlarını zaman damgasıyla belgelemektedir. OSB'deki mühendislik firmaları proje teslim belgelerini ve teknik şartnameleri zaman damgasıyla arşivlemektedir.",
     faqs: [
       { question: "Konya'daki ihracatçı firmalar e-imzayı nasıl kullanıyor?", answer: "Konya'nın tahıl, şeker pancarı ve makine ihracatçıları; gümrük belgeleri, ihracat teşvik başvuruları ve uluslararası sözleşmeler için e-imzayı aktif biçimde kullanmaktadır." },
       { question: "Konya'da kamu ihaleleri için e-imza şart mı?", answer: "Evet. EKAP üzerinden belediye ve kamu ihalelerine katılan firmalar için nitelikli e-imza zorunludur. Konya Büyükşehir Belediyesi ihalelerine giren tüm firmalar e-imzaya ihtiyaç duymaktadır." },
@@ -160,6 +196,10 @@ export const cities: CityData[] = [
     cityContext: "Gaziantep, Türkiye'nin en fazla ihracat yapan şehirleri arasında yer almakta olup tekstil, gıda, plastik ve makine sektörlerinde güçlü bir üretim altyapısına sahiptir. İSO 500 listesindeki firmalar arasında Gaziantep'ten önemli sayıda şirket yer almaktadır. Organize Sanayi Bölgelerindeki firmalar gümrük, ihracat ve kamu işlemleri için e-imzayı aktif kullanmaktadır.",
     sectorNote: "Gaziantep'te tekstil-konfeksiyon, halı, bakır işlemeciliği, gıda ihracatı ve plastik sektörlerindeki firmalar ile muhasebe ve hukuk büroları e-imzanın yoğun kullanıcılarıdır.",
     deliveryNote: "Gaziantep'e e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Gaziantep, Türkiye'nin en fazla ihracat yapan şehirleri arasında olup Orta Doğu ve Afrika'ya yönelik yoğun ticaret yazışmaları nedeniyle KEP kullanımının hızla arttığı bir şehirdir. Güneydoğu İhracatçı Birlikleri üyesi firmalar ve gümrük müşavirleri resmi tebligatlarını KEP üzerinden yasal zemine taşımaktadır.",
+    kepSectorNote: "Gaziantep'teki halı, tekstil ve bakır işlemeciliği firmaları yabancı alıcılarla yapılan anlaşma bildirimlerinde KEP'in Türk hukuku açısından sağladığı güvenceden yararlanmaktadır. Organize Sanayi Bölgesi yöneticileri kiracı şirketlere yönelik tebligatlarını KEP aracılığıyla göndermektedir.",
+    zdContext: "Gaziantep'teki halı ve tekstil tasarım firmaları desen ve koleksiyon tescili için zaman damgasını fikri mülkiyet koruması amacıyla kullanmaktadır. İhracatçı firmalar gümrük çıkış belgelerini ve ithalat lisanslarını zaman damgasıyla arşivleyerek ileride doğabilecek uyuşmazlıklara karşı kanıt oluşturmaktadır.",
+    zdSectorNote: "Gaziantep'te gıda üretimi ve gıda ihracatı yapan firmalar ürün analiz raporlarını ve helal sertifikalarını zaman damgasıyla tarihlendirmektedir. Plastik ve ambalaj sektörü firmaları ise müşteri sipariş belgelerinin zaman bütünlüğünü zaman damgasıyla koruma altına almaktadır.",
     faqs: [
       { question: "Gaziantep'teki ihracatçı firmalar için e-imza zorunlu mu?", answer: "İhracat teşvik başvuruları, gümrük beyannameleri ve Güneydoğu İhracatçı Birlikleri işlemleri için e-imza gerekmektedir. Özellikle tekstil ve gıda ihracatçıları için kritik bir ihtiyaçtır." },
       { question: "Gaziantep'te toplu e-imza alımında indirim var mı?", answer: "Evet. 3 ve üzeri e-imza başvurularında kurumsal indirim uygulanmaktadır. Detaylı bilgi için iletişime geçin." },
@@ -177,6 +217,10 @@ export const cities: CityData[] = [
     cityContext: "Adana, Çukurova bölgesinin merkezi olarak tekstil, tarım, gıda işleme ve inşaat sektörlerinde güçlü bir ekonomiye sahiptir. Adana Sanayi Odası üyesi firmalar, tarım ihracatçıları ve Tarsus Organize Sanayi Bölgesi'ndeki şirketler e-imzayı kamu ihaleleri ve ihracat işlemlerinde yoğun biçimde kullanmaktadır.",
     sectorNote: "Adana'da pamuk tekstili, narenciye ihracatı, çimento-yapı malzemeleri ve gıda sektörü firmaları e-imzanın başlıca kullanıcılarıdır.",
     deliveryNote: "Adana'ya e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir. Mersin de aynı sürede kapsanmaktadır.",
+    kepContext: "Adana, Çukurova Bölgesi'nin idari ve ticari merkezi olarak tarım ihracatçıları, tekstil sanayii ve inşaat firmalarının yoğun yazışma trafiğine sahip olduğu bir şehirdir. Adana Ticaret Odası üyesi şirketler resmi bildirimlerini ve tebligatlarını giderek artan oranda KEP üzerinden göndermektedir.",
+    kepSectorNote: "Adana'daki pamuk ve narenciye ihracatçıları Akdeniz İhracatçı Birlikleri ile olan resmi bildirimler için KEP'i kullanmaktadır. Çukurova Elektrik ve benzeri altyapı şirketleri abone tebligatlarını KEP aracılığıyla yasal güvenceye almaktadır.",
+    zdContext: "Adana'daki tarım analiz laboratuvarları ve gıda kontrol merkezleri test sonuçlarının gerçek zamanlı kaydını zaman damgasıyla kanıtlamaktadır. İnşaat ve gayrimenkul şirketleri proje ruhsatı belgelerini ve yapı denetim raporlarını zaman damgasıyla arşivlemektedir.",
+    zdSectorNote: "Adana'daki Tarsus OSB firmalarından tekstil ve kimya üreticileri ürün sertifikasyonlarını zaman damgasıyla tarihlendirmektedir. Hukuk büroları ve noterlerin yanı sıra muhasebe firmaları müşteri belgelerini zaman damgasıyla koruma altına almaktadır.",
     faqs: [
       { question: "Adana'da tarım ihracatçıları için e-imza zorunlu mu?", answer: "Gümrük beyannameleri, bitki sağlık sertifikaları ve ihracat izin belgeleri için e-imza gerekmektedir. Çukurova'nın narenciye ve pamuk ihracatçıları e-imzayı aktif kullanmaktadır." },
       { question: "Adana Sanayi Odası üyeleri için özel paket var mı?", answer: "Toplu başvurularda kurumsal indirim uygulanmaktadır. Dernek ve oda üyeleri aracılığıyla yapılan toplu alımlarda ek avantajlar için iletişime geçin." },
@@ -194,6 +238,10 @@ export const cities: CityData[] = [
     cityContext: "Mersin, Türkiye'nin en büyük limanlarından Mersin Limanı'na ev sahipliği yaparak önemli bir ithalat-ihracat merkezi konumundadır. Mersin Serbest Bölgesi, TOROSLAR ve Tarsus OSB'lerindeki firmalar gümrük işlemleri, konteyner takibi ve uluslararası sözleşmeler için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "Mersin'de gümrük müşavirliği firmaları, nakliye şirketleri, serbest bölge işletmecileri ve ihracatçı gıda firmaları e-imzanın yoğun kullanıcılarıdır.",
     deliveryNote: "Mersin'e e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Mersin, Türkiye'nin en büyük konteyner limanına ev sahipliği yaparak gümrük müşavirleri, lojistik şirketleri ve serbest bölge operatörlerinin KEP kullanımının en yoğun olduğu şehirler arasına girmiştir. Liman işlemlerinde konşimento tebligatları ve gümrük bildirimlerinin KEP üzerinden yapılması hız ve güvenlik sağlamaktadır.",
+    kepSectorNote: "Mersin Serbest Bölgesi'ndeki depo ve lojistik işletmeleri yükleme/tahliye bildirimlerini KEP aracılığıyla operatörlerine iletmektedir. İthalatçı ve ihracatçı firmalar ise akreditif bildirimleri ve sigorta tazminat taleplerini KEP üzerinden yasal zemine taşımaktadır.",
+    zdContext: "Mersin'deki gümrük müşavirleri ithalat gümrük beyannamelerinin ve karantina belgelerinin zaman bütünlüğünü zaman damgasıyla kanıtlamaktadır. Liman yönetimi ve konteyner takip sistemleri yükleme belgelerini zaman damgasıyla arşivleyerek olası uyuşmazlıklarda delil oluşturmaktadır.",
+    zdSectorNote: "Mersin'deki gıda ihracatçıları bitki sağlığı sertifikalarını ve gıda güvenliği raporlarını zaman damgasıyla tarihlendirmektedir. Serbest bölge kullanıcıları ise depolama ve işleme belgelerini zaman damgasıyla koruma altına alarak uluslararası alıcılara belgelerinin doğruluğunu ispat etmektedir.",
     faqs: [
       { question: "Mersin'deki gümrük müşavirleri için e-imza zorunlu mu?", answer: "Evet. e-Gümrük sistemi üzerinden beyanname gönderimi ve onaylaması için nitelikli e-imza zorunludur. Gümrük müşaviri ve yardımcıları e-imzasız işlem yapamamaktadır." },
       { question: "Mersin Serbest Bölgesi'ndeki firmalar için e-imza alabilir miyim?", answer: "Evet. Serbest bölge işleticileri ve kullanıcıları için hem bireysel e-imza hem kurumsal e-mühür hizmetimiz mevcuttur." },
@@ -211,6 +259,10 @@ export const cities: CityData[] = [
     cityContext: "Eskişehir, havacılık ve savunma sanayii alanında Türkiye'nin önde gelen şehridir. ROKETSAN, TEI (Tusaş Motor Sanayii) ve onlarca alt yüklenicinin bulunduğu şehirde savunma ihaleleri, Savunma Sanayii Başkanlığı (SSB) sistemi işlemleri ve Anadolu Üniversitesi'nin teknoloji girişimleri için e-imza yoğun biçimde kullanılmaktadır.",
     sectorNote: "Eskişehir'de havacılık-uzay firmaları, savunma sanayi alt yüklenicileri, teknoloji girişimleri ve üniversite-sanayi iş birliği kapsamındaki şirketler e-imzanın başlıca kullanıcılarıdır.",
     deliveryNote: "Eskişehir'e e-imza siparişleriniz 1 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Eskişehir'de havacılık ve savunma sanayii firmalarının gizlilik gerektiren yazışmaları ile Anadolu Üniversitesi ve ESTÜ'nün akademik-idari yazışmaları KEP üzerinden yürütülmektedir. SSB (Savunma Sanayii Başkanlığı) tedarikçisi firmalar teklif bildirimleri ve ihale tebligatları için KEP'i zorunlu görmektedir.",
+    kepSectorNote: "Eskişehir'deki ROKETSAN ve TEI tedarikçisi alt yükleniciler teknik doküman bildirimleri ve kalite denetim tebligatları için KEP kullanmaktadır. Eskişehir Organize Sanayi Bölgesi'ndeki firmalar kiracı-işletici yazışmalarını KEP güvencesine almaktadır.",
+    zdContext: "Eskişehir'deki savunma sanayii firmaları proje kabul belgeleri ve teknik dokümanların zaman bütünlüğünü zaman damgasıyla kanıtlamaktadır. Anadolu Üniversitesi araştırmacıları patent başvurusu öncesi araştırma belgelerini zaman damgasıyla tarihlendirerek ön tescil delili oluşturmaktadır.",
+    zdSectorNote: "Eskişehir'deki havacılık bakım firmaları uçak bakım sertifikasyonlarını ve denetim raporlarını zaman damgasıyla arşivlemektedir. Teknokent bünyesindeki yazılım firmalarının büyük kısmı kaynak kodu güvenliği için zaman damgasını düzenli kullanmaktadır.",
     faqs: [
       { question: "Eskişehir'deki savunma sanayii firmaları için e-imza gerekli mi?", answer: "Savunma Sanayii Başkanlığı (SSB) portalı, savunma ihaleleri ve gizlilik sözleşmeleri için e-imza zorunludur. Savunma firmalarının yetkilendirilmiş personeli bireysel e-imzaya ihtiyaç duymaktadır." },
       { question: "Eskişehir'de teknoloji girişimleri için e-imza alabilir miyim?", answer: "Evet. TÜBİTAK TEYDEB başvuruları, KOSGEB hibe formları ve teknoparklar üzerinden yapılan dijital işlemler için e-imza kullanabilirsiniz." },
@@ -228,6 +280,10 @@ export const cities: CityData[] = [
     cityContext: "Samsun, Karadeniz Bölgesi'nin en büyük şehri ve ticaret merkezi olarak tarım, lojistik ve hizmet sektörlerinin yoğunlaştığı bir konumdadır. Samsun Limanı, organize sanayi bölgeleri ve tarımsal ticaret şirketleri kamu ihaleleri ve ihracat işlemleri için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "Samsun'da tütün, fındık ve sebze ihracatçıları, nakliye şirketleri, muhasebe büroları ve kamu ihalelerine giren inşaat firmaları e-imzanın yoğun kullanıcılarıdır.",
     deliveryNote: "Samsun'a e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Samsun, Karadeniz Bölgesi'nin ticaret merkezi olarak fındık, tütün ve yaş meyve ihracatçılarının yoğun resmi yazışmalar yürüttüğü bir şehirdir. Karadeniz İhracatçı Birlikleri üyesi firmalar ve Samsun Limanı'ndaki lojistik şirketleri tebligatlarını KEP güvencesine almaktadır.",
+    kepSectorNote: "Samsun'daki tütün işleme firmaları ve tarım kooperatifleri çiftçi alım tebligatları ile ürün kalite bildirimlerini KEP üzerinden göndermektedir. Karadeniz'in diğer şehirlerine hizmet veren Samsun merkezli nakliye firmaları da yazışmalarını KEP aracılığıyla yasal zemine taşımaktadır.",
+    zdContext: "Samsun'daki tarım ürünleri analiz laboratuvarları fındık ve tütün analiz raporlarının gerçek zamanlı kaydını zaman damgasıyla sağlamaktadır. Karadeniz'e kıyısı olan Samsun'daki liman ve lojistik firmalar taşıma belgelerini zaman damgasıyla arşivlemektedir.",
+    zdSectorNote: "Samsun Üniversitesi ve Ondokuz Mayıs Üniversitesi araştırmacıları TÜBİTAK proje raporlarını zaman damgasıyla tarihlendirmektedir. Samsun OSB'deki imalat firmaları ürün test sertifikalarını ve ihracat belgelerini zaman damgasıyla koruma altına almaktadır.",
     faqs: [
       { question: "Samsun'da tarım ihracatçıları e-imzayı nasıl kullanıyor?", answer: "Fındık, tütün ve yaş meyve-sebze ihracatçıları; Karadeniz İhracatçı Birlikleri işlemleri, gümrük beyannameleri ve ihracat teşvik başvuruları için e-imzayı kullanmaktadır." },
       { question: "Samsun'da e-imza başvurusu nasıl yapılır?", answer: "Sitemiz üzerinden online başvuru yapın, e-Devlet üzerinden kimlik doğrulamanızı tamamlayın. USB token Samsun adresinize 1-2 iş günü içinde ulaşır." },
@@ -245,6 +301,10 @@ export const cities: CityData[] = [
     cityContext: "Denizli, dünya genelinde 'Made in Denizli' markasıyla tanınan ev tekstili ve havlu ihracatının merkezi şehridir. Türkiye'nin en fazla ihracat yapan şehirleri arasında yer alan Denizli'de tekstil fabrikaları, ihracatçı ticaret şirketleri ve OSB firmaları gümrük işlemleri ve uluslararası sözleşmeler için e-imzaya ihtiyaç duymaktadır.",
     sectorNote: "Denizli'de havlu-bornoz imalatçıları, kumaş ve iplik üreticileri, Denizli İhracatçılar Birliği üyeleri e-imzanın öncelikli kullanıcılarıdır.",
     deliveryNote: "Denizli'ye e-imza siparişleriniz 1-2 iş günü içinde kargo ile teslim edilmektedir.",
+    kepContext: "Denizli, 'Made in Denizli' markasıyla dünya genelinde tanınan ev tekstili ve havlu ihracatının merkezi olarak Avrupa ve Amerika'ya yönelik yüksek hacimli yazışmalar yürütmektedir. Denizli İhracatçılar Birliği üyesi firmalar tebligatlarını ve ticari anlaşmazlıklara ilişkin bildirimleri KEP üzerinden güvence altına almaktadır.",
+    kepSectorNote: "Denizli'deki büyük tekstil fabrikaları çalışan iş akdi bildirimleri ve sendika tebligatları için KEP'i zorunlu görmektedir. İhracatçı ticaret şirketleri ise yabancı alıcılarla olan anlaşma bildirimlerinde Türk hukukunda KEP'in sunduğu ispat gücünden yararlanmaktadır.",
+    zdContext: "Denizli'deki tekstil desen ve tasarım stüdyoları koleksiyon çalışmalarının ve desen varlığının zaman kanıtını zaman damgasıyla oluşturmaktadır. İhracat odaklı fabrikalar ürün kalite raporlarını ve CE/OEKO-TEX sertifikasyonlarını zaman damgasıyla arşivlemektedir.",
+    zdSectorNote: "Denizli'deki havlu-bornoz üreticileri büyük mağaza zincirleriyle yapılan alıcı sözleşmelerini zaman damgasıyla tarihlendirmektedir. Tekstil boyahaneleri ve baskı işletmeleri çevre uyum raporlarını ve kimyasal test belgelerini zaman damgasıyla koruma altına almaktadır.",
     faqs: [
       { question: "Denizli'deki tekstil ihracatçıları için e-imza zorunlu mu?", answer: "İhracat teşvik başvuruları, Ege ve Denizli İhracatçılar Birliği işlemleri ve gümrük beyannameleri için e-imza gerekmektedir. Yoğun ihracat yapan firmalar için 3 yıllık paket önerilmektedir." },
       { question: "Denizli fabrikamız için kaç e-imza almalıyız?", answer: "Tipik olarak ihracat müdürü, muhasebe müdürü ve satın alma yöneticisi olmak üzere 2-3 kişi için e-imza yeterlidir. Toplu alımlarda indirim uygulanır." },
