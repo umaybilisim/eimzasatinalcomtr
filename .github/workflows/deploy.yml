@@ -43,3 +43,42 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: IndexNow — Bing & Yandex Bildirim
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "eimzasatinal.com.tr",
+              "key": "eimza2026indexnow4f8b3c1d5a9e7f2b",
+              "keyLocation": "https://eimzasatinal.com.tr/eimza2026indexnow4f8b3c1d5a9e7f2b.txt",
+              "urlList": [
+                "https://eimzasatinal.com.tr/",
+                "https://eimzasatinal.com.tr/e-imza/",
+                "https://eimzasatinal.com.tr/kep/",
+                "https://eimzasatinal.com.tr/zaman-damgasi/",
+                "https://eimzasatinal.com.tr/blog/",
+                "https://eimzasatinal.com.tr/blog/e-imza-nedir/",
+                "https://eimzasatinal.com.tr/blog/e-imza-nasil-alinir/",
+                "https://eimzasatinal.com.tr/blog/kep-nedir-ne-ise-yarar/",
+                "https://eimzasatinal.com.tr/blog/zaman-damgasi-nedir/",
+                "https://eimzasatinal.com.tr/blog/mali-musavir-e-imza-rehberi/",
+                "https://eimzasatinal.com.tr/blog/e-imza-yenileme/",
+                "https://eimzasatinal.com.tr/blog/yapi-denetimcisi-e-imza-rehberi/",
+                "https://eimzasatinal.com.tr/blog/sakarya-e-imza/",
+                "https://eimzasatinal.com.tr/e-imza/istanbul/",
+                "https://eimzasatinal.com.tr/e-imza/ankara/",
+                "https://eimzasatinal.com.tr/e-imza/izmir/",
+                "https://eimzasatinal.com.tr/e-imza/sakarya/",
+                "https://eimzasatinal.com.tr/kep/istanbul/",
+                "https://eimzasatinal.com.tr/kep/ankara/",
+                "https://eimzasatinal.com.tr/kep/sakarya/",
+                "https://eimzasatinal.com.tr/zaman-damgasi/istanbul/",
+                "https://eimzasatinal.com.tr/zaman-damgasi/ankara/",
+                "https://eimzasatinal.com.tr/zaman-damgasi/sakarya/"
+              ]
+            }' && echo "IndexNow bildirimi gönderildi"
