@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/iletisim",
     "/referanslar",
     "/blog",
+    "/blog/e-fatura-icin-e-imza-gerekli-mi",
     "/blog/e-imza-nedir",
     "/blog/e-imza-nasil-alinir",
     "/blog/kep-nedir-ne-ise-yarar",

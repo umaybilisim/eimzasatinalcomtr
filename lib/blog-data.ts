@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "e-fatura-icin-e-imza-gerekli-mi",
+    title: "E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu ve Başvuru",
+    excerpt: "E-faturaya geçiş için e-imza mı mali mühür mü gerekli? 2026 e-fatura zorunluluğu, ciro limitleri, şahıs işletmesi ve şirket farkı, geçiş adımları ve ceza riskleri hakkında güncel rehber.",
+    date: "2026-07-05",
+    readTime: "9 dk",
+    category: "E-İmza",
+  },
+  {
     slug: "e-imza-nedir",
     title: "E-İmza Nedir? Hukuki Geçerliliği ve Kullanım Alanları",
     excerpt: "5070 sayılı Elektronik İmza Kanunu kapsamında e-imzanın tanımı, nasıl çalıştığı, hukuki dayanağı ve kimler tarafından kullanılabileceğine dair kapsamlı rehber.",
