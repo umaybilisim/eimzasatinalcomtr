@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Check, AlertCircle, Building2, FileCheck, Shield, Users } from "lucide-react"
+import { ArrowRight, Check, AlertCircle, Building2, FileCheck, Shield, Users, Phone, Zap } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
@@ -100,6 +100,36 @@ export default function YapiDenetimciEImzaPage() {
               <div>
                 <p className="font-semibold text-amber-800 mb-1">Yasal Zorunluluk</p>
                 <p className="text-amber-700 text-sm">4708 sayılı Yapı Denetimi Hakkında Kanun ve ilgili yönetmelikler gereğince, YDS sistemi üzerinden gerçekleştirilen tüm resmi işlemler e-imza zorunluluğuna tabidir. E-imzasız belge sisteme yüklenemez, onaylanamaz.</p>
+              </div>
+            </div>
+
+            {/* Güçlü CTA — YDS için e-imza gerekli */}
+            <div className="my-8 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 sm:p-8 text-white not-prose shadow-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <Zap className="h-5 w-5 text-yellow-300" />
+                <span className="text-xs font-semibold uppercase tracking-wide text-blue-200">YDS'ye giriş için e-imza şart</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-2">E-İmzanız yok mu? Aynı gün alın, YDS'ye hemen giriş yapın.</h3>
+              <p className="text-blue-100 text-sm mb-6 max-w-2xl">
+                yds.csb.gov.tr sistemine giriş yapabilmek için TÜBİTAK onaylı nitelikli elektronik imza gereklidir. Yapı denetimcilerine özel hızlı aktivasyon, aynı gün teslimat ve kurulum desteği sunuyoruz.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/e-imza"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+                >
+                  E-İmza Paketlerini İncele
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Merhaba, YDS sistemi için e-imza almak istiyorum.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  WhatsApp ile Hemen Al
+                </a>
               </div>
             </div>
 
