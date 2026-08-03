@@ -47,7 +47,7 @@ export const products: Product[] = [
         id: "eimza-1y",
         name: "1 Yıllık E-İmza",
         duration: "1 Yıl",
-        price: "2.750 TL",
+        price: "3.000 TL",
         priceNote: "KDV Dahil",
         features: [
           "TÜBİTAK onaylı sertifika",
@@ -62,7 +62,7 @@ export const products: Product[] = [
         id: "eimza-2y",
         name: "2 Yıllık E-İmza",
         duration: "2 Yıl",
-        price: "3.099 TL",
+        price: "3.500 TL",
         priceNote: "KDV Dahil",
         features: [
           "TÜBİTAK onaylı sertifika",
@@ -78,7 +78,7 @@ export const products: Product[] = [
         id: "eimza-3y",
         name: "3 Yıllık E-İmza",
         duration: "3 Yıl",
-        price: "3.750 TL",
+        price: "4.000 TL",
         priceNote: "KDV Dahil",
         highlighted: true,
         features: [
