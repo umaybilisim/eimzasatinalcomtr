@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Check, ArrowRight } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
+import { InternationalPricing } from "@/components/site/international-pricing"
 import { CtaSection } from "@/components/site/cta-section"
 import { Accordion } from "@/components/ui/accordion"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
@@ -89,6 +90,9 @@ export default function EImzaPage() {
           <PricingTable packages={product.packages} />
         </div>
       </section>
+
+      {/* Yurt dışı fiyatlandırma */}
+      <InternationalPricing />
 
       {/* Use cases */}
       <section className="py-16 bg-white">

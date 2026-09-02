@@ -9,6 +9,7 @@ import { ArrowRight } from "lucide-react"
 const FeatureGrid = dynamic(() => import("@/components/site/feature-grid").then(m => ({ default: m.FeatureGrid })))
 const TestimonialGrid = dynamic(() => import("@/components/site/testimonial-grid").then(m => ({ default: m.TestimonialGrid })))
 const PricingTable = dynamic(() => import("@/components/site/pricing-table").then(m => ({ default: m.PricingTable })))
+const InternationalPricing = dynamic(() => import("@/components/site/international-pricing").then(m => ({ default: m.InternationalPricing })))
 const CtaSection = dynamic(() => import("@/components/site/cta-section").then(m => ({ default: m.CtaSection })))
 const Accordion = dynamic(() => import("@/components/ui/accordion").then(m => ({ default: m.Accordion })))
 
@@ -84,6 +85,9 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* Yurt dışı fiyatlandırma */}
+      <InternationalPricing />
 
       <TestimonialGrid />
 

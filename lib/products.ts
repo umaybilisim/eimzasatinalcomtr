@@ -228,3 +228,42 @@ export const products: Product[] = [
 export function getProduct(slug: ProductSlug): Product | undefined {
   return products.find((p) => p.slug === slug)
 }
+
+// Yurt dışı müşteriler için USD ve EUR fiyatlandırma (döviz ile ödeme)
+export interface IntlPackage {
+  id: string
+  name: string
+  duration: string
+  usd: string
+  eur: string
+  note: string
+  highlighted?: boolean
+}
+
+export const internationalPricing: IntlPackage[] = [
+  {
+    id: "eimza-intl-1y",
+    name: "1 Yıllık E-İmza",
+    duration: "1 Yıl",
+    usd: "$115",
+    eur: "€115",
+    note: "KDV Dahil",
+  },
+  {
+    id: "eimza-intl-2y",
+    name: "2 Yıllık E-İmza",
+    duration: "2 Yıl",
+    usd: "$135",
+    eur: "€135",
+    note: "KDV Dahil",
+  },
+  {
+    id: "eimza-intl-3y",
+    name: "3 Yıllık E-İmza",
+    duration: "3 Yıl",
+    usd: "$165",
+    eur: "€165",
+    note: "KDV Dahil",
+    highlighted: true,
+  },
+]
