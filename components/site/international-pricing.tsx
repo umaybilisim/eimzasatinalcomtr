@@ -45,11 +45,11 @@ export function InternationalPricing() {
                   <span className="text-slate-400">/</span>
                   <span className="text-3xl font-extrabold text-white">{pkg.eur}</span>
                 </div>
-                <p className="mt-1 text-sm text-slate-400">{pkg.note}</p>
+                <p className="mt-1 text-sm text-slate-400">{pkg.note} · Kargo Hariç</p>
               </div>
 
               <ul className="space-y-2 flex-1 border-t border-slate-700 pt-4">
-                {["TÜBİTAK onaylı sertifika", "Uluslararası kargo", "Hukuki geçerlilik", "Uzaktan kurulum desteği"].map((f) => (
+                {["TÜBİTAK onaylı sertifika", "Hukuki geçerlilik", "Uzaktan kurulum desteği"].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <Check className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" />
                     <span className="text-slate-300">{f}</span>
