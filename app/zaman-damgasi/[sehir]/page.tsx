@@ -8,6 +8,8 @@ import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
 import { cities, getCityBySlug, getZdCityMeta } from "@/lib/city-seo-data"
+import { zdLocal } from "@/lib/city-local-content"
+import { CityLocalSections } from "@/components/site/city-local-sections"
 import { notFound } from "next/navigation"
 
 export function generateStaticParams() {
@@ -17,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { sehir: string } }): Promise<Metadata> {
   const city = getCityBySlug(params.sehir)
   if (!city) return {}
-  const meta = getZdCityMeta(city)
+  const meta = { ...getZdCityMeta(city), ...zdLocal[city.slug] }
   const url = `${siteConfig.url}/zaman-damgasi/${city.slug}/`
   return {
     title: pageTitle(meta.metaTitle),
@@ -52,7 +54,7 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
   const city = getCityBySlug(params.sehir)
   if (!city) notFound()
 
-  const meta = getZdCityMeta(city)
+  const meta = { ...getZdCityMeta(city), ...zdLocal[city.slug] }
   const pageUrl = `${siteConfig.url}/zaman-damgasi/${city.slug}/`
 
   const faqItems = meta.faqs.map((f) => ({
@@ -91,7 +93,7 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
             <span className="text-blue-400">Zaman Damgası Al</span>{" "}
             — TÜBİTAK Onaylı
           </h1>
-          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{meta.heroDesc}</p>
+          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{meta.intro ?? meta.heroDesc}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -135,6 +137,8 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
           </div>
         </div>
       </section>
+
+      {meta.sections && <CityLocalSections content={meta} cityName={city.name} />}
 
       {/* Packages */}
       <section className="py-16 bg-secondary/30">
@@ -232,7 +236,7 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
       </section>
 
       <CtaSection
-        title={`${city.name}'da Zaman Damgasını Bugün Kullanmaya Başlayın`}
+        title={`${city.nameGenitive} Zaman Damgasını Bugün Kullanmaya Başlayın`}
         subtitle="TÜBİTAK onaylı, RFC 3161 uyumlu zaman damgası ile belgelerinizi güvence altına alın."
       />
     </>

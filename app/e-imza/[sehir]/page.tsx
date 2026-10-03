@@ -10,6 +10,8 @@ import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components
 import { getProduct } from "@/lib/products"
 import { siteConfig } from "@/lib/site-config"
 import { cities, getCityBySlug } from "@/lib/city-seo-data"
+import { eimzaLocal } from "@/lib/city-local-content"
+import { CityLocalSections } from "@/components/site/city-local-sections"
 import { notFound } from "next/navigation"
 
 export function generateStaticParams() {
@@ -64,7 +66,10 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
   const product = getProduct("e-imza")!
   const pageUrl = `${siteConfig.url}/e-imza/${city.slug}/`
 
-  const cityFaqItems = city.faqs.map((f) => ({
+  const local = eimzaLocal[city.slug]
+  const faqs = [...city.faqs, ...(local?.faqs ?? [])]
+
+  const cityFaqItems = faqs.map((f) => ({
     id: `city-faq-${city.slug}-${f.question.slice(0, 20)}`,
     question: f.question,
     answer: f.answer,
@@ -80,7 +85,7 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
           city: city.name,
         })}
       />
-      <JsonLd data={faqSchema(city.faqs)} />
+      <JsonLd data={faqSchema(faqs)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Ana Sayfa", url: siteConfig.url },
@@ -103,7 +108,7 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
             <span className="text-blue-400">E-İmza Satın Al</span>{" "}
             — TÜBİTAK Onaylı
           </h1>
-          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{city.heroDesc}</p>
+          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{local?.intro ?? city.heroDesc}</p>
 
           {/* Quick delivery badge */}
           <div className="mt-6 inline-flex items-center gap-2 bg-blue-600/30 border border-blue-500/40 rounded-full px-4 py-2 text-sm text-blue-200">
@@ -153,6 +158,8 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
           </div>
         </div>
       </section>
+
+      {local && <CityLocalSections content={local} cityName={city.name} />}
 
       {/* Pricing */}
       <section className="py-16 bg-secondary/30">
@@ -255,7 +262,7 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
       </section>
 
       <CtaSection
-        title={`${city.name}'da E-İmzanızı Bugün Alın`}
+        title={`${city.nameGenitive} E-İmzanızı Bugün Alın`}
         subtitle={`${city.heroDesc} Hemen başvurun, hızlı teslimat ve aktivasyon desteği.`}
       />
     </>

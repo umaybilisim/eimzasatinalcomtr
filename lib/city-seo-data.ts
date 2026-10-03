@@ -320,15 +320,15 @@ export function getCityBySlug(slug: string): CityData | undefined {
 export function getKepCityMeta(city: CityData) {
   return {
     metaTitle: `${city.name} KEP Adresi Al | Kayıtlı Elektronik Posta`,
-    metaDescription: `${city.name}'da KEP adresi satın alın. BTK yetkili, yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.`,
+    metaDescription: `${city.nameGenitive} KEP adresi satın alın. BTK yetkili, yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.`,
     heroDesc: `${city.nameGenitive} faaliyet gösteren şirketler için BTK yetkili KEP adresi. Yasal tebligat ve resmi yazışmalarınızı güvence altına alın.`,
     faqs: [
       {
-        question: `${city.name}'da KEP adresi almak zorunlu mu?`,
+        question: `${city.nameGenitive} KEP adresi almak zorunlu mu?`,
         answer: `Türk Ticaret Kanunu gereği sermaye şirketleri (A.Ş., Ltd. Şti.) KEP adresi edinmek zorundadır. ${city.nameGenitive} faaliyet gösteren tüm sermaye şirketleri bu yükümlülük kapsamındadır.`,
       },
       {
-        question: `${city.name}'da KEP aktivasyonu ne kadar sürer?`,
+        question: `${city.nameGenitive} KEP aktivasyonu ne kadar sürer?`,
         answer: `KEP başvurusu online olarak tamamlanmaktadır. Kimlik doğrulama sonrası KEP adresiniz genellikle aynı gün aktive edilir. ${city.deliveryNote.replace("e-imza", "KEP").replace("USB token", "KEP hesabı")}`,
       },
       {
@@ -342,11 +342,11 @@ export function getKepCityMeta(city: CityData) {
 export function getZdCityMeta(city: CityData) {
   return {
     metaTitle: `${city.name} Zaman Damgası Al | TÜBİTAK Onaylı`,
-    metaDescription: `${city.name}'da zaman damgası satın alın. TÜBİTAK onaylı, RFC 3161 uyumlu zaman damgası. Belge varlığı kanıtı için güvenilir çözüm. Kontör bazlı paketler.`,
+    metaDescription: `${city.nameGenitive} zaman damgası satın alın. TÜBİTAK onaylı, RFC 3161 uyumlu zaman damgası. Belge varlığı kanıtı için güvenilir çözüm. Kontör bazlı paketler.`,
     heroDesc: `${city.nameGenitive} hukuk büroları, teknoloji ve finans firmaları için TÜBİTAK onaylı zaman damgası hizmeti. RFC 3161 uyumlu, hukuki geçerliliği olan belge zaman kanıtı.`,
     faqs: [
       {
-        question: `${city.name}'da zaman damgası neden kullanılır?`,
+        question: `${city.nameGenitive} zaman damgası neden kullanılır?`,
         answer: `Zaman damgası, bir belgenin belirli bir tarihte var olduğunu kriptografik olarak kanıtlar. ${city.nameGenitive} hukuk büroları, muhasebe firmaları ve kamu kurumları; sözleşmeler, raporlar ve dijital dosyaların zaman bütünlüğünü ispat etmek için zaman damgası kullanmaktadır.`,
       },
       {
@@ -354,7 +354,7 @@ export function getZdCityMeta(city: CityData) {
         answer: `Zaman damgası kontör bazlı satılır: her belgede bir kontör harcanır. 100, 500 veya 1000 kontörlük paket seçebilirsiniz. ${city.nameGenitive} yoğun belge işleyen firmalar için büyük paket daha ekonomiktir.`,
       },
       {
-        question: `${city.name}'da zaman damgası API entegrasyonu mümkün mü?`,
+        question: `${city.nameGenitive} zaman damgası API entegrasyonu mümkün mü?`,
         answer: `Evet. RFC 3161 uyumlu zaman damgamız kendi yazılımlarınıza veya belge yönetim sistemlerinize entegre edilebilir. ${city.nameGenitive} yazılım şirketleri ve teknoloji firmaları için API dökümanı ve teknik destek sağlanmaktadır.`,
       },
     ],

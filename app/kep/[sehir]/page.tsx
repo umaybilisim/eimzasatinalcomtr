@@ -8,6 +8,8 @@ import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
 import { cities, getCityBySlug, getKepCityMeta } from "@/lib/city-seo-data"
+import { kepLocal } from "@/lib/city-local-content"
+import { CityLocalSections } from "@/components/site/city-local-sections"
 import { notFound } from "next/navigation"
 
 export function generateStaticParams() {
@@ -17,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { sehir: string } }): Promise<Metadata> {
   const city = getCityBySlug(params.sehir)
   if (!city) return {}
-  const meta = getKepCityMeta(city)
+  const meta = { ...getKepCityMeta(city), ...kepLocal[city.slug] }
   const url = `${siteConfig.url}/kep/${city.slug}/`
   return {
     title: pageTitle(meta.metaTitle),
@@ -46,7 +48,7 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
   const city = getCityBySlug(params.sehir)
   if (!city) notFound()
 
-  const meta = getKepCityMeta(city)
+  const meta = { ...getKepCityMeta(city), ...kepLocal[city.slug] }
   const pageUrl = `${siteConfig.url}/kep/${city.slug}/`
 
   const faqItems = meta.faqs.map((f) => ({
@@ -83,7 +85,7 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
             <span className="text-blue-400">KEP Adresi Al</span>{" "}
             — Kayıtlı Elektronik Posta
           </h1>
-          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{meta.heroDesc}</p>
+          <p className="mt-4 text-lg text-slate-300 max-w-2xl">{meta.intro ?? meta.heroDesc}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -127,6 +129,8 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
           </div>
         </div>
       </section>
+
+      {meta.sections && <CityLocalSections content={meta} cityName={city.name} />}
 
       {/* Contact CTA */}
       <section className="py-10 bg-blue-600 text-white">
@@ -208,7 +212,7 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
       </section>
 
       <CtaSection
-        title={`${city.name}'da KEP Adresinizi Bugün Alın`}
+        title={`${city.nameGenitive} KEP Adresinizi Bugün Alın`}
         subtitle="Yasal zorunluluğu yerine getirin, resmi yazışmalarınızı güvence altına alın."
       />
     </>
