@@ -32,7 +32,7 @@ export function InternationalPricing() {
             >
               {pkg.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-white shadow-sm">
+                  <span className="rounded-full bg-blue-800 px-3 py-1 text-xs font-semibold text-white shadow-sm">
                     En Avantajlı
                   </span>
                 </div>

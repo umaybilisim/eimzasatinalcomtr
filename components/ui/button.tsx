@@ -13,7 +13,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-muted text-foreground",
         destructive: "bg-destructive text-destructive-foreground hover:bg-red-600",
         link: "text-primary underline-offset-4 hover:underline p-0 h-auto",
-        whatsapp: "bg-green-500 text-white hover:bg-green-600 shadow-sm",
+        whatsapp: "bg-green-700 text-white hover:bg-green-600 shadow-sm",
       },
       size: {
         default: "h-11 px-5 py-2",
@@ -36,13 +36,21 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    // asChild: stilleri tek çocuk öğeye (ör. <a>, <Link>) aktarır; <button><a> iç içe geçmesini önler.
+    if (asChild && React.isValidElement<{ className?: string }>(children)) {
+      return React.cloneElement(children, {
+        className: cn(buttonVariants({ variant, size, className }), children.props.className),
+      })
+    }
     return (
       <button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </button>
     )
   }
 )

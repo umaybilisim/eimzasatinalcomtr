@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Check, AlertCircle, Building2, FileCheck, Shield, Users, Phone, Zap } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,9 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Yapı Denetimcileri İçin E-İmza Rehberi 2026 | YDS ve Proje Onayları",
-  description: "Yapı denetim şirketleri ve denetimciler için e-imza rehberi. YDS sistemi, proje onayları, hakediş belgeleri ve bireysel/kurumsal e-imza seçimi hakkında kapsamlı bilgi.",
+  title: pageTitle("Yapı Denetimcisi E-İmza Rehberi 2026: YDS ve Proje Onayı"),
+  description: "Yapı denetimciler için e-imza rehberi: YDS girişi, proje onayı ve hakediş için hangi e-imza gerekir, nasıl alınır? 2026 güncel bilgiler.",
   alternates: { canonical: `${siteConfig.url}/blog/yapi-denetimcisi-e-imza-rehberi/` },
+  openGraph: { ...ogDefaults, title: "Yapı Denetimcisi E-İmza Rehberi 2026", url: `${siteConfig.url}/blog/yapi-denetimcisi-e-imza-rehberi/` },
 }
 
 const islemler = [
@@ -109,9 +111,9 @@ export default function YapiDenetimciEImzaPage() {
                 <Zap className="h-5 w-5 text-yellow-300" />
                 <span className="text-xs font-semibold uppercase tracking-wide text-blue-200">YDS'ye giriş için e-imza şart</span>
               </div>
-              <h3 className="text-2xl font-bold mb-2">E-İmzanız yok mu? Aynı gün alın, YDS'ye hemen giriş yapın.</h3>
+              <h3 className="text-2xl font-bold mb-2">E-İmzanız yok mu? Hemen başvurun, YDS'ye hızla giriş yapın.</h3>
               <p className="text-blue-100 text-sm mb-6 max-w-2xl">
-                yds.csb.gov.tr sistemine giriş yapabilmek için TÜBİTAK onaylı nitelikli elektronik imza gereklidir. Yapı denetimcilerine özel hızlı aktivasyon, aynı gün teslimat ve kurulum desteği sunuyoruz.
+                yds.csb.gov.tr sistemine giriş yapabilmek için TÜBİTAK onaylı nitelikli elektronik imza gereklidir. Yapı denetimcilerine özel hızlı aktivasyon, 1-3 iş günü kargo ve kurulum desteği sunuyoruz.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link

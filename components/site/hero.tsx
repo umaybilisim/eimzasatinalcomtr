@@ -19,7 +19,7 @@ const slides = [
     subtitle: "Bireysel ve kurumsal e-imza paketleri, hızlı aktivasyon, uygun fiyat. Hukuki geçerliliği olan dijital imzanızı bugün alın.",
     features: [
       { icon: Zap, color: "text-yellow-400", text: "Aynı gün aktivasyon" },
-      { icon: Clock, color: "text-blue-400", text: "7/24 teknik destek" },
+      { icon: Clock, color: "text-blue-400", text: "Telefon ve WhatsApp destek" },
       { icon: ShieldCheck, color: "text-green-400", text: "Hukuki geçerlilik" },
     ],
     right: "cards",
@@ -77,7 +77,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-start min-h-[320px]">
 
           {/* Left: Text */}
-          <div key={active} className="animate-fade-in flex flex-col">
+          <div key={active} className="flex flex-col">
             <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-500/30 px-4 py-1.5 text-sm text-blue-200 mb-6">
               <slide.badge.icon className="h-4 w-4" />
               {slide.badge.text}
@@ -97,7 +97,7 @@ export function Hero() {
               {slide.subtitle}
             </p>
 
-            <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-400">
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-300">
               {slide.features.map((f) => (
                 <span key={f.text} className="flex items-center gap-1.5">
                   <f.icon className={`h-4 w-4 ${f.color}`} />
@@ -107,7 +107,7 @@ export function Hero() {
             </div>
 
             <div className="mt-auto pt-8 flex flex-wrap gap-4">
-              <Button size="lg" asChild className="bg-blue-500 hover:bg-blue-400 text-white shadow-lg shadow-blue-900/40">
+              <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/40">
                 <Link href="/iletisim">
                   Hemen Sipariş Ver
                   <ArrowRight className="h-5 w-5" />
@@ -122,7 +122,7 @@ export function Hero() {
           </div>
 
           {/* Right: Cards or Steps */}
-          <div key={`right-${active}`} className="grid grid-cols-1 gap-3 animate-fade-in lg:pl-40">
+          <div key={`right-${active}`} className="grid grid-cols-1 gap-3 lg:pl-40">
             {slide.right === "cards" ? (
               cards.map((p) => (
                 <Link
@@ -138,7 +138,7 @@ export function Hero() {
                       <span className="font-semibold text-white">{p.name}</span>
                       <span className="text-xs rounded-full bg-blue-500/30 text-blue-200 px-2 py-0.5">{p.badge}</span>
                     </div>
-                    <p className="text-sm text-slate-400 mt-0.5">{p.desc}</p>
+                    <p className="text-sm text-slate-300 mt-0.5">{p.desc}</p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
                 </Link>
@@ -154,7 +154,7 @@ export function Hero() {
                       <span className="font-semibold text-white">{s.title}</span>
                       <span className="text-xs rounded-full bg-green-500/30 text-green-300 px-2 py-0.5">{s.time}</span>
                     </div>
-                    <p className="text-sm text-slate-400 mt-0.5">{s.desc}</p>
+                    <p className="text-sm text-slate-300 mt-0.5">{s.desc}</p>
                   </div>
                   <CheckCircle className="h-5 w-5 text-green-400 shrink-0" />
                 </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { Check, ArrowRight } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
@@ -13,12 +14,12 @@ import { siteConfig } from "@/lib/site-config"
 import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
-  title: "E-İmza Satın Al — Bireysel ve Kurumsal E-İmza",
+  title: pageTitle("E-İmza Satın Al — Bireysel ve Kurumsal E-İmza"),
   description:
     "TÜBİTAK onaylı nitelikli elektronik imza satın alın. 1, 2 ve 3 yıllık paketler. Mali müşavir, avukat ve KOBİ'lere özel çözümler. Hemen sipariş verin.",
   alternates: { canonical: `${siteConfig.url}/e-imza/` },
-  openGraph: {
-    title: "E-İmza Satın Al | eimzasatinal.com.tr",
+  openGraph: { ...ogDefaults,
+    title: "E-İmza Satın Al — Bireysel ve Kurumsal E-İmza",
     description: "TÜBİTAK onaylı e-imza. Hızlı aktivasyon, uygun fiyat.",
     url: `${siteConfig.url}/e-imza/`,
   },

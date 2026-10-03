@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Check } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Mali Müşavir ve Muhasebeciler İçin E-İmza Rehberi 2026",
+  title: pageTitle("Mali Müşavir ve Muhasebeciler İçin E-İmza Rehberi 2026"),
   description: "Mali müşavir, SMMM ve YMM'ler için e-imza zorunlulukları, kullanım alanları, başvuru süreci ve hangi e-imzayı seçmeleri gerektiğine dair rehber.",
   alternates: { canonical: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
-  openGraph: { title: "Mali Müşavir E-İmza Rehberi", description: "SMMM ve YMM için kapsamlı e-imza rehberi.", url: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
+  openGraph: { ...ogDefaults, title: "Mali Müşavir E-İmza Rehberi", description: "SMMM ve YMM için kapsamlı e-imza rehberi.", url: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
 }
 
 const useCases = [

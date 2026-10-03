@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Zaman Damgası Nedir? TÜBİTAK Onaylı Belge Güvencesi",
+  title: pageTitle("Zaman Damgası Nedir? TÜBİTAK Onaylı Belge Güvencesi"),
   description: "Zaman damgası nedir, nasıl çalışır, hangi amaçlarla kullanılır ve ne kadar maliyetlidir? RFC 3161 uyumlu TÜBİTAK onaylı zaman damgası rehberi.",
   alternates: { canonical: `${siteConfig.url}/blog/zaman-damgasi-nedir/` },
-  openGraph: { title: "Zaman Damgası Nedir?", description: "RFC 3161 uyumlu TÜBİTAK onaylı zaman damgası rehberi.", url: `${siteConfig.url}/blog/zaman-damgasi-nedir/` },
+  openGraph: { ...ogDefaults, title: "Zaman Damgası Nedir?", description: "RFC 3161 uyumlu TÜBİTAK onaylı zaman damgası rehberi.", url: `${siteConfig.url}/blog/zaman-damgasi-nedir/` },
 }
 
 const faqs = [

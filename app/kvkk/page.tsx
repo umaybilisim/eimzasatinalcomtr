@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "KVKK Aydınlatma Metni",
-  description: "Kişisel verilerin korunması kanunu kapsamında aydınlatma metni.",
+  title: pageTitle("KVKK Aydınlatma Metni"),
+  description: "6698 sayılı KVKK kapsamında aydınlatma metni: veri sorumlusu, işlenen kişisel veriler, işleme amaçları, aktarım ve başvuru haklarınız.",
   alternates: { canonical: `${siteConfig.url}/kvkk/` },
+  openGraph: { ...ogDefaults, title: "KVKK Aydınlatma Metni", url: `${siteConfig.url}/kvkk/` },
 }
 
 export default function KvkkPage() {
@@ -37,7 +39,7 @@ export default function KvkkPage() {
           </ul>
 
           <h2>2. İşlenen Kişisel Veriler</h2>
-          <p>Ad, soyad, e-posta adresi, telefon numarası, TC kimlik numarası (e-imza başvurusu için zorunlu), adres bilgileri.</p>
+          <p>Ad, soyad, e-posta adresi, telefon numarası, TC kimlik numarası (e-imza başvurusu için zorunlu), adres bilgileri. Açık rızanızla: Google Analytics aracılığıyla site kullanım verileri (ziyaret edilen sayfalar, cihaz bilgisi, iletişim bağlantılarına tıklamalar).</p>
 
           <h2>3. Kişisel Verilerin İşlenme Amacı</h2>
           <ul>
@@ -48,7 +50,7 @@ export default function KvkkPage() {
           </ul>
 
           <h2>4. Kişisel Verilerin Aktarılması</h2>
-          <p>Kişisel verileriniz, yalnızca hizmet sunumu için zorunlu olduğu durumlarda ve KVKK kapsamındaki güvencelere uygun olarak üçüncü taraflarla paylaşılabilir (sertifika sağlayıcıları, kargo şirketleri, ödeme kuruluşları).</p>
+          <p>Kişisel verileriniz, yalnızca hizmet sunumu için zorunlu olduğu durumlarda ve KVKK kapsamındaki güvencelere uygun olarak üçüncü taraflarla paylaşılabilir (sertifika sağlayıcıları, kargo şirketleri, ödeme kuruluşları). Açık rızanız olması hâlinde site kullanım verileri Google Analytics hizmeti kapsamında Google LLC&apos;ye (yurt dışı) aktarılır; WhatsApp üzerinden yazdığınız mesajlar Meta Platforms altyapısıyla iletilir. Ayrıntılar için <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>.</p>
 
           <h2>5. Haklarınız</h2>
           <p>KVKK kapsamında kişisel verilerinize erişim, düzeltme, silme ve işlemeye itiraz haklarına sahipsiniz. Haklarınızı kullanmak için <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> adresine yazabilirsiniz.</p>

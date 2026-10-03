@@ -1,13 +1,15 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { ContactForm } from "@/components/site/contact-form"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, organizationSchema, breadcrumbSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "İletişim — Sipariş ve Bilgi",
-  description: "E-imza, KEP ve zaman damgası siparişi için bizimle iletişime geçin. WhatsApp, telefon veya form ile ulaşın.",
+  title: pageTitle("İletişim — Sipariş ve Bilgi"),
+  description: "E-imza, KEP ve zaman damgası siparişi için arayın: 0850 777 11 45. WhatsApp, e-posta veya formla da ulaşabilirsiniz. Hafta içi 09:00-18:00.",
   alternates: { canonical: `${siteConfig.url}/iletisim/` },
+  openGraph: { ...ogDefaults, title: "İletişim — Sipariş ve Bilgi", url: `${siteConfig.url}/iletisim/` },
 }
 
 export default function IletisimPage() {

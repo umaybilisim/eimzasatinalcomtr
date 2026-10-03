@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, type FormEvent } from "react"
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site-config"
@@ -15,8 +18,38 @@ const packages = [
   "Bilgi almak istiyorum",
 ]
 
+const FIELDS: [string, string][] = [
+  ["Ad", "Ad"],
+  ["Soyad", "Soyad"],
+  ["Telefon", "Telefon"],
+  ["Eposta", "E-posta"],
+  ["TC_Vergi_No", "TC/Vergi No"],
+  ["Paket", "Paket"],
+  ["Mesaj", "Mesaj"],
+]
+
+// Statik sitede sunucu yok: form, ziyaretçinin seçtiği kanalda (WhatsApp veya e-posta) hazır mesaj açar.
+// WhatsApp, mailto'nun aksine e-posta istemcisi kurulu olmayan cihazlarda da çalışır.
 export function ContactForm() {
   const subject = "eimzasatinal.com.tr - Sipariş / Bilgi Talebi"
+  const [sent, setSent] = useState<null | "whatsapp" | "email">(null)
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const channel = ((e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null)?.value === "email" ? "email" : "whatsapp"
+    const lines = FIELDS.map(([key, label]) => [label, String(data.get(key) ?? "").trim()] as const)
+      .filter(([, v]) => v)
+      .map(([label, v]) => `${label}: ${v}`)
+    const body = [subject, "", ...lines].join("\n")
+    window.gtag?.("event", "generate_lead", { method: channel, form_id: "contact" })
+    if (channel === "whatsapp") {
+      window.open(`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(body)}`, "_blank", "noopener")
+    } else {
+      window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    }
+    setSent(channel)
+  }
 
   return (
     <div className="grid lg:grid-cols-2 gap-12">
@@ -91,74 +124,73 @@ export function ContactForm() {
       <div>
         <h2 className="text-2xl font-bold text-foreground mb-6">Sipariş / Bilgi Formu</h2>
         <p className="text-sm text-muted-foreground mb-6">
-          Formu doldurun, bilgilerinizle birlikte e-posta uygulamanız açılacak. Gönderdikten sonra en kısa sürede size dönüş yapıyoruz.
+          Formu doldurun; bilgileriniz WhatsApp'ta (veya e-posta uygulamanızda) hazır mesaj olarak açılır. Mesajı gönderdiğinizde çalışma saatleri içinde size dönüş yapıyoruz.
         </p>
 
-        {/* mailto: form — statik site uyumlu, JS gerektirmez */}
-        <form
-          action={`mailto:${siteConfig.email}`}
-          method="GET"
-          encType="text/plain"
-          className="space-y-4"
-        >
-          <input type="hidden" name="subject" value={subject} />
+        <form id="contact" onSubmit={handleSubmit} className="space-y-4">
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1">Ad</label>
+              <label htmlFor="f-Ad" className="block text-sm font-medium text-foreground mb-1">Ad</label>
               <input
                 name="Ad"
+                id="f-Ad"
                 required
-                className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 placeholder="Adınız"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1">Soyad</label>
+              <label htmlFor="f-Soyad" className="block text-sm font-medium text-foreground mb-1">Soyad</label>
               <input
                 name="Soyad"
+                id="f-Soyad"
                 required
-                className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 placeholder="Soyadınız"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">Telefon</label>
+            <label htmlFor="f-Telefon" className="block text-sm font-medium text-foreground mb-1">Telefon</label>
             <input
               name="Telefon"
+              id="f-Telefon"
               type="tel"
               required
-              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               placeholder="05XX XXX XX XX"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">E-posta</label>
+            <label htmlFor="f-Eposta" className="block text-sm font-medium text-foreground mb-1">E-posta</label>
             <input
               name="Eposta"
+              id="f-Eposta"
               type="email"
-              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               placeholder="ornek@mail.com"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">TC Kimlik / Vergi No</label>
+            <label htmlFor="f-TC_Vergi_No" className="block text-sm font-medium text-foreground mb-1">TC Kimlik / Vergi No</label>
             <input
               name="TC_Vergi_No"
-              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              id="f-TC_Vergi_No"
+              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               placeholder="TC Kimlik veya Vergi Numaranız"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">İlgilendiğiniz Paket</label>
+            <label htmlFor="f-Paket" className="block text-sm font-medium text-foreground mb-1">İlgilendiğiniz Paket</label>
             <select
               name="Paket"
-              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              id="f-Paket"
+              className="w-full h-11 rounded-lg border border-input bg-background px-3 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {packages.map((p) => (
                 <option key={p} value={p}>{p}</option>
@@ -167,19 +199,35 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">Mesaj</label>
+            <label htmlFor="f-Mesaj" className="block text-sm font-medium text-foreground mb-1">Mesaj</label>
             <textarea
               name="Mesaj"
+              id="f-Mesaj"
               rows={3}
-              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
+              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-base sm:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
               placeholder="Ek bilgi veya sorularınız..."
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full">
-            E-posta Gönder
-            <Mail className="h-5 w-5" />
-          </Button>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Button type="submit" name="channel" value="whatsapp" size="lg" className="w-full bg-green-700 hover:bg-green-600">
+              WhatsApp ile Gönder
+              <MessageCircle className="h-5 w-5" />
+            </Button>
+            <Button type="submit" name="channel" value="email" size="lg" variant="outline" className="w-full">
+              E-posta ile Gönder
+              <Mail className="h-5 w-5" />
+            </Button>
+          </div>
+
+          {sent && (
+            <p role="status" className="rounded-lg bg-green-50 p-3 text-sm text-green-800">
+              {sent === "whatsapp"
+                ? "Mesajınız WhatsApp'ta hazırlandı. Göndermek için WhatsApp'ta gönder düğmesine basmayı unutmayın."
+                : "Mesajınız e-posta uygulamanızda hazırlandı. Uygulama açılmadıysa bilgi@umaybilisim.com.tr adresine yazabilirsiniz."}{" "}
+              {siteConfig.workingHours} içinde dönüş yapıyoruz.
+            </p>
+          )}
         </form>
 
         <p className="mt-4 text-center text-sm text-muted-foreground">

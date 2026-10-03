@@ -4,6 +4,12 @@ export const siteConfig = {
   description:
     "TÜBİTAK onaylı e-imza, KEP ve zaman damgası satın alın. Bireysel ve kurumsal e-imza paketleri, hızlı aktivasyon, uygun fiyat. Hemen sipariş verin.",
   url: "https://eimzasatinal.com.tr",
+  // Marka/varlık bilgisi: şema, llms.txt ve metinlerde hep bu ifadeler kullanılır.
+  brandName: "eimzasatinal.com.tr",
+  legalName: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
+  shortLegalName: "Umay Tüm Bilişim",
+  entityDescription:
+    "eimzasatinal.com.tr, Sakarya merkezli Umay Tüm Bilişim'in TÜBİTAK ve BTK onaylı e-imza, KEP ve zaman damgası satış ve aktivasyon hizmetidir. Türkiye geneline kargo ve uzaktan kurulum desteği verir.",
   phone: "0 850 777 11 45",
   phoneTel: "+908507771145",
   phone2: "0 264 777 11 45",

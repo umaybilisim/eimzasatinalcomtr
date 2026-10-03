@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Gizlilik Politikası",
-  description: "eimzasatinal.com.tr gizlilik politikası ve çerez kullanımı.",
+  title: pageTitle("Gizlilik Politikası"),
+  description: "eimzasatinal.com.tr gizlilik politikası: hangi kişisel verileri, hangi amaçla işlediğimiz, çerezler ve Google Analytics kullanımı.",
   alternates: { canonical: `${siteConfig.url}/gizlilik/` },
+  openGraph: { ...ogDefaults, title: "Gizlilik Politikası", url: `${siteConfig.url}/gizlilik/` },
 }
 
 export default function GizlilikPage() {
@@ -38,10 +40,17 @@ export default function GizlilikPage() {
           </ul>
 
           <h2>2. Çerezler</h2>
-          <p>Sitemiz, kullanıcı deneyimini iyileştirmek amacıyla teknik çerezler kullanmaktadır. Analitik ve pazarlama çerezleri için açık onayınız alınmaktadır.</p>
+          <p>Sitemizi ilk ziyaretinizde bir çerez bandı gösterilir. <strong>Onay vermediğiniz sürece hiçbir analitik çerez yerleştirilmez ve Google Analytics betiği yüklenmez.</strong> Tercihinizi tarayıcınızın yerel depolama alanında saklarız; sayfanın altındaki &quot;Çerez Tercihleri&quot; bağlantısından istediğiniz zaman değiştirebilirsiniz. Reddettiğinizde mevcut Google Analytics çerezleri silinir.</p>
+          <h3>Kullandığımız üçüncü taraf hizmetler</h3>
+          <ul>
+            <li><strong>Google Analytics 4 (Google LLC)</strong> — yalnızca onayınızla; ziyaret edilen sayfalar, cihaz/tarayıcı bilgisi, yaklaşık konum ve telefon, WhatsApp, e-posta ve form bağlantılarına tıklama olayları. Çerezler: <code>_ga</code>, <code>_ga_*</code>. Veriler Google sunucularında (yurt dışında) işlenir.</li>
+            <li><strong>WhatsApp (Meta Platforms)</strong> — WhatsApp bağlantısına veya formdaki &quot;WhatsApp ile Gönder&quot; düğmesine bastığınızda mesajınız WhatsApp üzerinden bize iletilir; bu aşamada WhatsApp&apos;ın gizlilik politikası geçerlidir.</li>
+            <li><strong>Google Haritalar</strong> — İletişim sayfasındaki harita Google tarafından sunulur ve görüntülendiğinde Google&apos;a bağlantı kurulur.</li>
+            <li><strong>GitHub Pages</strong> — sitemiz GitHub altyapısında barındırılır; sunucu, güvenlik amacıyla IP adresi gibi teknik kayıtlar tutabilir.</li>
+          </ul>
 
           <h2>3. Veri Güvenliği</h2>
-          <p>Kişisel verileriniz HTTPS şifrelemesi ve güvenli sunucu altyapısıyla korunmaktadır. Umay Tüm Bilişim olarak 16 yıllık sektör deneyimimizle veri güvenliğini en üst önceliğimiz olarak görüyoruz.</p>
+          <p>Kişisel verileriniz HTTPS şifrelemesi ve güvenli sunucu altyapısıyla korunmaktadır. Umay Tüm Bilişim olarak 15 yılı aşkın sektör deneyimimizle veri güvenliğini en üst önceliğimiz olarak görüyoruz.</p>
 
           <h2>4. İletişim</h2>
           <p>Gizlilik politikasına ilişkin sorularınız için: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> veya <a href={`tel:${siteConfig.phoneTel}`}>{siteConfig.phone}</a> numaralı telefondan bize ulaşabilirsiniz.</p>

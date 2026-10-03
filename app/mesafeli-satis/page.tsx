@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Mesafeli Satış Sözleşmesi",
-  description: "eimzasatinal.com.tr mesafeli satış sözleşmesi.",
+  title: pageTitle("Mesafeli Satış Sözleşmesi"),
+  description: "eimzasatinal.com.tr mesafeli satış sözleşmesi: taraflar, ürün ve fiyat bilgisi, teslimat, cayma hakkı istisnası ve uyuşmazlık çözümü.",
   alternates: { canonical: `${siteConfig.url}/mesafeli-satis/` },
+  openGraph: { ...ogDefaults, title: "Mesafeli Satış Sözleşmesi", url: `${siteConfig.url}/mesafeli-satis/` },
 }
 
 export default function MesafeliSatisPage() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Check, X } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "KEP Nedir, Ne İşe Yarar? Kayıtlı Elektronik Posta Rehberi",
+  title: pageTitle("KEP Nedir, Ne İşe Yarar? Kayıtlı Elektronik Posta Rehberi"),
   description: "Kayıtlı Elektronik Posta (KEP) nedir, normal e-postadan farkı nedir, kimlere zorunlu ve nasıl kullanılır? Kapsamlı KEP rehberi.",
   alternates: { canonical: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
-  openGraph: { title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi — zorunluluk, kullanım ve avantajlar.", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
+  openGraph: { ...ogDefaults, title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi — zorunluluk, kullanım ve avantajlar.", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
 }
 
 const faqs = [

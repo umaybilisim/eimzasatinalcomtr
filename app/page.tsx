@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic"
 import { Hero } from "@/components/site/hero"
-import { JsonLd, organizationSchema, localBusinessSchema, webSiteSchema, faqSchema } from "@/components/seo/json-ld"
+import { JsonLd, organizationSchema, webSiteSchema, faqSchema } from "@/components/seo/json-ld"
 import { products } from "@/lib/products"
 import { faqData } from "@/lib/faq-data"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const FeatureGrid = dynamic(() => import("@/components/site/feature-grid").then(m => ({ default: m.FeatureGrid })))
-const TestimonialGrid = dynamic(() => import("@/components/site/testimonial-grid").then(m => ({ default: m.TestimonialGrid })))
+const TrustGrid = dynamic(() => import("@/components/site/trust-grid").then(m => ({ default: m.TrustGrid })))
 const PricingTable = dynamic(() => import("@/components/site/pricing-table").then(m => ({ default: m.PricingTable })))
 const InternationalPricing = dynamic(() => import("@/components/site/international-pricing").then(m => ({ default: m.InternationalPricing })))
 const CtaSection = dynamic(() => import("@/components/site/cta-section").then(m => ({ default: m.CtaSection })))
@@ -24,7 +24,6 @@ export default function HomePage() {
     <>
       <JsonLd data={webSiteSchema()} />
       <JsonLd data={organizationSchema()} />
-      <JsonLd data={localBusinessSchema()} />
       <JsonLd data={faqSchema(homeFaqs)} />
 
       <Hero />
@@ -89,7 +88,7 @@ export default function HomePage() {
       {/* Yurt dışı fiyatlandırma */}
       <InternationalPricing />
 
-      <TestimonialGrid />
+      <TrustGrid />
 
       {/* FAQ */}
       <section className="py-20 bg-white">

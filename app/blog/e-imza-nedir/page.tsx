@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "E-İmza Nedir? Hukuki Geçerliliği ve Kullanım Alanları",
+  title: pageTitle("E-İmza Nedir? Hukuki Geçerliliği ve Kullanım Alanları"),
   description: "Elektronik imza (e-imza) nedir, nasıl çalışır, hukuki dayanağı nedir ve kimler kullanabilir? 5070 sayılı kanun çerçevesinde kapsamlı rehber.",
   alternates: { canonical: `${siteConfig.url}/blog/e-imza-nedir/` },
-  openGraph: { title: "E-İmza Nedir?", description: "Elektronik imzanın tanımı, hukuki geçerliliği ve kullanım alanları.", url: `${siteConfig.url}/blog/e-imza-nedir/` },
+  openGraph: { ...ogDefaults, title: "E-İmza Nedir?", description: "Elektronik imzanın tanımı, hukuki geçerliliği ve kullanım alanları.", url: `${siteConfig.url}/blog/e-imza-nedir/` },
 }
 
 const faqs = [

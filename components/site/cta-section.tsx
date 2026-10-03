@@ -31,7 +31,7 @@ export function CtaSection({
           </Button>
           <Button
             size="lg"
-            className="bg-green-500 text-white hover:bg-green-400"
+            className="bg-green-700 text-white hover:bg-green-600"
             asChild
           >
             <a

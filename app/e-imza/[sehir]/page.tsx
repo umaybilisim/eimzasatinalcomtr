@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { Check, ArrowRight, Truck, Phone } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
 import { CtaSection } from "@/components/site/cta-section"
 import { Accordion } from "@/components/ui/accordion"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
-import { JsonLd, productSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
+import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/json-ld"
 import { getProduct } from "@/lib/products"
 import { siteConfig } from "@/lib/site-config"
 import { cities, getCityBySlug } from "@/lib/city-seo-data"
@@ -25,14 +26,13 @@ export async function generateMetadata({
 
   const url = `${siteConfig.url}/e-imza/${city.slug}/`
   return {
-    title: city.metaTitle,
+    title: pageTitle(city.metaTitle),
     description: city.metaDescription,
     alternates: { canonical: url },
-    openGraph: {
+    openGraph: { ...ogDefaults,
       title: city.metaTitle,
       description: city.metaDescription,
       url,
-      images: [{ url: `${siteConfig.url}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
@@ -64,13 +64,6 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
   const product = getProduct("e-imza")!
   const pageUrl = `${siteConfig.url}/e-imza/${city.slug}/`
 
-  // Fiyatları products.ts'den dinamik türet
-  const numericPrices = product.packages
-    .map(p => parseInt(p.price.replace(/[^0-9]/g, ""), 10))
-    .filter(p => !isNaN(p) && p > 0)
-  const lowPrice = numericPrices.length > 0 ? Math.min(...numericPrices).toString() : undefined
-  const highPrice = numericPrices.length > 0 ? Math.max(...numericPrices).toString() : undefined
-
   const cityFaqItems = city.faqs.map((f) => ({
     id: `city-faq-${city.slug}-${f.question.slice(0, 20)}`,
     question: f.question,
@@ -80,12 +73,11 @@ export default function SehirEImzaPage({ params }: { params: { sehir: string } }
   return (
     <>
       <JsonLd
-        data={productSchema({
+        data={serviceSchema({
           name: `${city.name} E-İmza — TÜBİTAK Onaylı Nitelikli Elektronik İmza`,
           description: city.metaDescription,
           url: pageUrl,
-          lowPrice,
-          highPrice,
+          city: city.name,
         })}
       />
       <JsonLd data={faqSchema(city.faqs)} />

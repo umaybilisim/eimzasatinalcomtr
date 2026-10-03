@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: Headphones,
-    title: "7/24 Teknik Destek",
-    desc: "Telefon, WhatsApp ve e-posta ile her zaman yanınızdayız. Aktivasyon sorunlarınızı çözüyoruz.",
+    title: "Kurulum ve Teknik Destek",
+    desc: "Hafta içi 09:00-18:00 telefon, WhatsApp ve e-posta ile kurulum ve aktivasyon sorunlarınızı birlikte çözüyoruz.",
   },
   {
     icon: Award,

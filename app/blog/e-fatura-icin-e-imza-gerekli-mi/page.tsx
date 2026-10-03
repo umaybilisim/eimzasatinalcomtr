@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Check, X, AlertCircle, Zap, Phone, Calendar } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,14 +8,13 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu ve Başvuru",
-  description: "E-faturaya geçiş için e-imza mı mali mühür mü gerekli? 2026 e-fatura zorunluluğu, ciro limitleri, şahıs işletmesi ve şirket farkı, geçiş adımları ve ceza riskleri.",
+  title: pageTitle("E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu"),
+  description: "E-fatura için e-imza mı mali mühür mü gerekir? 2026 zorunluluğu, ciro limitleri, şahıs-şirket farkı, geçiş adımları ve ceza riskleri.",
   alternates: { canonical: `${siteConfig.url}/blog/e-fatura-icin-e-imza-gerekli-mi/` },
-  openGraph: {
+  openGraph: { ...ogDefaults,
     title: "E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu",
     description: "E-faturaya geçiş için e-imza mı mali mühür mü gerekli? Şahıs işletmesi ve şirketler için 2026 zorunluluk rehberi.",
     url: `${siteConfig.url}/blog/e-fatura-icin-e-imza-gerekli-mi/`,
-    images: [{ url: `${siteConfig.url}/og-image.png`, width: 1200, height: 630 }],
   },
 }
 
@@ -40,7 +40,7 @@ export default function EFaturaIcinEImzaPage() {
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/30 text-blue-200 border border-blue-500/30">E-İmza</span>
             <span className="text-sm text-slate-400">5 Temmuz 2026 · 9 dk okuma</span>
           </div>
-          <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu ve Başvuru</h1>
+          <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu</h1>
         </div>
       </section>
 
@@ -90,7 +90,7 @@ export default function EFaturaIcinEImzaPage() {
               </div>
               <h3 className="text-2xl font-bold mb-2">Şahıs işletmeniz için e-imzanızı bugün alın</h3>
               <p className="text-blue-100 text-sm mb-6 max-w-2xl">
-                TÜBİTAK onaylı nitelikli elektronik imza ile e-faturaya sorunsuz geçin. Hızlı aktivasyon, aynı gün teslimat ve ücretsiz kurulum desteği. Son tarihi beklemeyin.
+                TÜBİTAK onaylı nitelikli elektronik imza ile e-faturaya sorunsuz geçin. Hızlı aktivasyon, 1-3 iş günü kargo (Sakarya'da aynı gün elden teslim) ve ücretsiz kurulum desteği. Son tarihi beklemeyin.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/e-imza" className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors">

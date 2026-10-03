@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site-config"
+
 interface JsonLdProps {
   data: Record<string, unknown>
 }
@@ -11,59 +13,31 @@ export function JsonLd({ data }: JsonLdProps) {
   )
 }
 
+const SITE = siteConfig.url
+export const ORG_ID = `${SITE}/#organization`
+export const WEBSITE_ID = `${SITE}/#website`
+const LOGO = `${SITE}/logo.png`
+const OG_IMAGE = `${SITE}/og-image.png`
+
+const sameAs = Object.values(siteConfig.social).filter(Boolean)
+
+// Diğer şemalardan kuruluşa yalnızca @id ile bağlanılır; tam tanım ana sayfada bir kez yer alır.
+const orgRef = { "@id": ORG_ID }
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "UMAY TÜM BİLİŞİM — eimzasatinal.com.tr",
-    url: "https://eimzasatinal.com.tr",
-    logo: "https://eimzasatinal.com.tr/og-image.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+908507771145",
-      contactType: "customer service",
-      availableLanguage: "Turkish",
-    },
-  }
-}
-
-export function webSiteSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "eimzasatinal.com.tr",
-    alternateName: "E-İmza Satın Al — eimzasatinal.com.tr",
-    url: "https://eimzasatinal.com.tr",
-    description: "TÜBİTAK onaylı e-imza, KEP ve zaman damgası satın al. Hızlı aktivasyon, uygun fiyat.",
-    inLanguage: "tr-TR",
-    publisher: {
-      "@type": "Organization",
-      name: "UMAY TÜM BİLİŞİM",
-      url: "https://eimzasatinal.com.tr",
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://eimzasatinal.com.tr/blog/?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
-  }
-}
-
-export function localBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    name: "eimzasatinal.com.tr — E-İmza, KEP ve Zaman Damgası",
-    alternateName: "UMAY TÜM BİLİŞİM",
-    url: "https://eimzasatinal.com.tr",
-    logo: "https://eimzasatinal.com.tr/og-image.png",
-    image: "https://eimzasatinal.com.tr/og-image.png",
-    description: "TÜBİTAK ve BTK onaylı e-imza, KEP ve zaman damgası satış ve aktivasyon hizmetleri. Uzaktan aktivasyon, aynı gün teslimat.",
-    telephone: "+908507771145",
-    email: "bilgi@umaybilisim.com.tr",
+    "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+    "@id": ORG_ID,
+    name: siteConfig.brandName,
+    legalName: siteConfig.legalName,
+    alternateName: siteConfig.shortLegalName,
+    url: SITE,
+    logo: { "@type": "ImageObject", url: LOGO, width: 512, height: 512 },
+    image: OG_IMAGE,
+    description: siteConfig.entityDescription,
+    telephone: siteConfig.phoneTel,
+    email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Erenler Mah. 1193 Nolu Sk. No:4/1-213, Meydan54 AVM B1 Blok K:2 D:84",
@@ -85,29 +59,42 @@ export function localBusinessSchema() {
         closes: "18:00",
       },
     ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phoneTel,
+        contactType: "customer service",
+        availableLanguage: ["Turkish"],
+        areaServed: "TR",
+      },
+    ],
     priceRange: "₺₺",
-    currenciesAccepted: "TRY",
+    currenciesAccepted: "TRY, USD, EUR",
     paymentAccepted: "Kredi Kartı, Havale, EFT",
-    areaServed: {
-      "@type": "Country",
-      name: "Türkiye",
-    },
+    areaServed: { "@type": "Country", name: "Türkiye" },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "E-İmza Ürünleri",
+      name: "Elektronik Sertifika Hizmetleri",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-İmza" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "KEP (Kayıtlı Elektronik Posta)" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Zaman Damgası" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-İmza (Nitelikli Elektronik Sertifika)", url: `${SITE}/e-imza/` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "KEP (Kayıtlı Elektronik Posta)", url: `${SITE}/kep/` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Zaman Damgası", url: `${SITE}/zaman-damgasi/` } },
       ],
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "6",
-      bestRating: "5",
-      worstRating: "1",
-    },
+    ...(sameAs.length ? { sameAs } : {}),
+  }
+}
+
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": WEBSITE_ID,
+    name: siteConfig.brandName,
+    alternateName: ["eimzasatinal", "E-İmza Satın Al"],
+    url: SITE,
+    inLanguage: "tr-TR",
+    publisher: orgRef,
   }
 }
 
@@ -128,11 +115,6 @@ export function productSchema({
   highPrice?: string
   image?: string
 }) {
-  const seller = {
-    "@type": "Organization",
-    name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
-  }
-
   const shippingDetails = {
     "@type": "OfferShippingDetails",
     shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "TRY" },
@@ -148,41 +130,24 @@ export function productSchema({
     "@type": "MerchantReturnPolicy",
     applicableCountry: "TR",
     returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-    merchantReturnDays: 0,
+  }
+
+  const common = {
+    priceCurrency: "TRY",
+    availability: "https://schema.org/InStock",
+    url,
+    seller: orgRef,
+    shippingDetails,
+    hasMerchantReturnPolicy: returnPolicy,
   }
 
   let offers: Record<string, unknown>
   if (lowPrice && highPrice) {
-    offers = {
-      "@type": "AggregateOffer",
-      priceCurrency: "TRY",
-      lowPrice,
-      highPrice,
-      offerCount: "3",
-      availability: "https://schema.org/InStock",
-      url,
-      seller,
-      shippingDetails,
-      hasMerchantReturnPolicy: returnPolicy,
-    }
+    offers = { "@type": "AggregateOffer", lowPrice, highPrice, offerCount: "3", ...common }
   } else if (price) {
-    offers = {
-      "@type": "Offer",
-      priceCurrency: "TRY",
-      price,
-      availability: "https://schema.org/InStock",
-      url,
-      seller,
-      shippingDetails,
-      hasMerchantReturnPolicy: returnPolicy,
-    }
+    offers = { "@type": "Offer", price, ...common }
   } else {
-    offers = {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      url,
-      seller,
-    }
+    offers = { "@type": "Offer", availability: "https://schema.org/InStock", url, seller: orgRef }
   }
 
   return {
@@ -191,36 +156,9 @@ export function productSchema({
     name,
     description,
     url,
-    image: image ?? "https://eimzasatinal.com.tr/og-image.png",
-    brand: { "@type": "Brand", name: "eimzasatinal.com.tr" },
+    image: image ?? OG_IMAGE,
+    brand: { "@type": "Brand", name: siteConfig.brandName },
     offers,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "6",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Ahmet Yılmaz" },
-        reviewBody: "3 yıldır e-imzamı bu hizmetten alıyorum. Hızlı aktivasyon ve sorunsuz teknik destek için teşekkürler.",
-      },
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Fatma Kaya" },
-        reviewBody: "KEP adresimi de buradan aldım. İşlem çok hızlı oldu ve her soruma anında yanıt verdiler.",
-      },
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Mehmet Demir" },
-        reviewBody: "Kurumsal e-imza için birden fazla personelimize aldık. Fiyat performans açısından çok memnunuz.",
-      },
-    ],
   }
 }
 
@@ -229,11 +167,13 @@ export function serviceSchema({
   description,
   url,
   image,
+  city,
 }: {
   name: string
   description: string
   url: string
   image?: string
+  city?: string
 }) {
   return {
     "@context": "https://schema.org",
@@ -241,16 +181,15 @@ export function serviceSchema({
     name,
     description,
     url,
-    image: image ?? "https://eimzasatinal.com.tr/og-image.png",
-    provider: {
-      "@type": "Organization",
-      name: "UMAY TÜM BİLİŞİM VE EĞİTİM DAN.YAZILIM İTH. İHR. SAN. TİC. LTD.ŞTİ.",
-      url: "https://eimzasatinal.com.tr",
-    },
-    areaServed: { "@type": "Country", name: "Türkiye" },
+    image: image ?? OG_IMAGE,
+    provider: orgRef,
+    areaServed: city
+      ? { "@type": "City", name: city, containedInPlace: { "@type": "Country", name: "Türkiye" } }
+      : { "@type": "Country", name: "Türkiye" },
     availableChannel: {
       "@type": "ServiceChannel",
       serviceUrl: url,
+      servicePhone: siteConfig.phoneTel,
     },
   }
 }
@@ -275,26 +214,33 @@ export function articleSchema({
   description,
   url,
   datePublished,
+  dateModified,
+  image,
 }: {
   title: string
   description: string
   url: string
   datePublished: string
+  dateModified?: string
+  image?: string
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: title,
     description,
     url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: image ?? OG_IMAGE,
     datePublished,
-    author: {
-      "@type": "Organization",
-      name: "eimzasatinal.com.tr",
-    },
+    dateModified: dateModified ?? datePublished,
+    inLanguage: "tr-TR",
+    author: { "@type": "Organization", "@id": ORG_ID, name: siteConfig.brandName, url: SITE },
     publisher: {
       "@type": "Organization",
-      name: "eimzasatinal.com.tr",
+      "@id": ORG_ID,
+      name: siteConfig.brandName,
+      logo: { "@type": "ImageObject", url: LOGO },
     },
   }
 }

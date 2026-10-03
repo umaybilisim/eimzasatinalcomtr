@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { Logo } from "./logo"
+import { CookiePreferencesButton } from "./analytics-consent"
 import { siteConfig, footerLinks } from "@/lib/site-config"
 import { cities } from "@/lib/city-seo-data"
 
@@ -56,6 +57,11 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                {group.title === "Yasal" && (
+                  <li>
+                    <CookiePreferencesButton className="text-sm hover:text-white transition-colors" />
+                  </li>
+                )}
               </ul>
             </div>
           ))}
@@ -72,7 +78,7 @@ export function Footer() {
                 <Link
                   key={city.slug}
                   href={`/e-imza/${city.slug}`}
-                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                  className="text-xs text-slate-400 hover:text-slate-200 transition-colors"
                 >
                   {city.name} E-İmza
                 </Link>
@@ -88,7 +94,7 @@ export function Footer() {
                 <Link
                   key={city.slug}
                   href={`/kep/${city.slug}`}
-                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                  className="text-xs text-slate-400 hover:text-slate-200 transition-colors"
                 >
                   {city.name} KEP
                 </Link>
@@ -104,7 +110,7 @@ export function Footer() {
                 <Link
                   key={city.slug}
                   href={`/zaman-damgasi/${city.slug}`}
-                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+                  className="text-xs text-slate-400 hover:text-slate-200 transition-colors"
                 >
                   {city.name} Zaman Damgası
                 </Link>
@@ -113,7 +119,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} eimzasatinal.com.tr — Tüm hakları saklıdır.</p>
           <p>
             TÜBİTAK BİLGEM onaylı nitelikli elektronik sertifika hizmetleri |{" "}

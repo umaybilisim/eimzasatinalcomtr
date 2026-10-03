@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { Check } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
@@ -12,10 +13,11 @@ import { siteConfig } from "@/lib/site-config"
 import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
-  title: "Zaman Damgası Satın Al — TÜBİTAK Onaylı",
+  title: pageTitle("Zaman Damgası Satın Al — TÜBİTAK Onaylı"),
   description:
     "TÜBİTAK BİLGEM onaylı zaman damgası satın alın. RFC 3161 uyumlu, API destekli. 100, 500 ve 1000 kontörlük paketler. Dijital arşiv ve hukuki belge güvencesi.",
   alternates: { canonical: `${siteConfig.url}/zaman-damgasi/` },
+  openGraph: { ...ogDefaults, title: "Zaman Damgası Satın Al — TÜBİTAK Onaylı", url: `${siteConfig.url}/zaman-damgasi/` },
 }
 
 const useCaseDetails = [

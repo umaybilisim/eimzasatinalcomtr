@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, AlertCircle, CheckCircle } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "E-İmza Yenileme — Süresi Dolanlar İçin Adım Adım Rehber",
+  title: pageTitle("E-İmza Yenileme — Süresi Dolanlar İçin Adım Adım Rehber"),
   description: "E-imza sertifikasının süresi dolmadan veya dolduktan sonra nasıl yenilenir? Yenileme süreci, ne zaman başvurulmalı ve dikkat edilmesi gerekenler.",
   alternates: { canonical: `${siteConfig.url}/blog/e-imza-yenileme/` },
-  openGraph: { title: "E-İmza Yenileme Rehberi", description: "E-imza yenileme süreci hakkında her şey.", url: `${siteConfig.url}/blog/e-imza-yenileme/` },
+  openGraph: { ...ogDefaults, title: "E-İmza Yenileme Rehberi", description: "E-imza yenileme süreci hakkında her şey.", url: `${siteConfig.url}/blog/e-imza-yenileme/` },
 }
 
 const faqs = [

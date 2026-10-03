@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,10 +8,10 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "E-İmza Nasıl Alınır? Adım Adım Başvuru Rehberi 2026",
+  title: pageTitle("E-İmza Nasıl Alınır? Adım Adım Başvuru Rehberi 2026"),
   description: "E-imza başvurusu nasıl yapılır? Gerekli belgeler, e-Devlet üzerinden başvuru, aktivasyon ve kurulum adımlarını anlatan eksiksiz rehber.",
   alternates: { canonical: `${siteConfig.url}/blog/e-imza-nasil-alinir/` },
-  openGraph: { title: "E-İmza Nasıl Alınır?", description: "E-imza başvurudan aktivasyona kadar adım adım rehber.", url: `${siteConfig.url}/blog/e-imza-nasil-alinir/` },
+  openGraph: { ...ogDefaults, title: "E-İmza Nasıl Alınır?", description: "E-imza başvurudan aktivasyona kadar adım adım rehber.", url: `${siteConfig.url}/blog/e-imza-nasil-alinir/` },
 }
 
 const steps = [

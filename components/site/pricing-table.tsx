@@ -38,7 +38,7 @@ export function PricingTable({ packages, ctaHref = "/iletisim" }: PricingTablePr
               <span className={cn("text-3xl font-extrabold", pkg.highlighted ? "text-white" : "text-primary")}>
                 {pkg.price}
               </span>
-              <span className={cn("text-sm", pkg.highlighted ? "text-blue-100" : "text-muted-foreground")}>
+              <span className={cn("text-sm", pkg.highlighted ? "text-white" : "text-muted-foreground")}>
                 {pkg.priceNote}
               </span>
             </div>
@@ -66,9 +66,8 @@ export function PricingTable({ packages, ctaHref = "/iletisim" }: PricingTablePr
             </Button>
             <Button
               variant="ghost"
-              size="sm"
               asChild
-              className={pkg.highlighted ? "text-blue-100 hover:bg-white/10" : ""}
+              className={pkg.highlighted ? "text-white underline-offset-4 hover:bg-white/10" : ""}
             >
               <a
                 href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Merhaba, ${pkg.name} hakkında bilgi almak istiyorum.`)}`}

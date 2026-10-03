@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { ShieldCheck, Award, Users, Clock } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
@@ -6,16 +7,17 @@ import { JsonLd, organizationSchema, breadcrumbSchema } from "@/components/seo/j
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Hakkımızda — E-İmza, KEP ve Zaman Damgası",
+  title: pageTitle("Hakkımızda — E-İmza, KEP ve Zaman Damgası"),
   description: "TÜBİTAK onaylı e-imza, KEP ve zaman damgası hizmetleri sunuyoruz. Güvenilir, hızlı ve uygun fiyatlı dijital imza çözümleri.",
   alternates: { canonical: `${siteConfig.url}/hakkimizda/` },
+  openGraph: { ...ogDefaults, title: "Hakkımızda", url: `${siteConfig.url}/hakkimizda/` },
 }
 
 const stats = [
   { icon: Users, value: "10.000+", label: "Memnun Müşteri" },
   { icon: Award, value: "TÜBİTAK", label: "Onaylı Hizmet" },
   { icon: Clock, value: "Aynı Gün", label: "Aktivasyon" },
-  { icon: ShieldCheck, value: "7/24", label: "Teknik Destek" },
+  { icon: ShieldCheck, value: "09-18", label: "Hafta İçi Destek" },
 ]
 
 export default function HakkimizdaPage() {
@@ -31,7 +33,7 @@ export default function HakkimizdaPage() {
             Hakkımızda
           </h1>
           <p className="mt-4 text-slate-300 max-w-2xl text-lg">
-            Umay Tüm Bilişim eimzasatinal.com.tr olarak, 15 Yıldır DİA ERP Yazılımı, E-Dönüşüm Portalı satışı, eğitimi ve desteği tecrübesi ile birlikte bireylere ve kurumlara TÜBİTAK onaylı nitelikli elektronik imza, KEP ve zaman damgası hizmetlerini 5 yıldır sunuyoruz.
+            Umay Tüm Bilişim eimzasatinal.com.tr olarak, 15 yılı aşkın süredir DİA ERP Yazılımı, E-Dönüşüm Portalı satışı, eğitimi ve desteği tecrübesi ile birlikte bireylere ve kurumlara TÜBİTAK onaylı nitelikli elektronik imza, KEP ve zaman damgası hizmetlerini 5 yıldır sunuyoruz.
           </p>
         </div>
       </section>
@@ -51,10 +53,10 @@ export default function HakkimizdaPage() {
           <div className="prose prose-slate max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground">Misyonumuz</h2>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              Umay Tüm Bilişim olarak 16 yıldır DİA ERP yazılımı ve E-Dönüşüm çözümleri alanında binlerce işletmeye kesintisiz hizmet verdik. Bu köklü deneyimimizi 5 yıl önce e-imza, KEP ve zaman damgası hizmetlerine taşıdık; bugün hem bireysel hem kurumsal müşterilerimize aynı güvenilirlik anlayışıyla TÜBİTAK onaylı dijital kimlik çözümleri sunuyoruz.
+              Umay Tüm Bilişim olarak 15 yılı aşkın süredir DİA ERP yazılımı ve E-Dönüşüm çözümleri alanında binlerce işletmeye kesintisiz hizmet verdik. Bu köklü deneyimimizi 5 yıl önce e-imza, KEP ve zaman damgası hizmetlerine taşıdık; bugün hem bireysel hem kurumsal müşterilerimize aynı güvenilirlik anlayışıyla TÜBİTAK onaylı dijital kimlik çözümleri sunuyoruz.
             </p>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              16 yıllık sektör birikimimiz sayesinde müşterilerimizin ihtiyaçlarını önceden anlıyor, doğru ürünü doğru süreçle ulaştırıyoruz. Satış öncesinde danışmanlık, satış sonrasında kurulum ve teknik destek — tüm süreç boyunca yanınızdayız.
+              15 yılı aşkın sektör birikimimiz sayesinde müşterilerimizin ihtiyaçlarını önceden anlıyor, doğru ürünü doğru süreçle ulaştırıyoruz. Satış öncesinde danışmanlık, satış sonrasında kurulum ve teknik destek — tüm süreç boyunca yanınızdayız.
             </p>
             <h2 className="text-2xl font-bold text-foreground mt-8">Sunduğumuz Hizmetler</h2>
             <ul className="text-muted-foreground mt-4 space-y-2">
@@ -64,7 +66,7 @@ export default function HakkimizdaPage() {
             </ul>
             <h2 className="text-2xl font-bold text-foreground mt-8">Neden Bizi Seçmelisiniz?</h2>
             <p className="text-muted-foreground mt-4">
-              Müşteri memnuniyetini ön planda tutan yaklaşımımız, aynı gün aktivasyon garantimiz ve 7/24 teknik destek hizmetimizle on binlerce müşterimize kesintisiz hizmet veriyoruz. Satış sonrası süreçlerde de yanınızda olduğumuzu unutmayın.
+              Müşteri memnuniyetini ön planda tutan yaklaşımımız, aynı gün aktivasyon imkânımız ve hafta içi telefon/WhatsApp destek hizmetimizle müşterilerimize kesintisiz hizmet veriyoruz. Satış sonrası süreçlerde de yanınızda olduğumuzu unutmayın.
             </p>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { Check, X } from "lucide-react"
 import { PricingTable } from "@/components/site/pricing-table"
@@ -12,12 +13,12 @@ import { siteConfig } from "@/lib/site-config"
 import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
-  title: "KEP Adresi Al — Kayıtlı Elektronik Posta",
+  title: pageTitle("KEP Adresi Al — Kayıtlı Elektronik Posta"),
   description:
     "BTK yetkili KEP adresi satın alın. Yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.",
   alternates: { canonical: `${siteConfig.url}/kep/` },
-  openGraph: {
-    title: "KEP Adresi Al | eimzasatinal.com.tr",
+  openGraph: { ...ogDefaults,
+    title: "KEP Adresi Al — Kayıtlı Elektronik Posta",
     description: "BTK yetkili KEP hizmeti. Yasal tebligat ve resmi yazışmalar için.",
     url: `${siteConfig.url}/kep/`,
   },

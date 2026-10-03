@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { Check, ArrowRight, Phone } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -19,14 +20,13 @@ export async function generateMetadata({ params }: { params: { sehir: string } }
   const meta = getZdCityMeta(city)
   const url = `${siteConfig.url}/zaman-damgasi/${city.slug}/`
   return {
-    title: meta.metaTitle,
+    title: pageTitle(meta.metaTitle),
     description: meta.metaDescription,
     alternates: { canonical: url },
-    openGraph: {
+    openGraph: { ...ogDefaults,
       title: meta.metaTitle,
       description: meta.metaDescription,
       url,
-      images: [{ url: `${siteConfig.url}/og-image.png`, width: 1200, height: 630 }],
     },
   }
 }
@@ -68,6 +68,7 @@ export default function SehirZamanDamgasiPage({ params }: { params: { sehir: str
           name: `${city.name} Zaman Damgası — TÜBİTAK Onaylı RFC 3161`,
           description: meta.metaDescription,
           url: pageUrl,
+          city: city.name,
         })}
       />
       <JsonLd data={faqSchema(meta.faqs)} />

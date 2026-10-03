@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import { Accordion } from "@/components/ui/accordion"
 import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
@@ -7,9 +8,10 @@ import { faqData } from "@/lib/faq-data"
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Sıkça Sorulan Sorular — E-İmza, KEP, Zaman Damgası",
+  title: pageTitle("Sıkça Sorulan Sorular — E-İmza, KEP, Zaman Damgası"),
   description: "E-imza, KEP ve zaman damgası hakkında merak ettikleriniz. Nasıl alınır, kim kullanmalı, fiyatlar nedir, aktivasyon süreci nasıl işler?",
   alternates: { canonical: `${siteConfig.url}/sss/` },
+  openGraph: { ...ogDefaults, title: "Sıkça Sorulan Sorular", url: `${siteConfig.url}/sss/` },
 }
 
 const categories = [

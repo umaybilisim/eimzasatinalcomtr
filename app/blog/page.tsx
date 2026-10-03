@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
@@ -7,9 +8,10 @@ import { siteConfig } from "@/lib/site-config"
 import { blogPosts } from "@/lib/blog-data"
 
 export const metadata: Metadata = {
-  title: "Blog — E-İmza, KEP ve Zaman Damgası Hakkında Her Şey",
+  title: pageTitle("Blog — E-İmza, KEP ve Zaman Damgası Hakkında Her Şey"),
   description: "E-imza nasıl alınır, KEP nedir, zaman damgası ne işe yarar? Dijital imza hakkında kapsamlı rehberler ve güncel bilgiler.",
   alternates: { canonical: `${siteConfig.url}/blog/` },
+  openGraph: { ...ogDefaults, title: "E-İmza, KEP ve Zaman Damgası Blogu", url: `${siteConfig.url}/blog/` },
 }
 
 export default function BlogPage() {

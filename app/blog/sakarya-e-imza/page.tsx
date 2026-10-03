@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageTitle, ogDefaults } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight, Check, MapPin, Truck, Phone, Clock } from "lucide-react"
 import { CtaSection } from "@/components/site/cta-section"
@@ -7,15 +8,13 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components
 import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim 2026",
-  description:
-    "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum. Toyota tedarikçileri, OSB firmaları ve muhasebecilere özel TÜBİTAK onaylı e-imza çözümleri.",
+  title: pageTitle("Sakarya E-İmza Al: Adapazarı'nda Aynı Gün Elden Teslim"),
+  description: "Sakarya ve Adapazarı'nda e-imza satın alın: ofisimizden randevuyla aynı gün elden teslim ve kurulum. TÜBİTAK onaylı, KDV dahil fiyat.",
   alternates: { canonical: `${siteConfig.url}/blog/sakarya-e-imza/` },
-  openGraph: {
+  openGraph: { ...ogDefaults,
     title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim",
     description: "Merkezimiz Sakarya'da! TÜBİTAK onaylı e-imza. Aynı gün elden teslim ve yerinde kurulum desteği.",
     url: `${siteConfig.url}/blog/sakarya-e-imza/`,
-    images: [{ url: `${siteConfig.url}/og-image.png`, width: 1200, height: 630 }],
   },
 }
 
@@ -69,7 +68,7 @@ export default function SakaryaEImzaPage() {
     <>
       <JsonLd
         data={articleSchema({
-          title: "Sakarya E-İmza Al — Adapazarı'nda Aynı Gün Elden Teslim 2026",
+          title: "Sakarya E-İmza Al: Adapazarı'nda Aynı Gün Elden Teslim",
           description:
             "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum desteği.",
           url: `${siteConfig.url}/blog/sakarya-e-imza/`,
