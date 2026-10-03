@@ -15,7 +15,7 @@ import { cities } from "@/lib/city-seo-data"
 export const metadata: Metadata = {
   title: pageTitle("KEP Adresi Al — Kayıtlı Elektronik Posta"),
   description:
-    "BTK yetkili KEP adresi satın alın. Yasal delil niteliğinde e-posta. Sermaye şirketleri için zorunlu KEP. Hızlı aktivasyon, uygun fiyat.",
+    "BTK yetkili KEP adresi satın alın. Tacirler arası ihbarlar ve kamu yazışmaları için yasal delil niteliğinde e-posta. Online başvuru, hızlı aktivasyon.",
   alternates: { canonical: `${siteConfig.url}/kep/` },
   openGraph: { ...ogDefaults,
     title: "KEP Adresi Al — Kayıtlı Elektronik Posta",
@@ -30,17 +30,17 @@ const comparison = [
   { feature: "Teslim bildirimi", normal: false, kep: true },
   { feature: "Okundu bilgisi", normal: false, kep: true },
   { feature: "İçerik bütünlüğü kanıtı", normal: false, kep: true },
-  { feature: "Yasal tebligat yerine geçer", normal: false, kep: true },
+  { feature: "TTK ihbarlarında kullanılabilir", normal: false, kep: true },
   { feature: "Mahkemede delil", normal: false, kep: true },
 ]
 
 const mandatory = [
-  "Anonim şirketler (A.Ş.)",
-  "Limited şirketler (Ltd. Şti.)",
-  "Kooperatifler",
-  "KAP'a bildirim yükümlüsü şirketler",
-  "Bankalar ve sigorta şirketleri",
-  "BTK lisanslı elektronik haberleşme şirketleri",
+  "Tedarikçi ve bayilerine fesih/temerrüt ihbarı gönderen şirketler",
+  "Kamu kurumlarıyla düzenli yazışan firmalar",
+  "Müvekkil adına ihtar gönderen avukatlar",
+  "Sözleşmeli çalışan anonim ve limited şirketler",
+  "İhaleye giren ve kamu yüklenicisi firmalar",
+  "Resmî bildirimlerini ispatlamak isteyen bireyler",
 ]
 
 export default function KepPage() {
@@ -108,8 +108,8 @@ export default function KepPage() {
       {/* Mandatory */}
       <section className="py-16 bg-secondary/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground mb-4">KEP Kimler İçin Zorunlu?</h2>
-          <p className="text-muted-foreground mb-6">Türk Ticaret Kanunu ve ilgili mevzuata göre aşağıdaki kurumların KEP adresi edinmesi zorunludur:</p>
+          <h2 className="text-3xl font-bold text-foreground mb-4">KEP Zorunlu mu, Kimler Kullanmalı?</h2>
+          <p className="text-muted-foreground mb-6">BTK'ya göre KEP mevzuatında kullanıma ilişkin genel bir zorunluluk yoktur. Ancak Türk Ticaret Kanunu, tacirler arasında elektronik ortamda yapılan temerrüt, fesih ve sözleşmeden dönme ihbarlarının KEP ile yapılacağını düzenler; kamu kurumları da yazıştıkları taraflardan KEP adresi isteyebilir. Bu nedenle KEP adresine en çok ihtiyaç duyanlar şunlardır:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {mandatory.map((m) => (
               <div key={m} className="flex items-center gap-2 p-3 rounded-lg bg-white border">

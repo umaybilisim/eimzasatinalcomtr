@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("E-İmza Yenileme — Süresi Dolanlar İçin Adım Adım Rehber"),
@@ -25,7 +28,7 @@ const faqs = [
 export default function EImzaYenilemePage() {
   return (
     <>
-      <JsonLd data={articleSchema({ title: "E-İmza Yenileme Rehberi", description: "E-imza yenileme süreci", url: `${siteConfig.url}/blog/e-imza-yenileme/`, datePublished: "2026-02-15" })} />
+      <JsonLd data={articleSchema({ title: "E-İmza Yenileme Rehberi", description: "E-imza yenileme süreci", url: `${siteConfig.url}/blog/e-imza-yenileme/`, datePublished: "2026-02-15", dateModified: "2026-10-03" })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Blog", url: `${siteConfig.url}/blog/` }, { name: "E-İmza Yenileme", url: `${siteConfig.url}/blog/e-imza-yenileme/` }])} />
 
@@ -37,6 +40,7 @@ export default function EImzaYenilemePage() {
             <span className="text-sm text-slate-400">15 Şubat 2026 · 10 dk okuma</span>
           </div>
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">E-İmza Yenileme — Süresi Dolanlar İçin Adım Adım Rehber</h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
@@ -183,6 +187,10 @@ export default function EImzaYenilemePage() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["e-imza-yenileme"]} />
+          <AuthorBox />
         </div>
       </article>
 

@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "e-imza-mobil-imza-mali-muhur-farki",
+    title: "E-İmza, Mobil İmza ve Mali Mühür: Farkları Nelerdir, Hangisini Almalısınız?",
+    excerpt: "E-imza ve mobil imza kişiye ait, ıslak imzayla aynı hukuki sonucu doğuran imzalardır; mali mühür ise şirkete aittir ve e-fatura, e-arşiv, e-defterde kullanılır. Karşılaştırma tablosu ve seçim rehberi.",
+    date: "2026-10-03",
+    readTime: "8 dk",
+    category: "E-İmza",
+  },
+  {
     slug: "e-fatura-icin-e-imza-gerekli-mi",
     title: "E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu ve Başvuru",
     excerpt: "E-faturaya geçiş için e-imza mı mali mühür mü gerekli? 2026 e-fatura zorunluluğu, ciro limitleri, şahıs işletmesi ve şirket farkı, geçiş adımları ve ceza riskleri hakkında güncel rehber.",

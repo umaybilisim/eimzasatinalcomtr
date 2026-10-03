@@ -52,9 +52,9 @@ export const faqData: FaqItem[] = [
   },
   {
     id: "kep-2",
-    question: "KEP kimler için zorunludur?",
+    question: "KEP adresi almak zorunlu mu?",
     answer:
-      "Türk Ticaret Kanunu'na göre anonim şirketler, limited şirketler ve kooperatiflerin KEP adresi edinmesi zorunludur. Bunların yanı sıra KAP'a bildirim yükümlülüğü olan şirketler, banka ve sigorta şirketleri de KEP kullanmak zorundadır.",
+      "BTK'ya göre KEP mevzuatında kullanıma ilişkin genel bir zorunluluk yoktur. Ancak Türk Ticaret Kanunu, tacirler arasında elektronik ortamda yapılan temerrüt, fesih ve sözleşmeden dönme ihbarlarının KEP ile yapılacağını düzenler ve kamu kurumları yazıştıkları taraflardan KEP adresi isteyebilir. Bu nedenle şirketlerin çoğu için KEP adresi pratikte gereklidir.",
     category: "kep",
   },
   {

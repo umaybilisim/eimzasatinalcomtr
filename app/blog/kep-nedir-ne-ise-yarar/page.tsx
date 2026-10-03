@@ -6,19 +6,22 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("KEP Nedir, Ne İşe Yarar? Kayıtlı Elektronik Posta Rehberi"),
-  description: "Kayıtlı Elektronik Posta (KEP) nedir, normal e-postadan farkı nedir, kimlere zorunlu ve nasıl kullanılır? Kapsamlı KEP rehberi.",
+  description: "KEP nedir, normal e-postadan farkı ne, zorunlu mu? BTK ve TTK kaynaklı rehber: ihbarlarda KEP, kamu yazışmaları ve KEP adresi alma adımları.",
   alternates: { canonical: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
-  openGraph: { ...ogDefaults, title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi — zorunluluk, kullanım ve avantajlar.", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
+  openGraph: { ...ogDefaults, title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi — hukuki dayanak, kullanım alanları ve avantajlar.", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` },
 }
 
 const faqs = [
   { question: "KEP mesajı ne kadar süre saklanır?", answer: "KEP mesajları BTK lisanslı hizmet sağlayıcının sunucularında en az 3 yıl saklanır. Kullanıcılar istedikleri zaman kendi arşivlerine de indirebilir. Yasal süreçlerde delil olarak sunmak için bu arşiv önemlidir." },
   { question: "KEP adresi başka bir e-posta uygulamasından kullanılabilir mi?", answer: "Evet. IMAP/SMTP protokolünü destekleyen e-posta istemcileri (Outlook, Thunderbird, Apple Mail vb.) ile KEP hesabınıza erişebilirsiniz. Ancak güvenli iletim için KEP sağlayıcısının kendi arayüzünü kullanmak önerilir." },
   { question: "KEP ile normal e-postanın maliyeti arasında fark ne kadar?", answer: "Normal e-posta ücretsiz ya da çok düşük maliyetlidir. KEP ise yıllık abonelik ücretine tabidir. Ancak ihtarname, tebligat ve resmi bildirimlerde noter ve posta masraflarını ortadan kaldırdığı için uzun vadede ciddi tasarruf sağlar." },
-  { question: "KEP adresi almak zorunlu mu?", answer: "Türk Ticaret Kanunu'na göre anonim şirketler ve limited şirketler KEP adresi edinmek zorundadır. Bireysel kullanıcılar için zorunluluk bulunmamaktadır; ancak resmi yazışmalarda güvence sağlamak isteyenler bireysel KEP alabilir." },
+  { question: "KEP adresi almak zorunlu mu?", answer: "BTK'ya göre KEP mevzuatında kullanıma ilişkin genel bir zorunluluk yoktur. Ancak TTK, tacirler arasında elektronik ortamda yapılan temerrüt, fesih ve sözleşmeden dönme ihbarlarının KEP ile yapılacağını düzenler; kamu kurumları da kendileriyle yazışan taraflardan KEP adresi isteyebilir. Bu nedenle şirketlerin çoğu için KEP adresi pratikte gereklidir." },
   { question: "KEP ile gönderilen belge imzalanmış sayılır mı?", answer: "KEP tek başına imza işlevi görmez; e-posta tesliminin yasal kanıtını sağlar. Belgenin içeriğinin imzalanmış sayılması için e-imzayla birlikte kullanılması gerekir. Resmi yazışmalarda KEP + e-imzalı belge kombinasyonu en güvenli yöntemdir." },
 ]
 
@@ -36,7 +39,7 @@ const comparison = [
 export default function KepNedirPage() {
   return (
     <>
-      <JsonLd data={articleSchema({ title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/`, datePublished: "2026-01-25" })} />
+      <JsonLd data={articleSchema({ title: "KEP Nedir?", description: "Kayıtlı Elektronik Posta rehberi", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/`, datePublished: "2026-01-25", dateModified: "2026-10-03" })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Blog", url: `${siteConfig.url}/blog/` }, { name: "KEP Nedir?", url: `${siteConfig.url}/blog/kep-nedir-ne-ise-yarar/` }])} />
 
@@ -48,20 +51,21 @@ export default function KepNedirPage() {
             <span className="text-sm text-slate-400">25 Ocak 2026 · 10 dk okuma</span>
           </div>
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">KEP Nedir, Ne İşe Yarar? Kayıtlı Elektronik Posta Rehberi</h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
       <article className="py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-slate prose-lg max-w-none">
-            <p className="lead text-xl text-muted-foreground">Kayıtlı Elektronik Posta (KEP), gönderilen e-posta mesajlarının içeriğini, gönderim ve alım zamanını yasal delil niteliğinde kayıt altına alan güvenli e-posta sistemidir. Adi posta ve faks yerini KEP'e bırakırken, Türk şirketleri için artık yasal bir zorunluluk haline gelmiştir.</p>
+            <p className="lead text-xl text-muted-foreground">Kayıtlı Elektronik Posta (KEP), gönderilen e-posta mesajlarının içeriğini, gönderim ve alım zamanını yasal delil niteliğinde kayıt altına alan güvenli e-posta sistemidir. Noter ve iadeli taahhütlü mektubun yanında, tacirler arası ihbarlarda kanunun açıkça saydığı bir yöntemdir.</p>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP'in Hukuki Dayanağı</h2>
             <p className="text-muted-foreground">KEP, Türkiye'de birden fazla yasal düzenlemeyle güvence altına alınmıştır:</p>
             <ul className="text-muted-foreground mt-4 space-y-2 list-disc list-inside">
-              <li><strong>6102 sayılı Türk Ticaret Kanunu:</strong> Sermaye şirketleri için KEP adresi edinme zorunluluğu</li>
+              <li><strong>6102 sayılı Türk Ticaret Kanunu (md. 18/3):</strong> Tacirler arasında temerrüde düşürme, fesih ve sözleşmeden dönmeye ilişkin elektronik ortamdaki ihbarların KEP ile yapılması</li>
               <li><strong>6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun:</strong> E-ticaret tebligatlarında KEP kullanımı</li>
-              <li><strong>7201 sayılı Tebligat Kanunu:</strong> Elektronik tebligat ve KEP ilişkisi</li>
+              <li><strong>7201 sayılı Tebligat Kanunu:</strong> Elektronik tebligat düzenlemeleri (elektronik tebligat, KEP'ten ayrı bir sistem üzerinden yürür)</li>
               <li><strong>BTK Yönetmelikleri:</strong> KEP hizmet sağlayıcılarının teknik ve hukuki yükümlülükleri</li>
             </ul>
             <p className="text-muted-foreground mt-4">BTK (Bilgi Teknolojileri ve İletişim Kurumu) tarafından yetkilendirilen KEP hizmet sağlayıcıları aracılığıyla sunulan KEP, iadeli taahhütlü posta ile eşdeğer hukuki güce sahiptir. Bu sayede mesai saatlerine bağlı kalmadan, posta kuyruklarında beklemeden resmi tebligat yapılabilmektedir.</p>
@@ -89,26 +93,14 @@ export default function KepNedirPage() {
               </table>
             </div>
 
-            <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP Kimler İçin Zorunlu?</h2>
-            <p className="text-muted-foreground">Türk Ticaret Kanunu gereğince aşağıdaki kurumların KEP adresi edinmesi zorunludur:</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-              {[
-                "Anonim şirketler (A.Ş.)",
-                "Limited şirketler (Ltd. Şti.)",
-                "Kooperatifler",
-                "Bankalar ve finans kuruluşları",
-                "Sigorta şirketleri",
-                "KAP bildirim yükümlüsü şirketler",
-                "Kamu kurumları (belirli kategoriler)",
-                "Avukatlar (UYAP sistemi için)",
-              ].map((m) => (
-                <div key={m} className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 border text-sm">
-                  <Check className="h-4 w-4 text-primary shrink-0" />
-                  <span className="text-muted-foreground">{m}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-muted-foreground mt-4">Yükümlülüğünü yerine getirmeyen şirketler için Türk Ticaret Kanunu kapsamında idari yaptırım uygulanabilir. Bu nedenle şirket kurucularının işletme kurarken KEP adresini de edinmesi tavsiye edilir.</p>
+            <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP Zorunlu mu? Kimler Kullanmalı?</h2>
+            <p className="text-muted-foreground"><strong>Kısa cevap: KEP adresi edinmek için genel bir yasal zorunluluk yoktur, ancak birçok şirket için pratikte gereklidir.</strong> BTK, KEP mevzuatında kullanıma ilişkin bir zorunluluk bulunmadığını açıkça belirtir. Bununla birlikte üç durum KEP'i fiilen vazgeçilmez kılar:</p>
+            <ul className="text-muted-foreground mt-4 space-y-3 list-disc list-inside">
+              <li><strong>Tacirler arası ihbarlar:</strong> Türk Ticaret Kanunu, tacirler arasında elektronik ortamda yapılan temerrüt, fesih ve sözleşmeden dönme ihbarlarının KEP ile yapılacağını düzenler. Bu ihbarları elektronik ortamda yapmak isteyen şirketin KEP adresi olmalıdır.</li>
+              <li><strong>Kamu kurumlarıyla yazışma:</strong> Resmî Yazışmalarda Uygulanacak Usul ve Esaslar Hakkında Yönetmelik uyarınca elektronik yazışma yapan kamu kurumları, KEP ile gelen yazışmaları kabul edecek altyapıyı kurmak zorundadır ve ilgili taraflardan KEP adresi kullanmalarını isteyebilir.</li>
+              <li><strong>KEP rehberi:</strong> KEP adresi olan tüzel kişilerin KEP rehberinde yer alması zorunludur; bireyler için isteğe bağlıdır.</li>
+            </ul>
+            <p className="text-muted-foreground mt-4">Pratikte KEP adresine en çok ihtiyaç duyanlar; tedarikçi, bayi ve müşterileriyle sözleşmeli çalışan anonim ve limited şirketler, kamu kurumlarıyla düzenli yazışan firmalar ve müvekkilleri adına ihtar gönderen avukatlardır. Unutmayın: KEP iletisi yalnızca karşı tarafın da KEP adresi varsa teslim edilebilir.</p>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP Nasıl Çalışır? Teknik Süreç</h2>
             <p className="text-muted-foreground">KEP sistemi, her gönderimi kriptografik yöntemlerle mühürleyerek kayıt altına alır:</p>
@@ -124,12 +116,10 @@ export default function KepNedirPage() {
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP'in Pratik Kullanım Alanları</h2>
             <p className="text-muted-foreground">KEP, iş dünyasında pek çok kritik iletişim sürecini güvence altına alır:</p>
             <ul className="text-muted-foreground mt-4 space-y-3 list-disc list-inside">
-              <li><strong>İhtarname ve İhbar:</strong> İş akdi feshi, kira ihtarı, borca itiraz bildirimleri KEP ile resmi geçerlilik kazanır. Notere gidip iadeli taahhütlü posta göndermek yerine saniyeler içinde yasal tebligat yapılabilir.</li>
+              <li><strong>İhtar ve İhbar:</strong> Fesih, temerrüt ve sözleşmeden dönme bildirimleri, karşı tarafın KEP adresi varsa noter beklemeden saniyeler içinde gönderilir; gönderim ve teslim anı delil olarak kayda geçer.</li>
               <li><strong>Sözleşme Bildirimleri:</strong> Sözleşme yenileme, fiyat güncellemesi veya fesih bildirimleri KEP'te teslim kanıtıyla birlikte iletilir.</li>
-              <li><strong>KAP Bildirimleri:</strong> Halka açık şirketler kamuyu aydınlatma bildirimlerini KEP üzerinden yapabilir.</li>
               <li><strong>Banka ve Sigorta İşlemleri:</strong> Ödeme hatırlatmaları, prim bildirimleri ve hesap kapatma talepleri KEP güvencesiyle iletilir.</li>
               <li><strong>Kamu Kurumu Yazışmaları:</strong> Bakanlıklar ve kamu kurumlarıyla yapılan resmi yazışmalarda KEP kullanılabilir.</li>
-              <li><strong>e-Ticaret Tebligatları:</strong> Tüketiciye yönelik mesafeli sözleşme bildirimlerinde KEP yasal güvence sağlar.</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">KEP Adresi Nasıl Alınır?</h2>
@@ -154,10 +144,10 @@ export default function KepNedirPage() {
             <div className="mt-10 p-6 rounded-xl bg-secondary border border-primary/20">
               <h3 className="font-bold text-foreground mb-3">KEP Hakkında Özet Bilgiler</h3>
               <ul className="text-sm text-muted-foreground space-y-2 list-disc list-inside">
-                <li>Sermaye şirketleri için yasal zorunluluk</li>
-                <li>İadeli taahhütlü posta ile eşdeğer hukuki güç</li>
+                <li>Genel bir zorunluluk yok; tacirler arası elektronik ihbarlarda ve kamu yazışmalarında pratikte gerekli</li>
+                <li>TTK'da noter ve taahhütlü mektupla birlikte sayılan ihbar yöntemi</li>
                 <li>Gönderim, teslim ve içerik bütünlüğü kriptografik olarak kanıtlanır</li>
-                <li>Mesajlar en az 3 yıl arşivlenir</li>
+                <li>İleti ve delil kayıtları KEP hizmet sağlayıcısı tarafından saklanır</li>
                 <li>Normal e-posta uygulamalarıyla da kullanılabilir</li>
                 <li>Yıllık abonelik ücretine tabidir</li>
               </ul>
@@ -187,9 +177,13 @@ export default function KepNedirPage() {
             </div>
           </div>
         </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["kep-nedir-ne-ise-yarar"]} />
+          <AuthorBox />
+        </div>
       </article>
 
-      <CtaSection title="KEP Adresinizi Alın" subtitle="Yasal yükümlülüğünüzü yerine getirin, hızlı aktivasyon." />
+      <CtaSection title="KEP Adresinizi Alın" subtitle="Resmî yazışmalarınızı ispatlanabilir hale getirin, hızlı aktivasyon." />
     </>
   )
 }

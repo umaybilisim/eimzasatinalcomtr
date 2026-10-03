@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("Zaman Damgası Nedir? TÜBİTAK Onaylı Belge Güvencesi"),
@@ -25,7 +28,7 @@ const faqs = [
 export default function ZamanDamgasiNedirPage() {
   return (
     <>
-      <JsonLd data={articleSchema({ title: "Zaman Damgası Nedir?", description: "Zaman damgası rehberi", url: `${siteConfig.url}/blog/zaman-damgasi-nedir/`, datePublished: "2026-02-01" })} />
+      <JsonLd data={articleSchema({ title: "Zaman Damgası Nedir?", description: "Zaman damgası rehberi", url: `${siteConfig.url}/blog/zaman-damgasi-nedir/`, datePublished: "2026-02-01", dateModified: "2026-10-03" })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Blog", url: `${siteConfig.url}/blog/` }, { name: "Zaman Damgası Nedir?", url: `${siteConfig.url}/blog/zaman-damgasi-nedir/` }])} />
 
@@ -37,6 +40,7 @@ export default function ZamanDamgasiNedirPage() {
             <span className="text-sm text-slate-400">1 Şubat 2026 · 10 dk okuma</span>
           </div>
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">Zaman Damgası Nedir? TÜBİTAK Onaylı Belge Güvencesi</h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
@@ -164,6 +168,10 @@ export default function ZamanDamgasiNedirPage() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["zaman-damgasi-nedir"]} />
+          <AuthorBox />
         </div>
       </article>
 

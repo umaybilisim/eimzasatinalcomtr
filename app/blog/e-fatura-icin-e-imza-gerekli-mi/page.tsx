@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu"),
@@ -29,7 +32,7 @@ const faqs = [
 export default function EFaturaIcinEImzaPage() {
   return (
     <>
-      <JsonLd data={articleSchema({ title: "E-Fatura İçin E-İmza Gerekli mi?", description: "2026 e-fatura zorunluluğu ve e-imza rehberi", url: `${siteConfig.url}/blog/e-fatura-icin-e-imza-gerekli-mi/`, datePublished: "2026-07-05" })} />
+      <JsonLd data={articleSchema({ title: "E-Fatura İçin E-İmza Gerekli mi?", description: "2026 e-fatura zorunluluğu ve e-imza rehberi", url: `${siteConfig.url}/blog/e-fatura-icin-e-imza-gerekli-mi/`, datePublished: "2026-07-05", dateModified: "2026-10-03" })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Blog", url: `${siteConfig.url}/blog/` }, { name: "E-Fatura İçin E-İmza Gerekli mi?", url: `${siteConfig.url}/blog/e-fatura-icin-e-imza-gerekli-mi/` }])} />
 
@@ -41,6 +44,7 @@ export default function EFaturaIcinEImzaPage() {
             <span className="text-sm text-slate-400">5 Temmuz 2026 · 9 dk okuma</span>
           </div>
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">E-Fatura İçin E-İmza Gerekli mi? 2026 Zorunluluğu</h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
@@ -213,6 +217,10 @@ export default function EFaturaIcinEImzaPage() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["e-fatura-icin-e-imza-gerekli-mi"]} />
+          <AuthorBox />
         </div>
       </article>
 

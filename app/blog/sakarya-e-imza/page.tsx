@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("Sakarya E-İmza Al: Adapazarı'nda Aynı Gün Elden Teslim"),
@@ -72,7 +75,7 @@ export default function SakaryaEImzaPage() {
           description:
             "Sakarya ve Adapazarı'nda e-imza satın alın. Merkezimiz Sakarya'da! Aynı gün elden teslim, yerinde kurulum desteği.",
           url: `${siteConfig.url}/blog/sakarya-e-imza/`,
-          datePublished: "2026-05-22",
+          datePublished: "2026-05-22", dateModified: "2026-10-03",
         })}
       />
       <JsonLd data={faqSchema(faqs)} />
@@ -104,6 +107,7 @@ export default function SakaryaEImzaPage() {
             Sakarya E-İmza Al —{" "}
             <span className="text-blue-400">Adapazarı&apos;nda Aynı Gün Elden Teslim</span>
           </h1>
+          <AuthorByline updated="2026-10-03" />
           <p className="mt-5 text-lg text-slate-300 max-w-2xl">
             TÜBİTAK onaylı nitelikli elektronik imzanızı Sakarya merkezimizden elden teslim alın, aynı gün aktive edin. Toyota tedarikçileri, OSB firmaları, mali müşavirler ve tüm Sakarya işletmelerine özel hizmet.
           </p>
@@ -298,6 +302,10 @@ export default function SakaryaEImzaPage() {
               </Link>
             ))}
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["sakarya-e-imza"]} />
+          <AuthorBox />
         </div>
       </article>
 

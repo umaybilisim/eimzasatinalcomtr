@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("E-İmza Nedir? Hukuki Geçerliliği ve Kullanım Alanları"),
@@ -25,7 +28,7 @@ const faqs = [
 export default function EImzaNedirPage() {
   return (
     <>
-      <JsonLd data={articleSchema({ title: "E-İmza Nedir?", description: "Elektronik imzanın tanımı ve hukuki dayanağı", url: `${siteConfig.url}/blog/e-imza-nedir/`, datePublished: "2026-01-15" })} />
+      <JsonLd data={articleSchema({ title: "E-İmza Nedir?", description: "Elektronik imzanın tanımı ve hukuki dayanağı", url: `${siteConfig.url}/blog/e-imza-nedir/`, datePublished: "2026-01-15", dateModified: "2026-10-03" })} />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema([{ name: "Ana Sayfa", url: siteConfig.url }, { name: "Blog", url: `${siteConfig.url}/blog/` }, { name: "E-İmza Nedir?", url: `${siteConfig.url}/blog/e-imza-nedir/` }])} />
 
@@ -37,17 +40,18 @@ export default function EImzaNedirPage() {
             <span className="text-sm text-slate-400">15 Ocak 2026 · 10 dk okuma</span>
           </div>
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">E-İmza Nedir? Hukuki Geçerliliği ve Kullanım Alanları</h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
       <article className="py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-slate prose-lg max-w-none">
-            <p className="lead text-xl text-muted-foreground">Elektronik imza (e-imza), dijital belgelerin kimin tarafından imzalandığını, ne zaman imzalandığını ve imza sonrası belge üzerinde değişiklik yapılıp yapılmadığını kriptografik yöntemlerle kanıtlayan bir güvenlik mekanizmasıdır. Türkiye'de milyonlarca bireysel kullanıcı ve yüz binlerce şirket e-imzayı aktif olarak kullanmaktadır.</p>
+            <p className="lead text-xl text-muted-foreground">Elektronik imza (e-imza), dijital belgelerin kimin tarafından imzalandığını, ne zaman imzalandığını ve imza sonrası belge üzerinde değişiklik yapılıp yapılmadığını kriptografik yöntemlerle kanıtlayan bir güvenlik mekanizmasıdır. e-Devlet, UYAP, GİB ve EKAP gibi pek çok kamu sistemi nitelikli elektronik imzayı kabul eder.</p>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmzanın Hukuki Dayanağı</h2>
-            <p className="text-muted-foreground">Türkiye'de elektronik imzanın hukuki çerçevesi, <strong>5070 sayılı Elektronik İmza Kanunu</strong> ile belirlenmiştir. 23 Ocak 2004 tarihinde yürürlüğe giren bu kanuna göre nitelikli elektronik imza, ıslak (elle atılan) imza ile aynı hukuki geçerliliğe sahiptir. Kanun, imzanın hangi koşullarda geçerli sayılacağını, sertifika hizmet sağlayıcılarının yükümlülüklerini ve imzanın ispat gücünü ayrıntılı biçimde düzenlemektedir.</p>
-            <p className="text-muted-foreground mt-4">Bu düzenleme, Avrupa Birliği'nin <strong>eIDAS (910/2014) tüzüğü</strong> ile de büyük ölçüde uyumludur. Bu uyum, Türk şirketlerinin Avrupa'daki iş ortaklarıyla e-imzalı belge alışverişini mümkün kılmaktadır. Nitelikli elektronik sertifikalar yalnızca <strong>TÜBİTAK BİLGEM</strong> tarafından akredite edilmiş sertifika hizmet sağlayıcıları aracılığıyla verilebilir.</p>
+            <p className="text-muted-foreground">Türkiye'de elektronik imzanın hukuki çerçevesi, <strong>5070 sayılı Elektronik İmza Kanunu</strong> ile belirlenmiştir. 23 Ocak 2004 tarihinde Resmî Gazete'de yayımlanan bu kanuna göre nitelikli elektronik imza, ıslak (elle atılan) imza ile aynı hukuki geçerliliğe sahiptir. Kanun, imzanın hangi koşullarda geçerli sayılacağını, sertifika hizmet sağlayıcılarının yükümlülüklerini ve imzanın ispat gücünü ayrıntılı biçimde düzenlemektedir.</p>
+            <p className="text-muted-foreground mt-4">Bu düzenleme, Avrupa Birliği'nin <strong>eIDAS (910/2014) tüzüğü</strong> ile de büyük ölçüde uyumludur. Bu uyum, Türk şirketlerinin Avrupa'daki iş ortaklarıyla e-imzalı belge alışverişini mümkün kılmaktadır. Nitelikli elektronik sertifikalar yalnızca <strong>Bilgi Teknolojileri ve İletişim Kurumu (BTK)</strong> tarafından yetkilendirilmiş elektronik sertifika hizmet sağlayıcıları (ESHS) tarafından verilebilir; güncel liste BTK'nın internet sitesinde yayımlanır.</p>
             <p className="text-muted-foreground mt-4">Türk hukuku, kağıt ortamındaki el yazısı imzanın zorunlu tutulduğu durumlar dışında nitelikli e-imzanın her alanda kullanılmasına olanak tanımaktadır. Mahkeme süreçlerinde, vergi beyannamelerinde, ticari sözleşmelerde ve kamu ihale süreçlerinde e-imza hukuki delil niteliği taşımaktadır.</p>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmza Nasıl Çalışır?</h2>
@@ -58,7 +62,7 @@ export default function EImzaNedirPage() {
               <li>Bu özet, USB token üzerinde güvenle saklanan <strong>özel anahtarınız</strong> ile şifrelenir. Özel anahtar hiçbir zaman token dışına çıkmaz.</li>
               <li>Şifreli özet ve sertifika bilgileri belgeye eklenir — bu bütüne "elektronik imza" denir.</li>
               <li>Karşı taraf veya mahkeme, sertifika otoritesinden alınan <strong>genel anahtar</strong> ile imzanın orijinalliğini ve belgenin değiştirilmediğini doğrulayabilir.</li>
-              <li>Sertifika otoritesi (TÜBİTAK onaylı), imzanın gerçekten size ait olduğunu garanti eder.</li>
+              <li>BTK tarafından yetkilendirilmiş elektronik sertifika hizmet sağlayıcısı, sertifikanın gerçekten size ait olduğunu kimlik doğrulamasıyla teyit eder.</li>
             </ol>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmza Türleri: Elektronik İmza ve Nitelikli Elektronik İmza</h2>
@@ -75,7 +79,7 @@ export default function EImzaNedirPage() {
                 <tbody>
                   {[
                     ["Hukuki geçerlilik", "Sınırlı", "Islak imzayla eşdeğer"],
-                    ["Sertifika gereksinimi", "Zorunlu değil", "TÜBİTAK onaylı sertifika şart"],
+                    ["Sertifika gereksinimi", "Zorunlu değil", "Nitelikli elektronik sertifika şart"],
                     ["Donanım", "Gerekmeyebilir", "USB token (güvenli cihaz)"],
                     ["Kullanım alanı", "İç süreçler", "Kamu, hukuki, ticari"],
                   ].map(([o, e, n]) => (
@@ -115,14 +119,14 @@ export default function EImzaNedirPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmza Kimler İçin Zorunlu?</h2>
-            <p className="text-muted-foreground">Bazı meslekler ve işlem türleri için e-imza kullanımı <strong>yasal zorunluluktur</strong>. Bu gruplar için e-imza olmadan ilgili işlemler yapılamamaktadır:</p>
+            <p className="text-muted-foreground">Aşağıdaki meslek grupları günlük işlerinin önemli bir kısmını e-imza gerektiren elektronik sistemler üzerinden yürütür. Hangi işlemde e-imzanın zorunlu, hangisinde alternatif giriş yönteminin yeterli olduğu sistemden sisteme değişir; kullandığınız sistemin güncel kurallarını kontrol etmeniz önerilir:</p>
             <ul className="text-muted-foreground mt-4 space-y-3 list-disc list-inside">
-              <li><strong>Serbest Muhasebeci Mali Müşavirler (SMMM) ve Yeminli Mali Müşavirler (YMM):</strong> GİB e-beyanname sistemi için zorunlu.</li>
-              <li><strong>Avukatlar:</strong> UYAP (Ulusal Yargı Ağı Bilişim Sistemi) üzerinden dava ve yazışmalar için zorunlu.</li>
+              <li><strong>Serbest Muhasebeci Mali Müşavirler (SMMM) ve Yeminli Mali Müşavirler (YMM):</strong> GİB sistemleri ve e-Devlet üzerinden yürütülen işlemler.</li>
+              <li><strong>Avukatlar:</strong> UYAP Avukat Portalı üzerinden dava açma ve evrak gönderme.</li>
               <li><strong>e-Fatura mükellefleri:</strong> Belirli ciro eşiğini aşan şirketler e-fatura kesmek zorunda.</li>
-              <li><strong>Kamu ihalelerine katılacak firmalar:</strong> EKAP sistemi üzerinden ihale başvurusu için zorunlu.</li>
-              <li><strong>Yapı denetimcileri:</strong> YDS sistemi üzerinden proje onayı için zorunlu.</li>
-              <li><strong>Gümrük müşavirleri:</strong> e-Gümrük beyanname sistemi için zorunlu.</li>
+              <li><strong>Kamu ihalelerine katılacak firmalar:</strong> EKAP üzerinden e-teklif hazırlama ve imzalama.</li>
+              <li><strong>Yapı denetimcileri:</strong> Yapı Denetim Sistemi (YDS) üzerindeki işlemler.</li>
+              <li><strong>Gümrük müşavirleri:</strong> Elektronik gümrük beyannamesi işlemleri.</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmza ile Elektronik Mühür Arasındaki Fark</h2>
@@ -149,11 +153,11 @@ export default function EImzaNedirPage() {
               <h3 className="font-bold text-foreground mb-3">Özet: E-İmza Hakkında Bilinmesi Gereken 6 Temel Nokta</h3>
               <ul className="text-sm text-muted-foreground space-y-2 list-disc list-inside">
                 <li>Islak imzayla aynı hukuki geçerliliğe sahip, mahkemede delil niteliği taşır</li>
-                <li>TÜBİTAK onaylı sertifika hizmet sağlayıcısından alınması zorunlu</li>
+                <li>BTK tarafından yetkilendirilmiş bir ESHS'den alınması gerekir</li>
                 <li>USB token adı verilen özel donanım cihazında saklanır</li>
                 <li>1, 2 veya 3 yıllık paketlerle alınır; uzun paket daha avantajlı</li>
                 <li>Süre dolunca yenilenebilir; eski imzalar geçerliliğini korur</li>
-                <li>e-Devlet, GİB, UYAP, EKAP gibi sistemlerde zorunlu kullanım alanı vardır</li>
+                <li>e-Devlet, GİB, UYAP ve EKAP gibi sistemlerde kullanılır</li>
               </ul>
             </div>
 
@@ -182,6 +186,10 @@ export default function EImzaNedirPage() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["e-imza-nedir"]} />
+          <AuthorBox />
         </div>
       </article>
 

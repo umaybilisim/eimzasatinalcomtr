@@ -6,6 +6,9 @@ import { CtaSection } from "@/components/site/cta-section"
 import { Breadcrumbs } from "@/components/seo/breadcrumbs"
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "@/components/seo/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { AuthorByline, AuthorBox } from "@/components/blog/author-byline"
+import { Sources } from "@/components/blog/sources"
+import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
   title: pageTitle("Yapı Denetimcisi E-İmza Rehberi 2026: YDS ve Proje Onayı"),
@@ -64,7 +67,7 @@ export default function YapiDenetimciEImzaPage() {
         title: "Yapı Denetimcileri İçin E-İmza Rehberi 2026",
         description: "Yapı denetim şirketleri ve denetimciler için e-imza rehberi. YDS sistemi, proje onayları ve e-imza seçimi.",
         url: `${siteConfig.url}/blog/yapi-denetimcisi-e-imza-rehberi/`,
-        datePublished: "2026-05-22",
+        datePublished: "2026-05-22", dateModified: "2026-10-03",
       })} />
       <JsonLd data={breadcrumbSchema([
         { name: "Ana Sayfa", url: siteConfig.url },
@@ -84,6 +87,7 @@ export default function YapiDenetimciEImzaPage() {
           <h1 className="mt-4 text-4xl lg:text-5xl font-extrabold text-balance">
             Yapı Denetimcileri İçin E-İmza Rehberi 2026: YDS, Proje Onayı ve Doğru E-İmza Seçimi
           </h1>
+          <AuthorByline updated="2026-10-03" />
         </div>
       </section>
 
@@ -307,6 +311,10 @@ export default function YapiDenetimciEImzaPage() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Sources items={blogSources["yapi-denetimcisi-e-imza-rehberi"]} />
+          <AuthorBox />
         </div>
       </article>
 

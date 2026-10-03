@@ -38,7 +38,7 @@ const kepFeatures = [
   "Teslim bildirimi kaydı",
   "İçerik bütünlüğü garantisi",
   "Mahkemede geçerli kanıt",
-  "Sermaye şirketleri zorunluluğu",
+  "TTK ihbarlarında kullanım",
   "Resmi yazışma güvencesi",
   "Okundu bilgisi kaydı",
   "7/24 erişim",
@@ -113,7 +113,7 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                {city.nameGenitive} KEP Zorunluluğu ve Avantajları
+                {city.nameGenitive} KEP'in Hukuki Dayanağı ve Avantajları
               </h2>
               <p className="text-muted-foreground leading-relaxed">{city.kepContext}</p>
               <p className="mt-4 text-muted-foreground leading-relaxed">{city.kepSectorNote}</p>
@@ -213,7 +213,7 @@ export default function SehirKepPage({ params }: { params: { sehir: string } }) 
 
       <CtaSection
         title={`${city.nameGenitive} KEP Adresinizi Bugün Alın`}
-        subtitle="Yasal zorunluluğu yerine getirin, resmi yazışmalarınızı güvence altına alın."
+        subtitle="Resmî yazışmalarınızı ve ihbarlarınızı ispatlanabilir hale getirin."
       />
     </>
   )

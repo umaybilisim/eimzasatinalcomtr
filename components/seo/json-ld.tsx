@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config"
+import { DEFAULT_AUTHOR, authorUrl, type Author } from "@/lib/authors"
 
 interface JsonLdProps {
   data: Record<string, unknown>
@@ -216,6 +217,7 @@ export function articleSchema({
   datePublished,
   dateModified,
   image,
+  author = DEFAULT_AUTHOR,
 }: {
   title: string
   description: string
@@ -223,6 +225,7 @@ export function articleSchema({
   datePublished: string
   dateModified?: string
   image?: string
+  author?: Author
 }) {
   return {
     "@context": "https://schema.org",
@@ -235,13 +238,28 @@ export function articleSchema({
     datePublished,
     dateModified: dateModified ?? datePublished,
     inLanguage: "tr-TR",
-    author: { "@type": "Organization", "@id": ORG_ID, name: siteConfig.brandName, url: SITE },
+    author: personSchema(author),
     publisher: {
       "@type": "Organization",
       "@id": ORG_ID,
       name: siteConfig.brandName,
       logo: { "@type": "ImageObject", url: LOGO },
     },
+  }
+}
+
+// Yazar: Person şeması; kuruluşa @id ile bağlanır (E-E-A-T).
+export function personSchema(author: Author) {
+  return {
+    "@type": "Person",
+    "@id": `${authorUrl(author)}#person`,
+    name: author.name,
+    jobTitle: author.jobTitle,
+    description: author.shortBio,
+    url: authorUrl(author),
+    worksFor: orgRef,
+    ...(author.image ? { image: author.image } : {}),
+    ...(author.sameAs.length ? { sameAs: author.sameAs } : {}),
   }
 }
 

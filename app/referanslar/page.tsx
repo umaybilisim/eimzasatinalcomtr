@@ -20,7 +20,7 @@ const segments = [
   { title: "Mali müşavir ve muhasebeciler", desc: "Beyanname, SGK ve e-Devlet işlemleri için e-imza; büro çalışanları için toplu kurulum." },
   { title: "Avukatlar ve hukuk büroları", desc: "UYAP işlemleri için e-imza, tebligatlar için KEP adresi." },
   { title: "Yapı denetim firmaları", desc: "YDS ve proje onay süreçleri için denetçi e-imzaları." },
-  { title: "Şirketler ve KOBİ'ler", desc: "Sermaye şirketleri için zorunlu KEP, e-fatura ve sözleşmeler için e-imza." },
+  { title: "Şirketler ve KOBİ'ler", desc: "Tacirler arası ihbarlar ve kamu yazışmaları için KEP, sözleşmeler ve kamu işlemleri için e-imza." },
   { title: "Yazılım ve arşiv ihtiyaçları", desc: "Belgelerin tarihini ispatlamak için zaman damgası kontörü." },
   { title: "Bireysel kullanıcılar", desc: "e-Devlet, banka ve resmî başvurular için kişisel e-imza." },
 ]
