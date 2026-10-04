@@ -22,7 +22,7 @@ export const authors: Record<string, Author> = {
       "Umay Bilişim bünyesinde DİA ERP yazılımı ve e-dönüşüm çözümlerinin satış, eğitim ve destek süreçlerini yürüttükten sonra bu deneyimi e-imza, KEP ve zaman damgası hizmetlerine taşıdı. Mali müşavirlerden yapı denetim firmalarına, avukatlardan sanayi şirketlerine kadar farklı sektörlerdeki kullanıcıların e-imza seçimi, kurulumu ve günlük kullanımında karşılaştığı sorunları yakından tanır.",
       "eimzasatinal.com.tr blogundaki yazılar, bu saha deneyiminden yola çıkarak kullanıcıların en sık sorduğu soruları sade ve doğru bilgiyle yanıtlamak amacıyla hazırlanır.",
     ],
-    sameAs: [],
+    sameAs: ["https://www.linkedin.com/in/aycanfirtin"],
   },
 }
 
