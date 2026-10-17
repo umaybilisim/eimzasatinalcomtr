@@ -11,10 +11,10 @@ import { Sources } from "@/components/blog/sources"
 import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
-  title: pageTitle("Mali Müşavir ve Muhasebeciler İçin E-İmza Rehberi 2026"),
-  description: "Mali müşavir, SMMM ve YMM'ler için e-imza zorunlulukları, kullanım alanları, başvuru süreci ve hangi e-imzayı seçmeleri gerektiğine dair rehber.",
+  title: pageTitle("SMMM ve Mali Müşavir E-İmza Zorunlu mu? 2026"),
+  description: "SMMM, mali müşavir ve YMM'ler için e-imza zorunlu mu, hangi paket uygun, toplu büro indirimi var mı? GİB, SGK ve TÜRMOB işlemleri için 2026 güncel rehber.",
   alternates: { canonical: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
-  openGraph: { ...ogDefaults, title: "Mali Müşavir E-İmza Rehberi", description: "SMMM ve YMM için kapsamlı e-imza rehberi.", url: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
+  openGraph: { ...ogDefaults, title: "SMMM ve Mali Müşavir E-İmza Zorunlu mu? 2026", description: "GİB, SGK ve TÜRMOB işlemleri için SMMM ve YMM'lere e-imza rehberi.", url: `${siteConfig.url}/blog/mali-musavir-e-imza-rehberi/` },
 }
 
 const useCases = [

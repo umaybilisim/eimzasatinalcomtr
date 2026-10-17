@@ -11,8 +11,8 @@ import { Sources } from "@/components/blog/sources"
 import { blogSources } from "@/lib/blog-sources"
 
 export const metadata: Metadata = {
-  title: pageTitle("Yapı Denetimcisi E-İmza Rehberi 2026: YDS ve Proje Onayı"),
-  description: "Yapı denetimciler için e-imza rehberi: YDS girişi, proje onayı ve hakediş için hangi e-imza gerekir, nasıl alınır? 2026 güncel bilgiler.",
+  title: pageTitle("Yapı Denetimcisi E-İmza Rehberi 2026: Hangi E-İmza Gerekli?"),
+  description: "Yapı denetimciler ve yapı denetim şirketleri için e-imza rehberi: hangi unvan hangi e-imzayı almalı, kaç kişi için alınmalı, toplu başvuru avantajları. 2026 güncel bilgiler.",
   alternates: { canonical: `${siteConfig.url}/blog/yapi-denetimcisi-e-imza-rehberi/` },
   openGraph: { ...ogDefaults, title: "Yapı Denetimcisi E-İmza Rehberi 2026", url: `${siteConfig.url}/blog/yapi-denetimcisi-e-imza-rehberi/` },
 }
@@ -51,8 +51,8 @@ const faqs = [
     answer: "e-Devlet üzerinden kimlik doğrulama ile başvurularda e-imza genellikle 1-2 iş günü içinde aktive edilir. USB token kargoya verilir veya elden teslim edilir. Acil durumlarda aynı gün aktivasyon seçeneğimiz de mevcuttur.",
   },
   {
-    question: "YDS sistemine e-imza ile nasıl giriş yapılır?",
-    answer: "YDS sistemine giriş için USB token'ı bilgisayara takın, gerekli sürücüleri ve tarayıcı eklentisini yükleyin. yds.csb.gov.tr adresine giderek 'E-İmza ile Giriş' seçeneğini seçin. PIN kodunuzu girerek sisteme erişim sağlayabilirsiniz. Teknik destek ekibimiz kurulum konusunda ücretsiz destek vermektedir.",
+    question: "Satın aldığım e-imza ile YDS'ye nasıl giriş yaparım?",
+    answer: "USB token'ı bilgisayara takın, gerekli sürücüleri ve tarayıcı eklentisini yükleyin, ardından Bakanlığın resmi yapı denetim portalında 'E-İmza ile Giriş' seçeneğini kullanıp PIN kodunuzu girin. Teknik destek ekibimiz kurulum konusunda müşterilerimize ücretsiz destek vermektedir.",
   },
   {
     question: "Yapı denetim şirketleri için toplu e-imza indirimi var mı?",
@@ -113,11 +113,11 @@ export default function YapiDenetimciEImzaPage() {
             <div className="my-8 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 sm:p-8 text-white not-prose shadow-lg">
               <div className="flex items-center gap-2 mb-3">
                 <Zap className="h-5 w-5 text-yellow-300" />
-                <span className="text-xs font-semibold uppercase tracking-wide text-blue-200">YDS'ye giriş için e-imza şart</span>
+                <span className="text-xs font-semibold uppercase tracking-wide text-blue-200">Yapı denetimciye özel</span>
               </div>
-              <h3 className="text-2xl font-bold mb-2">E-İmzanız yok mu? Hemen başvurun, YDS'ye hızla giriş yapın.</h3>
+              <h3 className="text-2xl font-bold mb-2">E-İmzanız yok mu? Hemen başvurun, hızlı aktivasyon alın.</h3>
               <p className="text-blue-100 text-sm mb-6 max-w-2xl">
-                yds.csb.gov.tr sistemine giriş yapabilmek için TÜBİTAK onaylı nitelikli elektronik imza gereklidir. Yapı denetimcilerine özel hızlı aktivasyon, 1-3 iş günü kargo ve kurulum desteği sunuyoruz.
+                Yapı denetim işlemleriniz için TÜBİTAK onaylı nitelikli elektronik imza gereklidir. Yapı denetimcilerine özel hızlı aktivasyon, 1-3 iş günü kargo ve kurulum desteği sunuyoruz.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
@@ -232,13 +232,13 @@ export default function YapiDenetimciEImzaPage() {
               </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">YDS Sistemine E-İmza ile Nasıl Giriş Yapılır?</h2>
-            <p className="text-muted-foreground">YDS (yds.csb.gov.tr) sistemine e-imzayla bağlanmak için adım adım yapmanız gerekenler:</p>
+            <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Satın Aldığınız E-İmzayı Yapı Denetim Sisteminde Kullanma</h2>
+            <p className="text-muted-foreground">E-imzanızı aldıktan sonra sisteme bağlanmak için adım adım yapmanız gerekenler:</p>
             <ol className="mt-4 space-y-4 text-muted-foreground list-none not-prose">
               {[
                 { num: "1", title: "USB Token'ı Takın", desc: "E-imza USB token'ınızı bilgisayarınızdaki USB portuna takın. Token sürücüsü genellikle otomatik yüklenir; yüklenmezse üreticinin web sitesinden indirin." },
-                { num: "2", title: "Tarayıcı Eklentisini Yükleyin", desc: "YDS sistemi için gerekli tarayıcı eklentisini resmi siteden indirip kurun. Chrome ve Edge tarayıcıları desteklenmektedir." },
-                { num: "3", title: "YDS Portalına Gidin", desc: "yds.csb.gov.tr adresine gidin ve 'E-İmza ile Giriş' seçeneğine tıklayın. Sertifikanızı seçin." },
+                { num: "2", title: "Tarayıcı Eklentisini Yükleyin", desc: "Gerekli tarayıcı eklentisini resmi siteden indirip kurun. Chrome ve Edge tarayıcıları desteklenmektedir." },
+                { num: "3", title: "Portala Giriş Yapın", desc: "Bakanlığın yapı denetim portalında 'E-İmza ile Giriş' seçeneğine tıklayın ve sertifikanızı seçin." },
                 { num: "4", title: "PIN Kodunuzu Girin", desc: "E-imza sertifikanız için belirlediğiniz PIN kodunu girin. Sisteme güvenli şekilde erişim sağlanır." },
                 { num: "5", title: "Belgelerinizi İmzalayın", desc: "Onaylamak istediğiniz belgeyi açın, 'İmzala' butonuna tıklayın ve PIN kodunuzu doğrulayın. Belge anında onaylanır." },
               ].map((step) => (
@@ -254,7 +254,7 @@ export default function YapiDenetimciEImzaPage() {
               ))}
             </ol>
             <p className="text-muted-foreground mt-4">
-              Teknik sorun yaşarsanız destek ekibimiz kurulum ve YDS entegrasyonu konusunda ücretsiz yardımcı olmaktadır. WhatsApp hattımıza mesaj atmanız yeterlidir.
+              Teknik sorun yaşarsanız destek ekibimiz kurulum konusunda müşterilerimize ücretsiz yardımcı olmaktadır. WhatsApp hattımıza mesaj atmanız yeterlidir.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">E-İmza Başvurusu için Gerekli Belgeler</h2>

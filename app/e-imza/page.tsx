@@ -14,13 +14,13 @@ import { siteConfig } from "@/lib/site-config"
 import { cities } from "@/lib/city-seo-data"
 
 export const metadata: Metadata = {
-  title: pageTitle("E-İmza Satın Al — Bireysel ve Kurumsal E-İmza"),
+  title: pageTitle("E-İmza Fiyatları 2026 — Satın Al"),
   description:
-    "TÜBİTAK onaylı nitelikli elektronik imza satın alın. 1, 2 ve 3 yıllık paketler. Mali müşavir, avukat ve KOBİ'lere özel çözümler. Hemen sipariş verin.",
+    "E-imza fiyatları ve paketleri: 1, 2 ve 3 yıllık seçenekler, KDV dahil fiyat. TÜBİTAK onaylı nitelikli elektronik imza, hızlı aktivasyon. Hemen sipariş verin.",
   alternates: { canonical: `${siteConfig.url}/e-imza/` },
   openGraph: { ...ogDefaults,
-    title: "E-İmza Satın Al — Bireysel ve Kurumsal E-İmza",
-    description: "TÜBİTAK onaylı e-imza. Hızlı aktivasyon, uygun fiyat.",
+    title: "E-İmza Fiyatları 2026 — Satın Al",
+    description: "TÜBİTAK onaylı e-imza fiyatları. Hızlı aktivasyon, uygun fiyat.",
     url: `${siteConfig.url}/e-imza/`,
   },
 }
