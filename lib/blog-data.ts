@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "kagit-fatura-2027-e-arsiv-zorunlulugu",
+    title: "1 Ocak 2027: Kağıt Fatura Dönemi Bitiyor — Basit Usul ve İşletme Hesabı Mükellefleri İçin Rehber",
+    excerpt: "Basit usul ve işletme hesabı mükellefleri için kağıt fatura istisnası 1 Ocak 2027'de bitiyor. E-Arşiv zorunluluğu kimleri kapsıyor, e-imza gerçekten şart mı? 2026 güncel rehber.",
+    date: "2026-10-26",
+    readTime: "9 dk",
+    category: "E-İmza",
+  },
+  {
     slug: "e-imza-mobil-imza-mali-muhur-farki",
     title: "E-İmza, Mobil İmza ve Mali Mühür: Farkları Nelerdir, Hangisini Almalısınız?",
     excerpt: "E-imza ve mobil imza kişiye ait, ıslak imzayla aynı hukuki sonucu doğuran imzalardır; mali mühür ise şirkete aittir ve e-fatura, e-arşiv, e-defterde kullanılır. Karşılaştırma tablosu ve seçim rehberi.",

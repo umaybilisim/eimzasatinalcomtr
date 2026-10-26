@@ -22,6 +22,8 @@ const S = {
   uyap: { title: "UYAP Avukat Portalı", url: "https://avukat.uyap.gov.tr/", publisher: "Adalet Bakanlığı" },
   ekap: { title: "Elektronik Kamu Alımları Platformu (EKAP)", url: "https://ekap.kik.gov.tr/EKAP/", publisher: "Kamu İhale Kurumu" },
   yds: { title: "Yapı Denetim Sistemi (YDS)", url: "https://yds.csb.gov.tr/", publisher: "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı" },
+  vuk589: { title: "VUK Genel Tebliği (Sıra No: 509)'nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 589) — 31.12.2025 tarihli, 33124 sayılı Resmî Gazete (5. Mükerrer)", url: "https://www.alomaliye.com/2025/12/31/vergi-usul-kanunu-genel-tebligi-sira-no-589/", publisher: "Resmî Gazete (31.12.2025/33124) — tam metin" },
+  ivdGib: { title: "İnteraktif Vergi Dairesi", url: "https://ivd.gib.gov.tr/", publisher: "Gelir İdaresi Başkanlığı" },
 } satisfies Record<string, Source>
 
 export const blogSources: Record<string, Source[]> = {
@@ -35,4 +37,5 @@ export const blogSources: Record<string, Source[]> = {
   "sakarya-e-imza": [S.btkEshs, S.k5070, S.edevlet, S.yds],
   "e-fatura-icin-e-imza-gerekli-mi": [S.gibEbelge, S.gib, S.k5070, S.btkEshs],
   "e-imza-mobil-imza-mali-muhur-farki": [S.btkEimzaSss, S.k5070, S.btkEshs, S.gibEbelge, S.uyap, S.ekap, S.edevlet],
+  "kagit-fatura-2027-e-arsiv-zorunlulugu": [S.vuk589, S.gibEbelge, S.ivdGib, S.gib],
 }

@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/yapi-denetimcisi-e-imza-rehberi",
     "/blog/sakarya-e-imza",
     "/blog/e-imza-mobil-imza-mali-muhur-farki",
+    "/blog/kagit-fatura-2027-e-arsiv-zorunlulugu",
     "/yazar/aycan-firtin",
     "/kvkk",
     "/gizlilik",
